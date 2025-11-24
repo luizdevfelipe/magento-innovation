@@ -21,6 +21,18 @@
 
     .page-header .header.panel .promo-header-message {
         .lib-css(text-align, center);
+        .lib-css(font-weight, bold)
+    }
+
+    .page-header .header.panel .promo-header-message > strong:nth-child(1) {
+        .lib-css(background-color, @theme__color__purple);
+        .lib-css(padding, 0 3px);
+        .lib-css(border-radius, 3px);
+    }
+
+    .page-header .header.panel .promo-header-message > strong:nth-child(2) {
+        .lib-css(font-weight, 300);
+        font-style: italic;
     }
 
     .page-header .header.content .header.links a {
