@@ -2,12 +2,23 @@
 //  _____________________________________________
 & when (@media-common =true) {}
 
+.page-header .header.panel .promo-header-message>strong:nth-child(1) {
+    .lib-css(background-color, @theme__color__purple);
+    .lib-css(padding, 0 3px);
+    .lib-css(border-radius, 3px);
+}
+
 //
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
     .page-header .panel.wrapper {
         .lib-css(background-color, @theme__color__primary);
+    }
+
+    .page-header .header.panel {
+        .lib-css(padding, 4px 12px);
+        .lib-css(text-align, center);
     }
 }
 
@@ -24,19 +35,49 @@
         .lib-css(font-weight, bold)
     }
 
-    .page-header .header.panel .promo-header-message > strong:nth-child(1) {
-        .lib-css(background-color, @theme__color__purple);
-        .lib-css(padding, 0 3px);
-        .lib-css(border-radius, 3px);
-    }
 
-    .page-header .header.panel .promo-header-message > strong:nth-child(2) {
+
+    .page-header .header.panel .promo-header-message>strong:nth-child(2) {
         .lib-css(font-weight, 300);
         font-style: italic;
     }
 
+    .page-header .header.content {
+        .lib-css(display, flex);
+        .lib-css(padding-bottom, 20px);
+    }
+
+    .page-header .header.content .block.block-search {
+        .lib-css(margin-right, 30px);
+        .lib-css(float, left);
+        .lib-css(width, 600px);
+    }
+
+    .page-header .header.content .header.links {
+        .lib-list-reset-styles();
+        .lib-css(margin-left, 50px);
+        .lib-css(display, flex);
+        .lib-css(flex-wrap, nowrap);
+        .lib-css(align-items, center);
+        .lib-css(gap, 16px);
+    }
+
+    .page-header .header.content .block.block-search .block.block-content input[type="text"] {
+        .lib-css(border-radius, 4px);
+        .lib-css(padding, 18px 16px);
+        .lib-css(border-color, #aaaaaa);
+
+        &::placeholder {
+            .lib-css(color, #0f0f0f);
+        }
+    }
+
     .page-header .header.content .header.links a {
         .lib-css(color, @theme__color__primary);
+    }
+
+    .page-header .header.content .minicart-wrapper {
+        .lib-css(float, none);
     }
 
     .logo {
