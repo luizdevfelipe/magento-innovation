@@ -1,0 +1,30 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$session = $objectManager->get(\Magento\Customer\Model\Session::class);
+?>
+
+<?php if ($session->isLoggedIn()): ?>
+
+    <li class="greet welcome">
+        <span>Bem-vindo, <?= $session->getCustomer()->getFirstname(); ?>!</span>
+    </li>
+
+    <li>
+        <a href="<?= $block->getUrl('customer/account/logout') ?>">Sair</a>
+    </li>
+
+<?php else: ?>
+
+    <li class="customer-auth-links">
+        <span class="profile-icon">
+            <img src="<?= $block->getViewFileUrl('Magento_Theme::images/user.svg') ?>" alt="Perfil">
+        </span>
+
+        <a href="<?= $block->getUrl('customer/account/login') ?>">Entrar</a>
+
+        <span class="separator"> ou </span>
+
+        <a href="<?= $block->getUrl('customer/account/create') ?>">Criar Conta</a>
+    </li>
+
+<?php endif; ?>
