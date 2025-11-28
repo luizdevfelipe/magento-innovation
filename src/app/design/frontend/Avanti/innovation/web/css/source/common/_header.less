@@ -1,15 +1,23 @@
-//  Common (styles-m.css)
+//  Common (styles-m.css) - reorganized
 //  _____________________________________________
 & when (@media-common =true) {}
 
+// -------------------------
+// **Global / Base styles**
+// Regras aplicáveis a todos os tamanhos (estrutura e elementos principais)
+// -------------------------
+
+// Wrapper / estrutura do header
 .page-header .panel.wrapper {
     .lib-css(min-height, 30px);
+    // Background padrão tratado em media-queries específicas
 }
 
 .page-header .panel.wrapper .panel.header {
     .lib-css(padding, 0px);
 }
 
+// Mensagem promocional (barra superior)
 .page-header .header.panel .promo-header-message {
     .lib-css(font-size, 14px);
     .lib-css(padding, 4px 0);
@@ -19,22 +27,19 @@
 }
 
 .page-header .header.panel .promo-header-message>strong:nth-child(1) {
+    // Destaque primário dentro da mensagem promocional
     .lib-css(background-color, @theme__color__purple);
     .lib-css(padding, 0 3px);
     .lib-css(border-radius, 3px);
 }
 
-.page-header .header.panel .promo-header-message {
-    .lib-css(text-align, center);
-    .lib-css(font-weight, bold)
-}
-
 .page-header .header.panel .promo-header-message>strong:nth-child(2) {
+    // Texto secundário da mensagem (estilo mais leve)
     .lib-css(font-weight, 300);
     font-style: italic;
 }
 
-
+// Busca (input) - estilo base
 .page-header .header.content .block.block-search .block.block-content input[type="text"] {
     .lib-css(border-radius, 7px);
     .lib-css(padding, 18px 16px);
@@ -45,14 +50,18 @@
     }
 }
 
+// Links de conta/usuario
 .page-header .header.content .header.links {
     .lib-css(font-weight, 600);
 }
 
-.header.content .header.links .customer-auth-links .profile-icon img {
+.header.content .header.links .customer-auth-links .profile-icon img,
+.header.content .header.links .greet.welcome .profile-icon img {
+    // Ajuste visual do ícone do perfil
     .lib-css(transform, translateY(6px));
 }
 
+// Ação do carrinho (estrutura base)
 .action.showcart {
     .lib-css(display, flex);
     .lib-css(align-items, center);
@@ -60,18 +69,12 @@
     .lib-css(transform, translateY(6px));
 }
 
-.minicart-wrapper .action.showcart::before {
-    content: "";
-    .lib-css(background-image, url("@{baseDir}images/cart.svg"));
-    .lib-css(width, 24px);
-    .lib-css(height, 24px);
-}
-
 .minicart-wrapper .action.showcart.active::before {
     content: "";
 }
 
 .minicart-wrapper .action.showcart .counter.qty {
+    // Badge de quantidade do minicart
     .lib-css(border-radius, 50%);
     .lib-css(transform, translate(-13px, -13px));
     .lib-css(line-height, 20px);
@@ -87,8 +90,8 @@
     .lib-css(transform, translateY(-1px));
 }
 
-// Ícone da Lupa
-.header.content .block.block-content .form.minisearch .actions .action.seach::before,
+// Ícone da lupa (usado na mini busca)
+.header.content .block.block-content .form.minisearch .actions .action.search::before,
 .header.content .block.block-content .form.minisearch .field.search .label::before {
     content: "";
     .lib-css(background-image, url("@{baseDir}images/search-ico.svg"));
@@ -96,26 +99,37 @@
     .lib-css(height, 19px);
 }
 
-//
-//  Mobile
-//  _____________________________________________
+// -------------------------
+// **Mobile (max @screen__m)**
+// Organização por ordem: estrutura -> promo -> branding/logo -> busca -> navegação/icones -> minicart
+// -------------------------
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Header: remoção de borda para versões mobile
     .page-header {
         .lib-css(border, none);
     }
 
+    // Barra promocional - ajuste do segundo strong para ficar normal em mobile
+    .page-header .header.panel .promo-header-message>strong:nth-child(2) {
+        .lib-css(font-weight, 300);
+        font-style: normal;
+    }
+
+    // Estrutura do conteúdo do header (altura e padding)
     .page-header .header.content {
         .lib-css(position, relative);
         .lib-css(padding, 0px);
         .lib-css(height, 132px);
     }
 
-    // Íncone de Menu Burger
+    // Ícone do menu (burger) - posicionamento
     .page-header .header.content .action.nav-toggle {
         .lib-css(top, 25px);
         .lib-css(left, 16px);
     }
 
+    // Ícone do menu (imagem)
     .page-header .header.content .action.nav-toggle::before {
         content: "";
         .lib-css(background-image, url("@{baseDir}images/menu-burger.svg"));
@@ -123,15 +137,7 @@
         .lib-css(height, 24px);
     }
 
-    .page-header .panel.wrapper {
-        .lib-css(background-color, @theme__color__primary);
-    }
-
-    .page-header .header.panel {
-        .lib-css(padding, 4px 12px);
-        .lib-css(text-align, center);
-    }
-
+    // Logo: centralizada na versão mobile
     .page-wrapper .page-header .header.content a.logo {
         .lib-css(position, absolute);
         .lib-css(margin, 22px 0 0 0);
@@ -139,8 +145,9 @@
         .lib-css(transform, translateX(-50%));
     }
 
+    // Busca: espaçamento e controle visual em mobile
     .page-header .header.content .block.block-search {
-        .lib-css(margin-top, 80px);
+        .lib-css(margin-top, 61px);
     }
 
     .header.content .block.block-content .field.search .control {
@@ -153,30 +160,54 @@
         .lib-css(top, 20%);
     }
 
-    .minicart-wrapper {
-        .lib-css(position, absolute);
-        .lib-css(top, 20%);
-        .lib-css(left, 86%);
-
-    }
-
     .header.content .block.block-content .form.minisearch.active {
         .lib-css(margin, 30px 16px 16px 16px);
     }
 
+    // Ícone do carrinho (mobile)
+    .minicart-wrapper .action.showcart::before {
+        content: "";
+        .lib-css(background-image, url("@{baseDir}images/cart-m.svg"));
+        .lib-css(width, 24px);
+        .lib-css(height, 24px);
+    }
+
+    // Posicionamento do minicart em mobile
+    .minicart-wrapper {
+        .lib-css(position, absolute);
+        .lib-css(top, 20%);
+        .lib-css(left, 86%);
+    }
+
+    // Painel superior do header no mobile
+    .page-header .header.panel {
+        .lib-css(padding, 4px 12px);
+        .lib-css(text-align, center);
+    }
+
+    // Oculta links no header na versão mobile
     .page-header .header.content .header.links {
         .lib-css(display, none);
     }
+
+    // Ajuste de cores do wrapper no mobile (quando necessário)
+    .page-header .panel.wrapper {
+        .lib-css(background-color, @theme__color__primary);
+    }
 }
 
-//
-//  Desktop
-//  _____________________________________________
+// -------------------------
+// **Desktop (min @screen__m)**
+// Organização por ordem: estrutura -> layout flex -> busca -> logo -> links -> minicart -> navegação
+// -------------------------
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Wrapper com background principal em desktop
     .page-header .panel.wrapper {
         .lib-css(background-color, @theme__color__primary);
     }
 
+    // Layout do header em desktop (centro e max-width)
     .page-header .header.content {
         .lib-css(display, flex);
         .lib-css(max-width, 1260px);
@@ -184,6 +215,7 @@
         .lib-css(padding-bottom, 20px);
     }
 
+    // Busca: dimensões e posicionamento em desktop
     .page-header .header.content .block.block-search {
         .lib-css(margin-right, clamp(60px, 16.74vw, 211px));
         .lib-css(margin-left, 65px);
@@ -193,48 +225,68 @@
         .lib-css(width, 600px);
     }
 
-    .page-header .header.content .block.block-search .block.block-content input[type="text"] {}
+    .page-header .header.content .block.block-search .block.block-content input[type="text"] {
+        .lib-css(min-width, 275px);
+    }
 
     .actions .action.seach {
         .lib-css(transform, translateY(3px));
     }
 
+    // Logo: ajuste de espaçamento em desktop
+    .logo {
+        .lib-css(margin-top, 22px);
+        .lib-css(margin-right, 0px);
+    }
+
+    .logo img {
+        .lib-css(min-width, 100%);
+    }
+
+    // Links do header: lista e estilo em desktop
     .page-header .header.content .header.links {
         .lib-list-reset-styles();
         .lib-css(font-size, 14px);
-        .lib-css(min-width, 163px);
+        .lib-css(min-width, fit-content);
         .lib-css(height, 24px);
         .lib-css(margin-top, 20px);
         .lib-css(color, black);
         .lib-css(display, flex);
         .lib-css(flex-wrap, nowrap);
-        .lib-css(align-items, center);
-        .lib-css(gap, 16px);
+        .lib-css(align-items, baseline);
+        .lib-css(gap, 5px);
     }
 
     .page-header .header.content .header.links a {
         .lib-css(color, black);
     }
 
-    .logo {
-        .lib-css(margin-top, 22px);
-        .lib-css(margin-right, 0px);
-    }
+    // .customer.welcome: ajustes específicos removidos (não há regras necessárias no momento)
 
+    // Mini search field height
     .header.content .block.block-content .form.minisearch .field.search {
         .lib-css(height, 40px);
+    }
 
-    }    
+    // Ícone do carrinho (desktop)
+    .minicart-wrapper .action.showcart::before {
+        content: "";
+        .lib-css(background-image, url("@{baseDir}images/cart-l.svg"));
+        .lib-css(width, 24px);
+        .lib-css(height, 24px);
+    }
 
     .page-header .header.content .minicart-wrapper {
         .lib-css(margin, 22px 0px 0px 34px);
     }
 
+    // Navegação principal (desktop)
     .navigation ul {
         .lib-css(display, flex);
         .lib-css(justify-content, space-between);
     }
 
+    // Seção customizada incluída aqui por conveniência (pode ser movida se necessário)
     .custom-featured-section {
         .lib-css(text-align, center);
         .lib-css(padding, 30px 0);
@@ -263,7 +315,6 @@
                     .lib-css(display, block);
                     .lib-css(font-size, 14px);
                     .lib-css(color, #000);
-                    .lib-css(text-decoration, none);
                     .lib-css(text-decoration, none);
 
                     &:hover {
