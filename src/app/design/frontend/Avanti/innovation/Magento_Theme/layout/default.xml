@@ -9,13 +9,16 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         
+        <!-- Referência ao continer que é carregado ao fim do <body> para incluir scripts-->
         <referenceContainer name="after.body.start">
+            <!-- Bloco que carrega um Template com scripts -->
             <block
                 class="Magento\Framework\View\Element\Template"
                 name="move.minicart.script"
                 template="Magento_Theme::move-minicart.phtml" />
         </referenceContainer>
 
+        <!-- Adiciona um bloco de promoção no header acima do painel padrão -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
                 <block class="Magento\Framework\View\Element\Template" name="promo.header.panel"
@@ -23,10 +26,13 @@
             </container>
         </referenceContainer>
 
+        <!-- Remove os links de login e registro padrão do header -->
         <referenceBlock name="authorization-link-login" remove="true" />
         <referenceBlock name="register-link" remove="true" />
 
+        <!-- Move os links de acesso do usuário para a área principal do header -->
         <move element="header.links" destination="header-wrapper" before="minicart" />
+        <!-- Move a barra de pesquisa para logo após o logotipo -->
         <move element="top.search" destination="header-wrapper" after="logo" />
 
     </body>

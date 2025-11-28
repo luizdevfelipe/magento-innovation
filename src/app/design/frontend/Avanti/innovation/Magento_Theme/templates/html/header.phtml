@@ -3,9 +3,13 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $session = $objectManager->get(\Magento\Customer\Model\Session::class);
 ?>
 
+<!-- Verfica se o usuário está logado, exibindo duas mensagems diferentes -->
 <?php if ($session->isLoggedIn()): ?>
 
     <li class="greet welcome">
+        <span class="profile-icon">
+            <img src="<?= $block->getViewFileUrl('Magento_Theme::images/user.svg') ?>" alt="Perfil">
+        </span>
         <span>Bem-vindo, <?= $session->getCustomer()->getFirstname(); ?>!</span>
     </li>
 
