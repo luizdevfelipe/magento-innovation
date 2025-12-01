@@ -8,15 +8,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        
-        <!-- Referência ao continer que é carregado ao fim do <body> para incluir scripts-->
-        <referenceContainer name="after.body.start">
-            <!-- Bloco que carrega um Template com scripts -->
-            <block
-                class="Magento\Framework\View\Element\Template"
-                name="move.minicart.script"
-                template="Magento_Theme::move-minicart.phtml" />
-        </referenceContainer>
 
         <!-- Adiciona um bloco de promoção no header acima do painel padrão -->
         <referenceContainer name="header.panel">
@@ -35,5 +26,7 @@
         <!-- Move a barra de pesquisa para logo após o logotipo -->
         <move element="top.search" destination="header-wrapper" after="logo" />
 
+        <!-- Move a navegação principal para o container do header -->
+        <move element="navigation.sections" destination="header.container" after="-"/>
     </body>
 </page>
