@@ -139,7 +139,7 @@
     // Ícone do menu (imagem)
     .page-header .header.content .action.nav-toggle::before {
         content: "";
-        .lib-css(background-image, url("@{baseDir}images/menu-burger.svg"));
+        .lib-css(background-image, url("@{baseDir}images/menu-burger-ico/menu-burger.svg"));
         .lib-css(width, 24px);
         .lib-css(height, 24px);
     }
@@ -177,7 +177,7 @@
 
         &::before {
             content: "";
-            .lib-css(background-image, url("@{baseDir}images/cart-m.svg"));
+            .lib-css(background-image, url("@{baseDir}images/cart-ico/cart-m.svg"));
             .lib-css(width, 24px);
             .lib-css(height, 24px);
         }
@@ -212,6 +212,11 @@
 // Organização por ordem: estrutura -> layout flex -> busca -> logo -> links -> minicart -> navegação
 // -------------------------
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Estrutura base do header
+    .page-header {
+        .lib-css(box-shadow, 0px 6px 5px #dedede94);
+    }
 
     // Wrapper com background principal em desktop
     .page-header .panel.wrapper {
@@ -301,9 +306,14 @@
     // Ícone do carrinho (desktop)
     .minicart-wrapper .action.showcart::before {
         content: "";
-        .lib-css(background-image, url("@{baseDir}images/cart-l.svg"));
+        .lib-css(background-image, url("@{baseDir}images/cart-ico/cart-l.svg"));
         .lib-css(width, 24px);
         .lib-css(height, 24px);
+    }
+
+    .minicart-wrapper .action.showcart .counter.qty {
+        // Badge de quantidade do minicart
+        .lib-css(transform, translate(-5px, -9px));
     }
 
     .page-header .header.content .minicart-wrapper {
@@ -325,7 +335,6 @@
 
     .page-wrapper .sections.nav-sections .section-items.nav-sections-items.mage-tabs-disabled {
         .lib-css(background-color, #fff);
-        .lib-css(box-shadow, 0px 6px 5px #dedede94);
 
         nav.navigation {
             .lib-css(background-color, #fff);
@@ -343,7 +352,7 @@
             &::before {
                 content: "";
                 .lib-css(display, inline-block);
-                .lib-css(background-image, url("@{baseDir}images/menu-burger-nav.svg"));
+                .lib-css(background-image, url("@{baseDir}images/menu-burger-ico/menu-burger-nav.svg"));
                 .lib-css(width, 14px);
                 .lib-css(height, 10px);
                 .lib-css(margin-right, 5px);
