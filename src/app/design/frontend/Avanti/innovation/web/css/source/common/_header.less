@@ -44,10 +44,17 @@
     .lib-css(border-radius, 7px);
     .lib-css(padding, 18px 16px);
     .lib-css(border-color, #dddddd);
+    .lib-css(font-weight, 600);
 
     &::placeholder {
         .lib-css(color, #0f0f0f);
     }
+}
+
+// Container do conteúdo do header
+.page-wrapper .page-header .header.content {
+    .lib-css(padding-bottom, 0px);
+    .lib-css(height, 70px);
 }
 
 // Links de conta/usuario
@@ -86,10 +93,6 @@
     .lib-css(margin, 0px);
 }
 
-.page-header .header.content .minicart-wrapper .action.showcart {
-    .lib-css(transform, translateY(-1px));
-}
-
 // Ícone da lupa (usado na mini busca)
 .header.content .block.block-content .form.minisearch .actions .action.search::before,
 .header.content .block.block-content .form.minisearch .field.search .label::before {
@@ -97,6 +100,10 @@
     .lib-css(background-image, url("@{baseDir}images/search-ico.svg"));
     .lib-css(width, 19px);
     .lib-css(height, 19px);
+}
+
+.header.content .block.block-content .form.minisearch .actions .action.search::before {
+    .lib-css(transform, translate(-6px, 8px));
 }
 
 // -------------------------
@@ -157,7 +164,7 @@
     .header.content .block.block-content .form.minisearch .field.search .label {
         .lib-css(position, absolute);
         .lib-css(left, 80%);
-        .lib-css(top, 20%);
+        .lib-css(top, 37%);
     }
 
     .header.content .block.block-content .form.minisearch.active {
@@ -165,17 +172,21 @@
     }
 
     // Ícone do carrinho (mobile)
-    .minicart-wrapper .action.showcart::before {
-        content: "";
-        .lib-css(background-image, url("@{baseDir}images/cart-m.svg"));
-        .lib-css(width, 24px);
-        .lib-css(height, 24px);
+    .minicart-wrapper .action.showcart {
+        .lib-css(transform, translateY(-1px));
+
+        &::before {
+            content: "";
+            .lib-css(background-image, url("@{baseDir}images/cart-m.svg"));
+            .lib-css(width, 24px);
+            .lib-css(height, 24px);
+        }
     }
 
     // Posicionamento do minicart em mobile
-    .minicart-wrapper {
+    .page-header .header.content .minicart-wrapper {
         .lib-css(position, absolute);
-        .lib-css(top, 20%);
+        .lib-css(top, 37%);
         .lib-css(left, 86%);
     }
 
@@ -210,7 +221,7 @@
     // Layout do header em desktop (centro e max-width)
     .page-header .header.content {
         .lib-css(display, flex);
-        .lib-css(max-width, 1260px);
+        .lib-css(max-width, @layout__max-width);
         .lib-css(padding, 0px);
         .lib-css(padding-bottom, 20px);
     }
@@ -223,10 +234,17 @@
         .lib-css(padding, 0px);
         .lib-css(float, left);
         .lib-css(width, 600px);
+
+        @media (min-width: 768px) and (max-width: 940px) {
+            & {
+                .lib-css(margin-right, 20px);
+            }
+        }
     }
 
+    // Busca: largura mínima do campo de texto em desktop
     .page-header .header.content .block.block-search .block.block-content input[type="text"] {
-        .lib-css(min-width, 275px);
+        .lib-css(min-width, 280px);
     }
 
     .actions .action.seach {
@@ -237,14 +255,22 @@
     .logo {
         .lib-css(margin-top, 22px);
         .lib-css(margin-right, 0px);
+        .lib-css(min-width, 152px);
     }
 
     .logo img {
         .lib-css(min-width, 100%);
     }
 
+    // Ajuste de opacidade e interatividade para o botão de busca desabilitado
+    .block-search .action.search[disabled],
+    .block-search .action.search.disabled {
+        .lib-css(opacity, 1);
+        .lib-css(pointer-events, auto);
+    }
+
     // Links do header: lista e estilo em desktop
-    .page-header .header.content .header.links {
+    .page-header .header.content>.header.links {
         .lib-list-reset-styles();
         .lib-css(font-size, 14px);
         .lib-css(min-width, fit-content);
@@ -254,18 +280,22 @@
         .lib-css(display, flex);
         .lib-css(flex-wrap, nowrap);
         .lib-css(align-items, baseline);
-        .lib-css(gap, 5px);
+        .lib-css(gap, 8px);
     }
 
     .page-header .header.content .header.links a {
         .lib-css(color, black);
     }
 
-    // .customer.welcome: ajustes específicos removidos (não há regras necessárias no momento)
-
     // Mini search field height
     .header.content .block.block-content .form.minisearch .field.search {
         .lib-css(height, 40px);
+    }
+
+    // Ícone do menu de conta do usuário (desktop)
+    .customer-welcome .action.switch::after {
+        .lib-css(color, #000);
+        .lib-css(transform, translateY(-12px));
     }
 
     // Ícone do carrinho (desktop)
@@ -284,6 +314,43 @@
     .navigation ul {
         .lib-css(display, flex);
         .lib-css(justify-content, space-between);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(padding-left, 0px);
+    }
+
+    // Estilo do menu de navegação principal em desktop
+    .page-wrapper .sections.nav-sections {
+        .lib-css(margin, 0px);
+    }
+
+    .page-wrapper .sections.nav-sections .section-items.nav-sections-items.mage-tabs-disabled {
+        .lib-css(background-color, #fff);
+        .lib-css(box-shadow, 0px 6px 5px #dedede94);
+
+        nav.navigation {
+            .lib-css(background-color, #fff);
+        }
+    }
+
+    // Primeiro item do menu de navegação (desktop)
+    .level0.nav-1.category-item.first.level-top.ui-menu-item {
+        .lib-css(font-weight, 700);
+
+        a {
+            .lib-css(color, #000);
+            .lib-css(padding-left, 0px);
+
+            &::before {
+                content: "";
+                .lib-css(display, inline-block);
+                .lib-css(background-image, url("@{baseDir}images/menu-burger-nav.svg"));
+                .lib-css(width, 14px);
+                .lib-css(height, 10px);
+                .lib-css(margin-right, 5px);
+                .lib-css(background-size, contain);
+                .lib-css(background-repeat, no-repeat);
+            }
+        }
     }
 
     // Seção customizada incluída aqui por conveniência (pode ser movida se necessário)
