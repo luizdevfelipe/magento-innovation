@@ -1,7 +1,3 @@
-//  Common (styles-m.css) - reorganized
-//  _____________________________________________
-& when (@media-common =true) {}
-
 // -------------------------
 // **Global / Base styles**
 // Regras aplicáveis a todos os tamanhos (estrutura e elementos principais)
@@ -13,6 +9,7 @@
     // Background padrão tratado em media-queries específicas
 }
 
+// Painel superior do header (barra promocional)
 .page-header .panel.wrapper .panel.header {
     .lib-css(padding, 0px);
 }
@@ -26,20 +23,22 @@
     .lib-css(font-weight, 700);
 }
 
-.page-header .header.panel .promo-header-message>strong:nth-child(1) {
-    // Destaque primário dentro da mensagem promocional
-    .lib-css(background-color, @theme__color__purple);
-    .lib-css(padding, 0 3px);
-    .lib-css(border-radius, 3px);
+.page-header .header.panel .promo-header-message>strong {
+    &:nth-child(1) {
+        // Destaque primário dentro da mensagem promocional
+        .lib-css(background-color, @theme__color__purple);
+        .lib-css(padding, 0 3px);
+        .lib-css(border-radius, 3px);
+    }
+
+    &:nth-child(2) {
+        // Texto secundário da mensagem (estilo mais leve)
+        .lib-css(font-weight, 300);
+        font-style: italic;
+    }
 }
 
-.page-header .header.panel .promo-header-message>strong:nth-child(2) {
-    // Texto secundário da mensagem (estilo mais leve)
-    .lib-css(font-weight, 300);
-    font-style: italic;
-}
-
-// Busca (input) - estilo base
+// Campo de busca no header
 .page-header .header.content .block.block-search .block.block-content input[type="text"] {
     .lib-css(border-radius, 7px);
     .lib-css(padding, 18px 16px);
@@ -62,9 +61,9 @@
     .lib-css(font-weight, 600);
 }
 
+// Ajuste visual do ícone do perfil do usuário
 .header.content .header.links .customer-auth-links .profile-icon img,
 .header.content .header.links .greet.welcome .profile-icon img {
-    // Ajuste visual do ícone do perfil
     .lib-css(transform, translateY(6px));
 }
 
@@ -76,6 +75,7 @@
     .lib-css(transform, translateY(6px));
 }
 
+// Ícone do carrinho (base)
 .minicart-wrapper .action.showcart.active::before {
     content: "";
 }
@@ -311,8 +311,8 @@
         .lib-css(height, 24px);
     }
 
+    // Badge de quantidade do minicart (desktop)
     .minicart-wrapper .action.showcart .counter.qty {
-        // Badge de quantidade do minicart
         .lib-css(transform, translate(-5px, -9px));
     }
 
