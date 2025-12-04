@@ -1,0 +1,32 @@
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    .footer-accordion h4 {
+        .lib-css(cursor, pointer);
+        .lib-css(position, relative);
+        .lib-css(padding-right, 20px);
+    }
+
+    /* Ícone visual de abrir/fechar */
+    .footer-accordion h4::after {
+        content: '';
+        .lib-css(position, absolute);
+        .lib-css(background-image, url('@{baseDir}images/down-arrow.svg'));
+        .lib-css(background-size, contain);
+        .lib-css(width, 12px);
+        .lib-css(height, 8px);
+        .lib-css(right, 0);
+        .lib-css(top, 50%);
+        .lib-css(transform, translateY(-50%));
+        .lib-css(transition, transform .3s ease);
+    }
+
+    .footer-accordion.is-open h4::after {
+        .lib-css(transform, translateY(-50%) rotate(180deg));
+    }
+
+    .footer-accordion ul {
+        .lib-css(margin-top, 5px);
+    }
+}
