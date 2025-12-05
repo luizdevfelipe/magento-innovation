@@ -6,7 +6,6 @@
     .pagebuilder-column .footer-contacts-wrapper {
         .lib-css(display, flex);
         .lib-css(margin-top, 40px);
-        .lib-css(margin-right, 8px);
         .lib-css(gap, 40px);
     }
 
@@ -19,6 +18,10 @@
 
     .footer.content {
         .lib-css(border, none);
+
+        .footer-accordion ul {
+            .lib-css(padding, 0);
+        }
 
         &>div[data-content-type="row"] {
             .lib-css(max-width, none);
@@ -56,13 +59,11 @@
                 .lib-css(line-height, 100%);
                 .lib-css(margin-top, 5px);
                 .lib-css(margin-bottom, 7px);
-
-                &.time-opened {
-                    .lib-css(font-size, 12px);
-                }
+                .lib-css(display, inline);
             }
 
             p,
+            li,
             a,
             a:visited,
             a:hover {
@@ -71,18 +72,7 @@
                 .lib-css(font-weight, 400);
                 .lib-css(line-height, 28px);
                 .lib-css(margin, 0px);
-
-                &.time-opened {
-                    .lib-css(font-size, 12px);
-                    .lib-css(line-height, 22px);
-                }
             }
-
-            h5.inline-block,
-            p.inline-block {
-                .lib-css(display, inline-block);
-            }
-
 
             // Ícones de bandeiras de cartões de crédito
             .flags-cards-wrapper {
@@ -155,6 +145,11 @@
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    #html-body .footer-images-wrapper[data-content-type="column"] {
+        .lib-css(width, 35%);
+    }
+
     .page-footer {
         .lib-css(height, 597px);
 
@@ -169,6 +164,10 @@
                 .lib-css(min-height, 386px);
                 .lib-css(max-width, 1163px);
                 .lib-css(margin, auto);
+
+                .pagebuilder-column .footer-contacts-wrapper {
+                    .lib-css(margin-right, 8px);
+                }
 
                 h4 {
                     .lib-css(margin-bottom, 16px);
