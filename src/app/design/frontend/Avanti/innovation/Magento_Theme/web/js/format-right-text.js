@@ -2,19 +2,20 @@ define([
     'jquery',
     'matchMedia'
 ], function ($, mediaCheck) {
+    'use strict';
 
     mediaCheck({
         media: '(max-width: 767px)',
 
         entry: function () {
-            var container = $('.right-text');
-            var span = container.find('span');
+            var $container = $('.right-text');
+            var $span = $container.find('span');
 
             // garante que o container existe
-            if (!container.length) return;
+            if (!$container.length) return;
 
             // pega a classe do container
-            var classAttr = container.attr('class') || "";
+            var classAttr = $container.attr('class') || "";
 
             // encontra classe do tipo mobile-length-XXX
             var lengthClass = classAttr.split(' ').find(function (c) {
@@ -28,13 +29,13 @@ define([
 
             // aplica o truncamento se houver número
             if (length > 0) {
-                truncateText(span, length);
+                truncateText($span, length);
             }
         },
 
         exit: function () {
-            var span = $('.right-text span');
-            restoreText(span);
+            var $span = $('.right-text span');
+            restoreText($span);
         }
     });
 
