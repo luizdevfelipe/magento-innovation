@@ -53,7 +53,6 @@
 // Container do conteúdo do header
 .page-wrapper .page-header .header.content {
     .lib-css(padding-bottom, 0px);
-    .lib-css(height, 70px);
 }
 
 // Links de conta/usuario
@@ -127,7 +126,7 @@
     .page-header .header.content {
         .lib-css(position, relative);
         .lib-css(padding, 0px);
-        .lib-css(height, 132px);
+        .lib-css(min-height, 132px);
     }
 
     // Ícone do menu (burger) - posicionamento
@@ -157,6 +156,10 @@
         .lib-css(margin-top, 61px);
     }
 
+    .page-header .header.content .block.block-search .block.block-content input[type="text"] {
+        .lib-css(margin, 15px 0 0 0);
+    }
+
     .header.content .block.block-content .field.search .control {
         .lib-css(border, none);
     }
@@ -164,7 +167,7 @@
     .header.content .block.block-content .form.minisearch .field.search .label {
         .lib-css(position, absolute);
         .lib-css(left, 80%);
-        .lib-css(top, 37%);
+        .lib-css(top, 20%);
     }
 
     .header.content .block.block-content .form.minisearch.active {
@@ -186,7 +189,7 @@
     // Posicionamento do minicart em mobile
     .page-header .header.content .minicart-wrapper {
         .lib-css(position, absolute);
-        .lib-css(top, 37%);
+        .lib-css(top,20%);
         .lib-css(left, 86%);
     }
 
@@ -240,9 +243,10 @@
         .lib-css(float, left);
         .lib-css(width, 600px);
 
-        @media (min-width: 768px) and (max-width: 940px) {
+        @media (min-width: 768px) and (max-width: 1112px) {
             & {
                 .lib-css(margin-right, 20px);
+                .lib-css(margin-left, 36px);
             }
         }
     }
@@ -250,6 +254,7 @@
     // Busca: largura mínima do campo de texto em desktop
     .page-header .header.content .block.block-search .block.block-content input[type="text"] {
         .lib-css(min-width, 280px);
+        .lib-css(max-width, 600px);
     }
 
     .actions .action.seach {
@@ -398,5 +403,5 @@
                 }
             }
         }
-    }  
+    }
 }
