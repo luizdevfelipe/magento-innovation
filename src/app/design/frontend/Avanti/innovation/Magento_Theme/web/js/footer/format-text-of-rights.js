@@ -8,7 +8,7 @@ define([
         media: '(max-width: 767px)',
 
         entry: function () {
-            var $container = $('.right-text');
+            var $container = $('.text-of-rights');
             var $span = $container.find('span');
 
             // garante que o container existe
@@ -34,7 +34,7 @@ define([
         },
 
         exit: function () {
-            var $span = $('.right-text span');
+            var $span = $('.text-of-rights span');
             restoreText($span);
         }
     });
@@ -47,6 +47,7 @@ define([
     function truncateText($el, limit) {
         if (!$el.length) return;
 
+        // tenta obter o texto original em memória
         var original = $el.data('original-text');
 
         // salva o original uma única vez
