@@ -1,34 +1,42 @@
+@import "_footer-mixins.less";
+
 //
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Estilos dos ícones de contato
     .pagebuilder-column .footer-contacts-wrapper {
         .lib-css(display, flex);
-        .lib-css(margin-top, 40px);
         .lib-css(gap, 40px);
+        .lib-css(margin-top, 40px);
     }
 
+    // Estilos da tag footer
     .page-footer {
-        .lib-css(background-color, #f5f5f5);
+        .lib-css(background-color, @footer_bgcolor);
         .lib-css(box-sizing, border-box);
         .lib-css(padding, 0px);
         .lib-css(height, auto);
     }
 
+    // Estilos do conteúdo
     .footer.content {
         .lib-css(border, none);
 
+        // Estilos do accordion
         .footer-accordion ul {
             .lib-css(padding, 0);
         }
 
+        // Estilos sobre o pai do container de text-of-rights
         &>div[data-content-type="row"] {
             .lib-css(max-width, none);
             .lib-css(padding-top, 40px);
-            .lib-css(background-color, #ffffff);
+            .lib-css(background-color, #fff);
 
-            .right-text {
+            // Estilos do texto de direitos
+            .text-of-rights {
                 .lib-css(color, #303030);
                 .lib-css(text-align, center);
                 .lib-css(font-size, 12px);
@@ -38,28 +46,24 @@
                 p {
                     .lib-css(margin, 0px);
                 }
+
             }
+            
         }
 
-        // 
+        // Estilos do container de conteúdo
         .footer-rows-wrapper {
 
             h4 {
-                .lib-css(color, #000000);
-                .lib-css(font-size, 14px);
-                .lib-css(font-weight, 700);
-                .lib-css(line-height, 100%);
+                .footer-title();
                 .lib-css(margin-top, 4px);
             }
 
             h5 {
-                .lib-css(color, #000000);
-                .lib-css(font-size, 14px);
-                .lib-css(font-weight, 700);
-                .lib-css(line-height, 100%);
+                .footer-title();
+                .lib-css(display, inline);
                 .lib-css(margin-top, 5px);
                 .lib-css(margin-bottom, 7px);
-                .lib-css(display, inline);
             }
 
             p,
@@ -67,56 +71,46 @@
             a,
             a:visited,
             a:hover {
-                .lib-css(color, #303030);
-                .lib-css(font-size, 14px);
-                .lib-css(font-weight, 400);
-                .lib-css(line-height, 28px);
+                .footer-text();
                 .lib-css(margin, 0px);
             }
 
-            // Ícones de bandeiras de cartões de crédito
+            // Estilos do container de ícones de métodos de pagamento
             .flags-cards-wrapper {
                 .lib-css(display, flex);
                 .lib-css(justify-content, center);
-                .lib-css(gap, 45px);
+                .lib-css(gap, 30px);
                 .lib-css(margin, 64px);
                 .lib-css(flex-wrap, wrap);
             }
+
         }
 
-        // Ícones de parceiros Stamps (padrão)
+        // Container dos ícones de parceiros Stamps
         .stamps-partners-wrapper {
-            .lib-css(background-color, #ffffff);
+            .lib-css(background-color, #fff);
             .lib-css(text-align, center);
             .lib-css(height, 32px);
             .lib-css(padding-top, 38px);
             .lib-css(padding-bottom, 38px);
         }
+
     }
 
 }
-
 
 //
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
-    // Aplica margem superior apenas na primeira coluna
+    // Estilos sobre o container da logo e ícones de redes sociais
     .pagebuilder-column-line .pagebuilder-column:first-child {
         .lib-css(margin, 40px 0px 48px 0px);
         .lib-css(align-items, center);
     }
 
-    .pagebuilder-column-line .pagebuilder-column:not(:first-child) {
-        .lib-css(padding, 14px);
-    }
-
-    .pagebuilder-column-line .pagebuilder-column:nth-of-type(even) {
-        .lib-css(border-top, 1px solid #DDDDDD);
-        .lib-css(border-bottom, 1px solid #DDDDDD);
-    }
-
+    // Estilos sobre o container de ícones de métodos de pagamento
     .footer.content .footer-rows-wrapper {
         h4 {
             .lib-css(margin-bottom, 4px);
@@ -130,15 +124,18 @@
 
     }
 
+    // Estilos sobre o container de conteúdo
     .footer.content {
         .lib-css(margin, 0px);
         .lib-css(padding, 0px);
         .lib-css(max-width, none);
 
-        .right-text {
+        .text-of-rights {
             .lib-css(margin, 0px 16px);
         }
+
     }
+
 }
 
 //
@@ -146,25 +143,37 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
 
+    // Estilos sobre o container da logo e ícones de redes sociais
+    // Precisa dessa prioridade para sobrescrever o conteúdo vindo do PageBuilder
     #html-body .footer-images-wrapper[data-content-type="column"] {
         .lib-css(width, 35%);
     }
 
+    // Estilos sobre a tag footer
     .page-footer {
         .lib-css(height, 597px);
 
+        // Estilos sobre o conteúdo
         .footer.content {
             .lib-css(margin, 0px);
             .lib-css(padding, 0px);
             .lib-css(max-width, none);
 
+            // Estilos sobre o container de linhas do footer
             .footer-rows-wrapper {
                 .lib-css(box-sizing, border-box);
                 .lib-css(padding, 64px 0px 0px 0px);
                 .lib-css(min-height, 386px);
                 .lib-css(max-width, 1163px);
-                .lib-css(margin, auto);
+                .lib-css(margin, 0 auto);
 
+                // Estilos sobre o grupo de colunas do PageBuilder
+                .pagebuilder-column-group {
+                    .lib-css(padding-right, 5px);
+                    .lib-css(margin-left, 18px);
+                }
+
+                // Estilos sobre as colunas do PageBuilder
                 .pagebuilder-column .footer-contacts-wrapper {
                     .lib-css(margin-right, 8px);
                 }
@@ -174,14 +183,14 @@
                 }
             }
 
-            &>div[data-content-type="row"] {
-                .right-text {
-                    .lib-css(max-width, 1074px);
-                    .lib-css(margin, auto);
-                }
+            // Estilos sobre o container de direitos
+            .text-of-rights {
+                .lib-css(max-width, 1074px);
+                .lib-css(margin, auto);
             }
 
         }
 
     }
+
 }
