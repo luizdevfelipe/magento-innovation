@@ -1,114 +1,114 @@
-// -------------------------
-// **Global / Base styles**
-// Regras aplicáveis a todos os tamanhos (estrutura e elementos principais)
-// -------------------------
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
 
-// Wrapper / estrutura do header
-.page-header .panel.wrapper {
-    .lib-css(min-height, 30px);
-    // Background padrão tratado em media-queries específicas
-}
-
-// Painel superior do header (barra promocional)
-.page-header .panel.wrapper .panel.header {
-    .lib-css(padding, 0px);
-}
-
-// Mensagem promocional (barra superior)
-.page-header .header.panel .promo-header-message {
-    .lib-css(font-size, 14px);
-    .lib-css(padding, 4px 0);
-    .lib-css(line-height, 22px);
-    .lib-css(text-align, center);
-    .lib-css(font-weight, 700);
-}
-
-.page-header .header.panel .promo-header-message>strong {
-    &:nth-child(1) {
-        // Destaque primário dentro da mensagem promocional
-        .lib-css(background-color, @theme__color__purple);
-        .lib-css(padding, 0 3px);
-        .lib-css(border-radius, 3px);
+    // Wrapper / estrutura do header
+    .page-header .panel.wrapper {
+        .lib-css(min-height, 30px);
+        // Background padrão tratado em media-queries específicas
     }
 
-    &:nth-child(2) {
-        // Texto secundário da mensagem (estilo mais leve)
-        .lib-css(font-weight, 300);
-        font-style: italic;
+    // Painel superior do header (barra promocional)
+    .page-header .panel.wrapper .panel.header {
+        .lib-css(padding, 0px);
+    }
+
+    // Mensagem promocional (barra superior)
+    .page-header .header.panel .promo-header-message {
+        .lib-css(font-size, 14px);
+        .lib-css(padding, 4px 0);
+        .lib-css(line-height, 22px);
+        .lib-css(text-align, center);
+        .lib-css(font-weight, 700);
+    }
+
+    .page-header .header.panel .promo-header-message>strong {
+        &:nth-child(1) {
+            // Destaque primário dentro da mensagem promocional
+            .lib-css(background-color, @theme__color__purple);
+            .lib-css(padding, 0 3px);
+            .lib-css(border-radius, 3px);
+        }
+
+        &:nth-child(2) {
+            // Texto secundário da mensagem (estilo mais leve)
+            .lib-css(font-weight, 300);
+            font-style: italic;
+        }
+    }
+
+    // Campo de busca no header
+    .page-header .header.content .block.block-search .block.block-content input[type="text"] {
+        .lib-css(border-radius, 7px);
+        .lib-css(padding, 18px 16px);
+        .lib-css(border-color, #dddddd);
+        .lib-css(font-weight, 600);
+
+        &::placeholder {
+            .lib-css(color, #0f0f0f);
+        }
+    }
+
+    // Container do conteúdo do header
+    .page-wrapper .page-header .header.content {
+        .lib-css(padding-bottom, 0px);
+    }
+
+    // Links de conta/usuario
+    .page-header .header.content .header.links {
+        .lib-css(font-weight, 600);
+    }
+
+    // Ajuste visual do ícone do perfil do usuário
+    .header.content .header.links .customer-auth-links .profile-icon img,
+    .header.content .header.links .greet.welcome .profile-icon img {
+        .lib-css(transform, translateY(6px));
+    }
+
+    // Ação do carrinho (estrutura base)
+    .action.showcart {
+        .lib-css(display, flex);
+        .lib-css(align-items, center);
+        .lib-css(gap, 8px);
+        .lib-css(transform, translateY(6px));
+    }
+
+    // Ícone do carrinho (base)
+    .minicart-wrapper .action.showcart.active::before {
+        content: "";
+    }
+
+    .minicart-wrapper .action.showcart .counter.qty {
+        // Badge de quantidade do minicart
+        .lib-css(border-radius, 50%);
+        .lib-css(transform, translate(-13px, -13px));
+        .lib-css(line-height, 20px);
+        .lib-css(min-width, 16px);
+        .lib-css(height, 20px);
+    }
+
+    .page-header .header.content .minicart-wrapper {
+        .lib-css(margin, 0px);
+    }
+
+    // Ícone da lupa (usado na mini busca)
+    .header.content .block.block-content .form.minisearch .actions .action.search::before,
+    .header.content .block.block-content .form.minisearch .field.search .label::before {
+        content: "";
+        .lib-css(background-image, url("@{baseDir}images/search-ico.svg"));
+        .lib-css(width, 19px);
+        .lib-css(height, 19px);
+    }
+
+    .header.content .block.block-content .form.minisearch .actions .action.search::before {
+        .lib-css(transform, translate(-6px, 8px));
     }
 }
 
-// Campo de busca no header
-.page-header .header.content .block.block-search .block.block-content input[type="text"] {
-    .lib-css(border-radius, 7px);
-    .lib-css(padding, 18px 16px);
-    .lib-css(border-color, #dddddd);
-    .lib-css(font-weight, 600);
-
-    &::placeholder {
-        .lib-css(color, #0f0f0f);
-    }
-}
-
-// Container do conteúdo do header
-.page-wrapper .page-header .header.content {
-    .lib-css(padding-bottom, 0px);
-}
-
-// Links de conta/usuario
-.page-header .header.content .header.links {
-    .lib-css(font-weight, 600);
-}
-
-// Ajuste visual do ícone do perfil do usuário
-.header.content .header.links .customer-auth-links .profile-icon img,
-.header.content .header.links .greet.welcome .profile-icon img {
-    .lib-css(transform, translateY(6px));
-}
-
-// Ação do carrinho (estrutura base)
-.action.showcart {
-    .lib-css(display, flex);
-    .lib-css(align-items, center);
-    .lib-css(gap, 8px);
-    .lib-css(transform, translateY(6px));
-}
-
-// Ícone do carrinho (base)
-.minicart-wrapper .action.showcart.active::before {
-    content: "";
-}
-
-.minicart-wrapper .action.showcart .counter.qty {
-    // Badge de quantidade do minicart
-    .lib-css(border-radius, 50%);
-    .lib-css(transform, translate(-13px, -13px));
-    .lib-css(line-height, 20px);
-    .lib-css(min-width, 16px);
-    .lib-css(height, 20px);
-}
-
-.page-header .header.content .minicart-wrapper {
-    .lib-css(margin, 0px);
-}
-
-// Ícone da lupa (usado na mini busca)
-.header.content .block.block-content .form.minisearch .actions .action.search::before,
-.header.content .block.block-content .form.minisearch .field.search .label::before {
-    content: "";
-    .lib-css(background-image, url("@{baseDir}images/search-ico.svg"));
-    .lib-css(width, 19px);
-    .lib-css(height, 19px);
-}
-
-.header.content .block.block-content .form.minisearch .actions .action.search::before {
-    .lib-css(transform, translate(-6px, 8px));
-}
-
-// -------------------------
-// **Mobile (max @screen__m)**
-// Organização por ordem: estrutura -> promo -> branding/logo -> busca -> navegação/icones -> minicart
-// -------------------------
+//
+//  Mobile
+//  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
     // Header: remoção de borda para versões mobile
@@ -189,7 +189,7 @@
     // Posicionamento do minicart em mobile
     .page-header .header.content .minicart-wrapper {
         .lib-css(position, absolute);
-        .lib-css(top,20%);
+        .lib-css(top, 20%);
         .lib-css(left, 86%);
     }
 
@@ -210,10 +210,9 @@
     }
 }
 
-// -------------------------
-// **Desktop (min @screen__m)**
-// Organização por ordem: estrutura -> layout flex -> busca -> logo -> links -> minicart -> navegação
-// -------------------------
+//
+//  Desktop
+//  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
     // Estrutura base do header
