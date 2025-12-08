@@ -13,7 +13,7 @@
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
                 <block class="Magento\Framework\View\Element\Template" name="promo.header.panel"
-                    template="Magento_Theme::html/promo.phtml" before="-" />
+                    template="Magento_Theme::html/header/promo.phtml" before="-" />
             </container>
         </referenceContainer>
 
@@ -25,38 +25,36 @@
                 htmlClass="footer-columns-wrapper" />
         </referenceContainer>
 
-
         <!-- Adiciona um container para as linhas do footer -->
         <referenceContainer name="footer">
             <container name="footer.rows.wrapper" label="Footer Rows Wrapper" htmlTag="div"
                 htmlClass="footer-rows-wrapper">
 
-                <!-- linha 1-->
+                <!-- linha 1 (Links) -->
                 <block class="Magento\Cms\Block\Block" name="footer_row_1">
                     <arguments>
                         <argument name="block_id" xsi:type="string">footer_row_1</argument>
                     </arguments>
                 </block>
 
-                <!-- linha 2-->
+                <!-- linha 2 (Métodos de Pagamento) -->
                 <block class="Magento\Framework\View\Element\Template"
                     name="flag.cards"
-                    template="Magento_Theme::html/flags-cards.phtml" />
-
+                    template="Magento_Theme::html/footer/flags-cards.phtml" />
 
             </container>
 
-            <!-- linha 3-->
+            <!-- linha 3 (Texto) -->
             <block class="Magento\Cms\Block\Block" name="footer_row_3">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_row_3</argument>
                 </arguments>
             </block>
 
-            <!-- linha 4-->
+            <!-- linha 4 (Parceiros Stamps) -->
             <block class="Magento\Framework\View\Element\Template"
                 name="stamps.partners"
-                template="Magento_Theme::html/stamps-partners.phtml" />
+                template="Magento_Theme::html/footer/stamps-partners.phtml" />
         </referenceContainer>
 
         <!-- Remove os links de login e registro padrão do header -->
@@ -66,7 +64,6 @@
         <!-- Remove os links padrão do footer -->
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="copyright" remove="true" />
-
 
         <!-- Move os links de acesso do usuário para a área principal do header -->
         <move element="header.links" destination="header-wrapper" before="minicart" />
