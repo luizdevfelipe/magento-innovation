@@ -2,13 +2,24 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    // Espaçamento interno
+    .footer-accordion {
+        .lib-css(padding, 14px);
+    }
+
+    // Bordas nos accordions pares
+    .pagebuilder-column:nth-of-type(even) .footer-accordion {
+        .lib-css(border-bottom, 1px solid #DDDDDD);
+        .lib-css(border-top, 1px solid #DDDDDD);
+    }
+
     .footer-accordion h4 {
         .lib-css(cursor, pointer);
         .lib-css(position, relative);
         .lib-css(padding-right, 20px);
     }
 
-    /* Ícone visual de abrir/fechar */
+    // Ícone visual de abrir
     .footer-accordion h4::after {
         content: '';
         .lib-css(position, absolute);
@@ -22,6 +33,7 @@
         .lib-css(transition, transform .3s ease);
     }
 
+    // Ícone visual de fechar
     .footer-accordion.is-open h4::after {
         .lib-css(transform, translateY(-50%) rotate(180deg));
     }

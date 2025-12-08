@@ -4,8 +4,6 @@ define([
 ], function ($, mediaCheck) {
     'use strict';
 
-    console.log("footer-accordion: módulo carregado");
-
     // Só aplica o comportamento em mobile
     mediaCheck({
         media: '(max-width: 767px)',
@@ -26,7 +24,6 @@ define([
         var $accordions = $('.footer-accordion');
 
         if (!$accordions.length) {
-            console.log("footer-accordion: nenhum bloco encontrado");
             return;
         }
 
@@ -36,7 +33,6 @@ define([
             var $list = $title.next('ul');
 
             if (!$list.length) {
-                console.log("footer-accordion: bloco sem <ul> logo após o <h4>");
                 return;
             }
 
