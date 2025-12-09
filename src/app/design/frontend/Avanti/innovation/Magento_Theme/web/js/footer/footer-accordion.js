@@ -13,10 +13,13 @@ define([
         },
         exit: function () {
             // Ao sair do mobile, remove estados e estilos inline
-            $('.footer-accordion')
+            var $accordions = $('.footer-accordion');
+            $accordions
                 .removeClass('is-open')
                 .find('ul')
                 .attr('style', '');
+
+            $accordions.find('h4').off('click.footerAccordion');
         }
     });
 
