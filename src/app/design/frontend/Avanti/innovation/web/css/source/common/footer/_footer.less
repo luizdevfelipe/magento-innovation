@@ -5,11 +5,10 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-    // Estilos dos ícones de contato
-    .pagebuilder-column .footer-contacts-wrapper {
+    // Estilos dos ícones de contato/mídias sociais
+    .pagebuilder-column .footer-contacts-wrapper p {
         .lib-css(display, flex);
         .lib-css(gap, 40px);
-        .lib-css(margin-top, 40px);
     }
 
     // Estilos da tag footer
@@ -23,11 +22,6 @@
     // Estilos do conteúdo
     .footer.content {
         .lib-css(border, none);
-
-        // Estilos do accordion
-        .footer-accordion ul {
-            .lib-css(padding, 0);
-        }
 
         // Estilos sobre o pai do container de text-of-rights
         &>div[data-content-type="row"] {
@@ -48,7 +42,7 @@
                 }
 
             }
-            
+
         }
 
         // Estilos do container de conteúdo
@@ -173,13 +167,13 @@
                     .lib-css(margin-left, 18px);
                 }
 
-                // Estilos sobre as colunas do PageBuilder
-                .pagebuilder-column .footer-contacts-wrapper {
-                    .lib-css(margin-right, 8px);
-                }
-
                 h4 {
                     .lib-css(margin-bottom, 16px);
+                }
+
+                // Estilos da lista de links
+                .footer-accordion ul {
+                    .lib-css(padding, 0);
                 }
             }
 
