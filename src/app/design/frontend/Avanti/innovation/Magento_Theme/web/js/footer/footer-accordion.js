@@ -47,9 +47,8 @@ define([
             $title
                 .off('click.footerAccordion')
                 .on('click.footerAccordion', function () {
-
-                    // Se quiser só um aberto por vez, descomente:
-                    // $accordions.not($block).removeClass('is-open').find('ul').slideUp();
+                    // Apenas um accordion aberto por vez
+                    $accordions.not($block).removeClass('is-open').find('ul').slideUp();
 
                     $block.toggleClass('is-open');
                     $list.slideToggle(200);
