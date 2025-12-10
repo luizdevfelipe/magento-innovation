@@ -65,6 +65,23 @@
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="copyright" remove="true" />
 
+        <!-- 
+            Remove funcionalidades de compare de produtos
+        -->
+        <!-- Remove link de compare do cabeçalho -->
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <!-- Remove sidebar de compare -->
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <!-- *** ESTE é o da shelf (card de produto) em categoria *** -->
+        <referenceBlock name="category.product.addto.compare" remove="true" />
+        <!-- Compare em resultados de busca -->
+        <referenceBlock name="catalogsearch.product.addto.compare" remove="true" />
+        <!-- Compare em relacionados / upsell / crosssell / página de produto -->
+        <referenceBlock name="crosssell.product.addto.compare" remove="true" />
+        <referenceBlock name="related.product.addto.compare" remove="true" />
+        <referenceBlock name="upsell.product.addto.compare" remove="true" />
+        <referenceBlock name="view.addto.compare" remove="true" />
+
         <!-- Move os links de acesso do usuário para a área principal do header -->
         <move element="header.links" destination="header-wrapper" before="minicart" />
         <!-- Move a barra de pesquisa para logo após o logotipo -->
