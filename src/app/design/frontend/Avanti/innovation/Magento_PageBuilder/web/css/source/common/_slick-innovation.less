@@ -3,28 +3,69 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-css(border-radius, 50%);
         .lib-css(width, 30px);
-        .lib-css(height, 36px);
-        .lib-css(border, 2px solid #005CFF);
+        .lib-css(height, 30px);
+        .lib-css(border, 2px solid @theme__color__primary);
+        .lib-css(transition, 0.5s ease);
 
-        &::before {
-            content: '';
-            background-image: url('@{baseDir}images/icons/right-arrow.svg');
-            .lib-css(width, 13px);
-            .lib-css(height, 14px);
+        &:hover {
+            .lib-css(background-color, @theme__color__primary);
         }
     }
 
+    // Ajusta a posição da seta next
+    div.slider-home button.slick-next.slick-arrow {
+        .lib-css(transform, translate(34px, -19px));
 
+        &::before {
+            content: '';
+            .lib-css(position, absolute);
+            .lib-css(background-image, url('@{baseDir}images/icons/right-arrow.svg'));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(width, 13px);
+            .lib-css(height, 14px);
+            .lib-css(top, 26%);
+            .lib-css(left, 25%);
+        }
+    }
+
+    // Ajusta a posição da seta prev
+    div.slider-home button.slick-prev.slick-arrow {
+        .lib-css(transform, translate(-35px, -19px));
+
+        &::before {
+            content: '';
+            .lib-css(position, absolute);
+            .lib-css(background-image, url('@{baseDir}images/icons/right-arrow.svg'));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(width, 13px);
+            .lib-css(height, 14px);
+            .lib-css(top, 22%);
+            .lib-css(left, 6%);
+            .lib-rotate(180deg);
+        }
+    }
+
+    // Ajusta a posição dos dots
+    div.slider-home .slick-dots {
+        .lib-css(transform, translateY(-39px));
+    }
 }
 
 //
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    #html-body .slider-home[class="slider-home"] {
+        .lib-css(height, 306px);
+        .lib-css(margin-bottom, 24px);
+    }
+
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-visibility-hidden();
@@ -34,4 +75,11 @@
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    #html-body .slider-home[class="slider-home"] {
+        .lib-css(height, 335px);
+        .lib-css(margin-bottom, 16px);
+        .lib-css(max-width, @layout__max-width);
+    }
+}
