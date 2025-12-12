@@ -3,9 +3,18 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    #html-body .featured-departments[class="featured-departments"] {
+        .lib-css(margin, 0 0 24px 16px);
+    }
+
     .featured-departments-title,
     .featured-departments h1 {
         .lib-css(width, 100%);
+    }
+
+    // Garante que as imagens fiquem redondas
+    .featured-departments div img {
+        .lib-css(border-radius, 50%);
     }
 }
 
@@ -18,7 +27,6 @@
         .lib-css(flex-direction, row);
         .lib-css(flex-wrap, wrap);
         .lib-css(justify-content, space-between);
-
     }
 
     .featured-departments>div:not(.featured-departments-title) {
@@ -26,8 +34,8 @@
         .lib-css(height, 135px);
     }
 
-    .featured-departments> :nth-child(8),
-    .featured-departments> :nth-child(9) {
+    div.featured-departments>div:nth-child(8),
+    div.featured-departments>div:nth-child(9) {
         .lib-visibility-hidden();
     }
 
@@ -46,6 +54,6 @@
         .lib-css(flex-direction, row);
         .lib-css(flex-wrap, wrap);
         .lib-css(justify-content, space-between);
-
+        .lib-css(margin-bottom, 72px);
     }
 }
