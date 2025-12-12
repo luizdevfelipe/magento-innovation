@@ -1,0 +1,52 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .advantages-message>div {
+        .lib-css(padding, 16px);
+        .lib-css(background-color, #f5f5f5);
+        .lib-css(border-radius, 8px);
+
+        p {
+            .lib-css(display, flex);
+            .lib-css(align-items, center);
+            .lib-css(justify-content, center);
+            .lib-css(gap, 12px);
+        }
+    }
+}
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    #html-body .advantages-message[data-pb-style=TOK8MQ5] {
+        .lib-css(max-width, 358px);
+        .lib-css(gap, 8px);
+        .lib-css(margin, 0 auto 24px auto);
+
+        &>div {
+            .lib-css(max-width, 358px);
+            .lib-css(max-height, 56px);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+    #html-body .advantages-message[class="advantages-message"]  {
+        .lib-css(max-width, @layout__max-width);
+        .lib-css(gap, 20px);
+        .lib-css(flex-direction, row);
+        .lib-css(margin-bottom, 72px);
+
+        &>div {
+            .lib-css(width, 300px);
+            .lib-css(max-height, 56px);
+        }
+    }
+}
