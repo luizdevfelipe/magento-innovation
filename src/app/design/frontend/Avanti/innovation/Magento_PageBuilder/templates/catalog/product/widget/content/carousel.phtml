@@ -41,15 +41,14 @@ use Magento\Framework\App\Action\Action;
                 </a>
                 <div class="product-item-details">
                     <strong class="product-item-name">
-                        <a title="<?= $escaper->escapeHtml($_item->getName()) ?>"
-                            href="<?= $escaper->escapeUrl($block->getProductUrl($_item)) ?>"
-                            class="product-item-link">
-                            <?= $escaper->escapeHtml($_item->getName()) ?>
-                        </a>
+                        <h3>
+                            <a title="<?= $escaper->escapeHtml($_item->getName()) ?>"
+                                href="<?= $escaper->escapeUrl($block->getProductUrl($_item)) ?>"
+                                class="product-item-link">
+                                <?= $escaper->escapeHtml($_item->getName()) ?>
+                            </a>
+                        </h3>
                     </strong>
-                    <?php if ($templateType): ?>
-                        <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
-                    <?php endif; ?>
 
                     <?= $block->getProductPriceHtml($_item, $type) ?>
 
@@ -72,9 +71,9 @@ use Magento\Framework\App\Action\Action;
                                                 <input type="hidden" name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
                                                 <?= $block->getBlockHtml('formkey') ?>
                                                 <button type="submit"
-                                                    title="<?= $escaper->escapeHtml(__('Add to Cart')) ?>"
+                                                    title="<?= $escaper->escapeHtml(__('Buy')) ?>"
                                                     class="action tocart primary">
-                                                    <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
+                                                    <span><?= $escaper->escapeHtml(__('Buy')) ?></span>
                                                 </button>
                                             </form>
                                             <script type="text/x-magento-init">
@@ -95,16 +94,7 @@ use Magento\Framework\App\Action\Action;
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($showWishlist || $showCompare): ?>
-                                    <div class="actions-secondary" data-role="add-to-links">
-                                        <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
-                                            <a href="#"
-                                                data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $escaper->escapeHtmlAttr(__('Add to Wish List')) ?>">
-                                                <span><?= $escaper->escapeHtml(__('Add to Wish List')) ?></span>
-                                            </a>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php endif; ?>
+                                
                             </div>
                         </div>
                     <?php endif; ?>
