@@ -18,7 +18,7 @@
     }
 
     // Ajusta a posição da seta next
-    div.slider-home button.slick-next.slick-arrow {
+    button.slick-next.slick-arrow {
         .lib-css(transform, translate(34px, -19px));
 
         &::before {
@@ -31,10 +31,14 @@
             .lib-css(top, 26%);
             .lib-css(left, 25%);
         }
+
+        &:hover::before {
+            .lib-css(background-image, url('@{baseDir}images/icons/right-arrow-white.svg'));
+        }
     }
 
     // Ajusta a posição da seta prev
-    div.slider-home button.slick-prev.slick-arrow {
+    button.slick-prev.slick-arrow {
         .lib-css(transform, translate(-35px, -19px));
 
         &::before {
@@ -47,6 +51,10 @@
             .lib-css(top, 22%);
             .lib-css(left, 6%);
             .lib-rotate(180deg);
+        }
+
+        &:hover::before {
+            .lib-css(background-image, url('@{baseDir}images/icons/right-arrow-white.svg'));
         }
     }
 
@@ -70,6 +78,10 @@
     .slick-prev.slick-arrow {
         .lib-visibility-hidden();
     }
+
+    div.slider-home .slick-dots {
+        .lib-visibility-hidden();
+    }
 }
 
 //
@@ -81,5 +93,9 @@
         .lib-css(height, 335px);
         .lib-css(margin-bottom, 16px);
         .lib-css(max-width, @layout__max-width);
+    }
+
+    #html-body .slider-home[class="slider-home"] .pagebuilder-slide-wrapper {
+        .lib-css(min-height, 335px);
     }
 }
