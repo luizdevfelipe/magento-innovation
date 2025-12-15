@@ -2,7 +2,10 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
-    #html-body .weekly-offers[class="weekly-offers"] {
-        
+    #html-body .main-brands-carousel[class="main-brands-carousel"] {
+        .lib-css(flex-direction, row);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(justify-content, center);
+        .lib-css(gap, 8px);
     }
 }
