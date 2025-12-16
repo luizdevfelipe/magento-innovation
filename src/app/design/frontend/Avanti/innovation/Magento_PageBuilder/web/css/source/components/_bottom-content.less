@@ -2,8 +2,15 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    // Esconde a versão desktop do Bottom Content
     .bottom-content .bottom-content.desktop {
         .lib-visibility-hidden();
+
+
+    }
+    // Estiliza a versão mobile do Bottom Content
+    .bottom-content .bottom-content.mobile h4 {
+        .lib-css(font-weight, 400);
     }
 }
 
@@ -11,6 +18,7 @@
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+    // Esconde a versão mobile do Bottom Content
     .bottom-content .bottom-content.mobile {
         .lib-visibility-hidden();
     }
