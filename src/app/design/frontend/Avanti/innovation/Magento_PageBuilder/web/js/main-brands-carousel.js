@@ -19,14 +19,19 @@ require([
                 dots: false,
                 arrows: true,
                 infinite: false,
+                responsive: [
+                    {
+                        breakpoint: 1180,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                ]
             });
 
         }
     });
-
-
-
-
-
-
 });
