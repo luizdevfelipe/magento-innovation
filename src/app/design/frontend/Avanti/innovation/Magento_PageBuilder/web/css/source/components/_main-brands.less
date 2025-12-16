@@ -1,11 +1,54 @@
 //
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    
+
+    .main-brands div p {
+        .lib-css(display, inline-block);
+    }
+
+    .main-brands div :nth-child(2) {
+        .lib-css(float, right);
+    }
+
+}
+
+
+//
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    .main-brands {
+        .lib-css(padding, 0 16px);
+    }
+
+    .main-brands p:nth-child(2) span {
+        .lib-css(text-decoration, underline);
+        .lib-css(color, @theme__color__primary);
+    }
+
     #html-body .main-brands-carousel[class="main-brands-carousel"] {
         .lib-css(flex-direction, row);
         .lib-css(flex-wrap, wrap);
         .lib-css(justify-content, center);
-        .lib-css(gap, 8px);
+        .lib-css(gap, 16px);
+        .lib-css(padding, 0 16px);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    .main-brands p span {
+        .lib-css(text-decoration, none);
+        .lib-css(color, #000);
+
+        &:hover {
+            .lib-css(color, @theme__color__primary);
+        }
     }
 }
