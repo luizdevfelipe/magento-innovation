@@ -3,8 +3,6 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-    
-
     .main-brands div p {
         .lib-css(display, inline-block);
     }
@@ -12,7 +10,6 @@
     .main-brands div :nth-child(2) {
         .lib-css(float, right);
     }
-
 }
 
 
@@ -22,6 +19,7 @@
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
     .main-brands {
         .lib-css(padding, 0 16px);
+        .lib-css(margin-top, 40px);
     }
 
     .main-brands p:nth-child(2) span {
@@ -35,6 +33,7 @@
         .lib-css(justify-content, center);
         .lib-css(gap, 16px);
         .lib-css(padding, 0 16px);
+        .lib-css(margin-bottom, 40px);
     }
 }
 
@@ -42,6 +41,28 @@
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    .main-brands {
+        .lib-css(margin-top, 75px);
+    }
+
+    .main-brands-carousel {
+        .lib-css(margin-bottom, 116px);
+    }
+
+    // Contralização dos logos ativos
+    .main-brands-carousel .slick-track .slick-slide.slick-active {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+    }
+
+    .main-brands-carousel .slick-prev.slick-arrow {
+        .lib-css(transform, translate(-25px, -19px));
+    }
+
+    .main-brands-carousel .slick-next.slick-arrow {
+        .lib-css(transform, translate(23px, -19px));
+    }
 
     .main-brands p span {
         .lib-css(text-decoration, none);
