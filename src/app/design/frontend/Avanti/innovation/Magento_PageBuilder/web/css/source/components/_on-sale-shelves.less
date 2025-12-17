@@ -35,16 +35,23 @@
         .lib-css(border-radius, 15px 15px 0 0);
     }
 
-    .on-sale-shelves .product-item-name h3 {
-        .lib-css(text-align, center);
-        .lib-css(font-size, 15px);
-        .lib-css(font-weight, 700);
+    // Título do Produto
+    .on-sale-shelves .product-item-name {
+        .lib-css(margin, 0);
 
-        & a {
-            .lib-css(color, #303030);
+        h3 {
+            .lib-css(text-align, center);
+            .lib-css(font-size, 15px);
+            .lib-css(font-weight, 600);
+            .lib-css(margin, 0 0 10px 0);
+
+            & a {
+                .lib-css(color, #303030);
+            }
         }
     }
 
+    // Preço do Produto
     .on-sale-shelves .price-box.price-final_price {
         .lib-css(text-align, center);
 
@@ -54,13 +61,19 @@
         }
     }
 
+    // Conteiner das opções de cor/tamanho
     .on-sale-shelves .swatch-attribute-options.clearfix {
         .lib-css(display, flex);
         .lib-css(justify-content, center);
         .lib-css(gap, 15px);
         .lib-css(margin-bottom, 20px);
+
+        &::after {
+            content: none;
+        }
     }
 
+    // Tamanho das opções de cor/tamanho
     .on-sale-shelves .swatch-option {
         .lib-css(width, 27px);
         .lib-css(height, 27px);
@@ -70,6 +83,7 @@
         .lib-css(padding, 0);
         .lib-css(margin, 0);
 
+        // Texto das opções de tamanho
         &.text {
             .lib-css(min-width, 0);
             .lib-css(padding, 0);
@@ -84,6 +98,7 @@
             }
         }
 
+        // Opção de cor
         &.color {
             .lib-css(width, 20px);
             .lib-css(min-width, 20px);
@@ -99,6 +114,7 @@
     // Botão de Comprar
     .on-sale-shelves .action.tocart.primary {
         .lib-css(border-radius, 0 0 15px 15px);
+        .lib-css(border, none);
         .lib-css(width, 100%);
         .lib-css(text-transform, none);
         .lib-css(letter-spacing, normal);
@@ -109,6 +125,15 @@
             .lib-css(color, #fff);
         }
     }
+
+    // Dots do Slider
+    .on-sale-shelves .slick-dots { 
+        button {
+            .lib-css(background-color, #838383);
+            .lib-css(width, 8px);
+            .lib-css(height, 8px);
+        }
+    }
 }
 
 
@@ -117,15 +142,16 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
-    // Padding geral do On Sale Shelves
-    .on-sale-shelves-header {
-        .lib-css(padding, 0 16px);
-    }
-
     // Header do On Sale Shelves
     .on-sale-shelves .on-sale-shelves-header {
+        .lib-css(padding, 0 16px);
+
         & p:nth-child(1) {
             .lib-css(font-size, 16px);
+        }
+
+        a {
+            .lib-css(text-decoration, underline);
         }
     }
 
@@ -152,9 +178,9 @@
 
     // Tamanho do preço do produto
     .on-sale-shelves .price-box.price-final_price {
-        .lib-css(margin, 0);
+        .lib-css(margin, 0 0 18px 0);
 
-        &.price {
+        & .price {
             .lib-css(font-size, 11px);
         }
     }
@@ -162,6 +188,11 @@
     // Conteiner das opções de cor/tamanho
     .on-sale-shelves .swatch-attribute-options.clearfix {
         .lib-css(margin-bottom, 0);
+    }
+
+    // Container das opções de cores
+    .on-sale-shelves .product-item-info .swatch-attribute.color {
+        .lib-css(margin-top, 20px);
     }
 
     // Tamanho das opções de cor/tamanho
@@ -185,6 +216,16 @@
     .on-sale-shelves .action.tocart.primary {
         .lib-css(font-size, 10px);
         .lib-css(padding, 6px 16px);
+        .lib-css(margin-top, 10px);
+    }
+
+    // Dots do Slider
+    .on-sale-shelves .slick-dots {
+        .lib-css(padding, 15px 0 0 0);
+
+        button {
+            .lib-css(background-color, #838383);
+        }
     }
 }
 
@@ -216,12 +257,27 @@
     }
 
     .on-sale-shelves button.slick-next.slick-arrow {
-        .lib-css(transform, translate(24px, -103px));
+        .lib-css(transform, translate(27px, -103px));
+    }
+
+    // Tamanho do preço do produto
+    .on-sale-shelves .price-box.price-final_price {
+        .lib-css(margin, 19px 0 25px);
+    }
+
+    // Container das opções de cores
+    .on-sale-shelves .product-item-info .swatch-attribute.color {
+        .lib-css(margin-top, 30px);
     }
 
     // Botão de Comprar
     .on-sale-shelves .action.tocart.primary {
         .lib-css(padding, 12px 24px);
         .lib-css(font-size, 14px);
+    }
+
+    // Dots do Slider
+    .on-sale-shelves .slick-dots {
+        .lib-css(margin-top, 15px);
     }
 }
