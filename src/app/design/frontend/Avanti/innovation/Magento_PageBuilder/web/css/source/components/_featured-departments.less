@@ -4,19 +4,21 @@
 & when (@media-common =true) {
 
     #html-body .featured-departments[class="featured-departments"] {
-        .lib-css(margin-bottom, 24px);
+        .lib-css(margin-bottom, 40px);
         .lib-css(box-sizing, border-box);
     }
 
     .featured-departments img {
         .lib-css(border, 1px solid #00000000);
         .lib-css(transition, 0.3s ease);
+        .lib-css(box-sizing, border-box);
     }
 
     .featured-departments>div:not(.featured-departments-title) {
-        span {
+        p, span {
             .lib-css(color, #000);
             .lib-css(transition, 0.3s ease);
+            .lib-css(margin, 0);
         }
 
         &:hover {
@@ -24,7 +26,7 @@
                 .lib-css(border, 1px solid @theme__color__primary);
             }
 
-            p>span {
+            p, span {
                 .lib-css(color, @theme__color__primary);
             }
         }
@@ -56,6 +58,11 @@
     .featured-departments>div:not(.featured-departments-title) {
         .lib-css(width, 108px);
         .lib-css(height, 135px);
+
+        img {
+            .lib-css(width, 108px);
+            .lib-css(height, 108px);
+        }
     }
 
     div.featured-departments>div:nth-child(8),
@@ -79,5 +86,10 @@
         .lib-css(flex-wrap, wrap);
         .lib-css(justify-content, space-between);
         .lib-css(margin-bottom, 72px);
+    }
+
+    .featured-departments img {
+        .lib-css(width, 143px);
+        .lib-css(height, 143px);
     }
 }
