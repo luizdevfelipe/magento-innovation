@@ -3,8 +3,23 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-     #html-body .weekly-offers[class="weekly-offers"] {
+     #html-body .weekly-offers.primary[class="weekly-offers primary"],
+     #html-body .weekly-offers.secondary[class="weekly-offers secondary"] {
         .lib-css(gap, 18px);
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    #html-body .weekly-offers.primary[class="weekly-offers primary"],
+    #html-body .weekly-offers.secondary[class="weekly-offers secondary"] {
+        .lib-css(margin-bottom, 40px);
+    }
+
+    #html-body .weekly-offers.secondary[class="weekly-offers secondary"] {
+        .lib-css(margin-top, 30px);
     }
 }
 
@@ -13,8 +28,9 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
-     #html-body .weekly-offers[class="weekly-offers"] {
+     #html-body .weekly-offers.primary[class="weekly-offers primary"],
+     #html-body .weekly-offers.secondary[class="weekly-offers secondary"] {
         .lib-css(flex-direction, row);
-        .lib-css(margin-bottom, 83px);
+        .lib-css(margin, 76px 0 83px 0);
     }
 }
