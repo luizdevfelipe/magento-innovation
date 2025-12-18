@@ -3,7 +3,7 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-
+    // Estilos comuns de ambas as setas dos carrosseis
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-css(border-radius, 50%);
@@ -19,7 +19,7 @@
         }
     }
 
-    // Ajusta a posição da seta next
+    // Configurações especiais para a seta next
     button.slick-next.slick-arrow {
         .lib-css(transform, translate(34px, -19px));
 
@@ -39,7 +39,7 @@
         }
     }
 
-    // Ajusta a posição da seta prev
+    // Configurações especiais para a seta prev
     button.slick-prev.slick-arrow {
         .lib-css(transform, translate(-35px, -19px));
 
@@ -59,45 +59,16 @@
             .lib-css(background-image, url('@{baseDir}images/icons/right-arrow-white.svg'));
         }
     }
-
-    // Ajusta a posição dos dots
-    div.slider-home .slick-dots {
-        .lib-css(transform, translateY(-39px));
-    }
 }
 
 //
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
-
-    #html-body .slider-home[class="slider-home"] {
-        .lib-css(height, 306px);
-        .lib-css(margin-bottom, 24px);
-    }
-
+    
+    // Esconde as setas dos carrosseis em mobile
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-visibility-hidden();
-    }
-
-    div.slider-home .slick-dots {
-        .lib-visibility-hidden();
-    }
-}
-
-//
-//  Desktop
-//  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
-
-    #html-body .slider-home[class="slider-home"] {
-        .lib-css(height, 335px);
-        .lib-css(margin-bottom, 16px);
-        .lib-css(max-width, @layout__max-width);
-    }
-
-    #html-body .slider-home[class="slider-home"] .pagebuilder-slide-wrapper {
-        .lib-css(min-height, 335px);
-    }
+    }    
 }
