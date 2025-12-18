@@ -24,11 +24,16 @@
     }
 
     // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide .product-item .product-item-info {
-        .lib-css(border, 1px solid #DDDDDD);
-        .lib-css(border-radius, 15px);
-        .lib-css(box-sizing, border-box);
-        .lib-css(width, 100%);
+    .on-sale-shelves .slick-list .slick-slide {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+
+        .product-item .product-item-info {
+            .lib-css(border, 1px solid #DDDDDD);
+            .lib-css(border-radius, 15px);
+            .lib-css(box-sizing, border-box);
+        }
+
     }
 
     .on-sale-shelves .product-image-wrapper {
@@ -127,7 +132,7 @@
     }
 
     // Dots do Slider
-    .on-sale-shelves .slick-dots { 
+    .on-sale-shelves .slick-dots {
         button {
             .lib-css(background-color, #838383);
             .lib-css(width, 8px);
@@ -161,13 +166,16 @@
     }
 
     // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide .product-item .product-item-info {
-        .lib-css(max-height, 361px);
+    .on-sale-shelves .slick-list .slick-slide .product-item {
+        .lib-css(max-width, 166px);
+
+        .product-item-info {
+            .lib-css(max-height, 361px);
+        }
     }
 
     // Tamanho do slide do produto
     .on-sale-shelves .slick-slide {
-        .lib-css(max-width, 166px);
         .lib-css(margin, 0 14px);
     }
 
