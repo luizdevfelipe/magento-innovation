@@ -1,0 +1,169 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container da newsletters
+    .footer-columns-wrapper {
+
+        .block.newsletter {
+            .lib-css(max-width, none);
+            .lib-css(width, 100%);
+            .lib-css(margin, 0);
+        }
+
+        // Título da seção
+        .block.newsletter div.title {
+            .lib-css(display, block);
+            .lib-css(color, @color-black);
+
+            .lib-css(text-align, center);
+
+            & strong {
+                .lib-css(font-size, 20px);
+            }
+
+            & span {
+                .lib-css(color, @theme__color__primary);
+            }
+        }
+
+        // Formulário de inscrição
+        .content form.form.subscribe {
+            .lib-css(display, flex);
+            .lib-css(justify-content, center);
+            .lib-css(align-items, center);
+            .lib-css(height, 100%);
+            .lib-css(gap, 24px);
+            .lib-css(flex-wrap, wrap);
+        }
+
+    }
+
+    // Container dos campos principais
+    .footer-columns-wrapper div.content {
+        .lib-css(background-color, @color-white-smoke);
+        .lib-css(border-radius, 8px);
+    }
+
+    // Remove o ícone do campo de e-mail
+    .footer-columns-wrapper .block.newsletter .field .control:before {
+        content: '';
+    }
+
+    // Campos de nome e e-mail
+    #newsletter,
+    #newsletter-name {
+        .lib-css(padding, 15px 0 15px 24px);
+        .lib-css(border, none);
+        .lib-css(border-radius, 8px);
+        .lib-css(height, auto);
+        .lib-css(min-width, 280px);
+        .lib-css(margin-right, 0);
+    }
+
+    // Container do botão
+    .footer-columns-wrapper .block.newsletter .actions {
+        .lib-css(width, fit-content);
+    }
+
+    label[for="newsletter-privacy"] {
+        & span {
+            .lib-css(color, @color-dark-gray);
+            .lib-css(font-size, 12px);
+            .lib-css(font-weight, 700);
+
+            & a {
+                .lib-css(color, @color-dark-gray);
+                .lib-css(text-decoration, underline);
+            }
+        }
+
+        & input[type="checkbox"] {
+            .lib-css(margin-right, 8px);
+        }
+    }
+
+    // Botão de inscrição
+    .footer-columns-wrapper button.action.subscribe.primary {
+        .lib-css(width, 100%);
+        .lib-css(padding, 14px 24px);
+        .lib-css(border-radius, 8px);
+        .lib-css(border, none);
+        .lib-css(font-size, 16px);
+        .lib-css(text-transform, none);
+        .lib-css(letter-spacing, normal);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(color, @color-white);
+        }
+    }
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container da newsletters
+    .footer-columns-wrapper {
+        .lib-css(padding, 0 16px);
+        .lib-css(margin-bottom, 15px);
+        .lib-css(height, 330px);
+    }
+
+
+    // Título da seção
+    .footer-columns-wrapper .block.newsletter div.title strong {
+        .lib-css(font-size, 16px);
+    }
+
+    // Formulário de inscrição
+    .footer-columns-wrapper .content form.form.subscribe {
+        .lib-css(flex-direction, column);
+        .lib-css(gap, 16px);
+
+        .field {
+            .lib-css(width, 100%);
+        }
+
+        .field.newsletter-privacy {
+            .lib-css(text-align, center);
+        }
+
+    }
+
+    // Container dos campos principais
+    .footer-columns-wrapper div.content {
+        .lib-css(padding, 38px 16px);
+    }
+
+    // Container do botão
+    .footer-columns-wrapper .block.newsletter .actions {
+        .lib-css(width, 100%);
+    }
+
+    // Botão de inscrição
+    .footer-columns-wrapper button.action.subscribe.primary {
+        .lib-css(padding, 15px 24px);
+    }
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+    .footer-columns-wrapper {
+        .lib-css(height, 227px);
+        .lib-css(margin-bottom, 71px);
+    }
+
+    .footer-columns-wrapper div.content {
+        .lib-css(height, 176px);
+    }
+
+}

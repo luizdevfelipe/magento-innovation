@@ -1,12 +1,57 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
-   <default>
-       <avanti_backtotop>
-           <general>
-               <enabled>1</enabled>
-               <position>right</position>
-               <color>#000000</color>
-           </general>
-       </avanti_backtotop>
-   </default>
+
+<!-- 
+    config.xml
+    Define VALORES PADRÃO de configuração do módulo.
+    Esses valores são usados quando:
+    - O admin nunca salvou a configuração
+    - Não existe valor no escopo (default / website / store)
+-->
+
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
+
+    <!-- 
+        Nó <default>
+        Representa o escopo GLOBAL (default)
+        Todos os valores aqui são defaults do sistema
+    -->
+    <default>
+
+        <!-- 
+            Chave raiz da configuração
+            DEVE corresponder ao <section id="..."> do system.xml
+            Neste caso: section id="avanti_backtotop"
+        -->
+        <avanti_backtotop>
+
+            <!-- 
+                Sub-nó que representa o <group id="general">
+                A hierarquia segue exatamente:
+                section / group / field
+            -->
+            <general>
+
+                <!-- 
+                    Valor padrão do campo:
+                    <field id="enabled">
+                -->
+                <enabled>1</enabled>
+
+                <!-- 
+                    Valor padrão do campo:
+                    <field id="position">
+                -->
+                <position>right</position>
+
+                <!-- 
+                    Valor padrão do campo:
+                    <field id="color">
+                -->
+                <color>#000000</color>
+
+            </general>
+        </avanti_backtotop>
+    </default>
 </config>

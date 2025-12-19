@@ -1,10 +1,46 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
-   <acl>
-       <resources>
-           <resource id="Magento_Backend::admin">
-               <resource id="Avanti_BackToTop::backtotop_config" title="Avanti BackToTop" sortOrder="100"/>
-           </resource>
-       </resources>
-   </acl>
+
+<!-- 
+    acl.xml
+    Define permissões (ACL) do Magento Admin.
+    Controla:
+    - Quem pode VER
+    - Quem pode EDITAR
+    seções, menus, ações e configurações
+-->
+
+<config 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+
+    <!-- Nó raiz de ACL -->
+    <acl>
+
+        <!-- 
+            Todos os recursos de permissão ficam dentro de <resources>
+            Eles formam uma árvore hierárquica
+        -->
+        <resources>
+
+            <!-- 
+                Nó raiz do Admin
+                TODAS as permissões do backend precisam estar abaixo dele
+            -->
+            <resource id="Magento_Backend::admin">
+
+                <!-- 
+                    Recurso de permissão do módulo
+                    Este ID será usado em:
+                    - system.xml (<resource>)
+                    - menu.xml (se existir)
+                    - controllers admin
+                -->
+                <resource 
+                    id="Avanti_BackToTop::backtotop_config"
+                    title="Avanti BackToTop"
+                    sortOrder="100" />
+
+            </resource>
+        </resources>
+    </acl>
 </config>
