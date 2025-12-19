@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+
+        <section id="avanti_newsletterextend" translate="label" sortOrder="800" showInDefault="1"
+            showInWebsite="1" showInStore="1">
+
+            <label>Avanti - Newsletter Extend</label>
+
+            <tab>avanti</tab>
+
+            <resource>Avanti_NewsletterExtend::newsletterextend_config</resource>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+
+                <label>General Settings</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Enabled Avanti Newsletter Extend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="privacy_policy" translate="label" type="text" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Privacy Policy Link</label>
+                    <comment>Enter a link (e.g. https://magento.innovation/)</comment>
+                </field>
+
+            </group>
+
+        </section>
+
+    </system>
+
+</config>
