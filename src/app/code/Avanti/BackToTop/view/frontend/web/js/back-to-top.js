@@ -1,20 +1,22 @@
-require(['jquery'], function ($) {
-   $(document).ready(function () {
-       const btn = $('#back-to-top');
+define([
+    'jquery'
+], function ($) {
+    'use strict';
 
+    $(function () {
+        const btn = $('#back-to-top');
 
-       $(window).scroll(function () {
-           if ($(window).scrollTop() > 300) {
-               btn.fadeIn();
-           } else {
-               btn.fadeOut();
-           }
-       });
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() > 300) {
+                btn.fadeIn();
+            } else {
+                btn.fadeOut();
+            }
+        });
 
-
-       btn.on('click', function (e) {
-           e.preventDefault();
-           $('html, body').animate({scrollTop: 0}, 600);
-       });
-   });
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, 600);
+        });
+    });
 });
