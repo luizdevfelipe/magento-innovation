@@ -1,15 +1,70 @@
 <?xml version="1.0"?>
-<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<schema
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 
-    <table name="newsletter_subscriber" resource="default" engine="innodb"
+    <!--
+        Definição de uma tabela do banco de dados
+
+        name:
+        - Nome real da tabela no banco
+        - Se já existir, o Magento tentará "mesclar" a estrutura
+
+        resource:
+        - Conexão de banco usada
+        - Geralmente "default"
+
+        engine:
+        - Engine do MySQL (InnoDB é padrão recomendado)
+
+        comment:
+        - Comentário da tabela (documentação no banco)
+    -->
+    <table
+        name="newsletter_subscriber"
+        resource="default"
+        engine="innodb"
         comment="Newsletter Subscriber">
 
-        <column xsi:type="varchar" name="subscriber_name" nullable="true" comment="Subscriber Name" />
+        <!--
+            Definição de uma coluna do tipo VARCHAR
 
-        <column xsi:type="smallint" name="subscriber_privacy" nullable="true" default="0"
+            xsi:type:
+            - Tipo lógico do Magento (não é SQL puro)
+
+            name:
+            - Nome da coluna no banco
+
+            nullable:
+            - Define se o campo aceita NULL
+
+            comment:
+            - Comentário da coluna no banco
+        -->
+        <column
+            xsi:type="varchar"
+            name="subscriber_name"
+            nullable="true"
+            comment="Subscriber Name" />
+
+        <!--
+            Definição de uma coluna do tipo SMALLINT
+
+            default:
+            - Valor padrão aplicado quando nenhum valor é informado
+
+            Uso comum:
+            - Flags
+            - Booleanos (0 / 1)
+            - Estados simples
+        -->
+        <column
+            xsi:type="smallint"
+            name="subscriber_privacy"
+            nullable="true"
+            default="0"
             comment="Privacy Policy Accepted (0 = No, 1 = Yes)" />
 
     </table>
-    
+
 </schema>

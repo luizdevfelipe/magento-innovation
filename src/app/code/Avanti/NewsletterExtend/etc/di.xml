@@ -1,10 +1,47 @@
 <?xml version="1.0"?>
+
+<!--
+    di.xml
+    Arquivo de Dependency Injection (DI) do Magento 2.
+
+    Ele é usado para:
+    - Declarar plugins (interceptors)
+    - Preferências (preference)
+    - Argumentos de classes
+    - Virtual types
+-->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    
+
+    <!--
+        <type>
+        Define configurações de DI para uma classe específica
+
+        name:
+        - Classe que será interceptada / configurada
+        - Neste caso, uma classe CORE do Magento
+    -->
     <type name="Magento\Newsletter\Model\SubscriptionManager">
 
-        <plugin name="Newsletter_Subscriber_Custom_Field"
+        <!--
+            Plugin (Interceptor)
+
+            Um plugin permite:
+            - Executar código ANTES de um método
+            - Executar código DEPOIS de um método
+            - Substituir completamente a execução (around)
+
+            Sem sobrescrever a classe original (sem rewrite)
+
+            Deve implementar métodos:
+                - beforeMethod()
+                - afterMethod()
+                - aroundMethod()
+                conforme a necessidade
+        -->
+        <plugin
+            name="Newsletter_Subscriber_Custom_Field"
             type="Avanti\NewsletterExtend\Plugin\Newsletter\Model\SubscriptionManager" />
 
     </type>
