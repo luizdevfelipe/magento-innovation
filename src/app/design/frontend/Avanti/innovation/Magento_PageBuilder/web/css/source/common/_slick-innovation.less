@@ -66,6 +66,12 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
     
+    // Evita overflow horizontal em blocos estáticos com carrossel
+    // Pode dar conflito com as setas caso usado em conjunto
+    .widget.block.block-static-block:has(.slick-list.draggable) {
+        .lib-css(overflow, hidden);
+    }
+
     // Esconde as setas dos carrosseis em mobile
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {

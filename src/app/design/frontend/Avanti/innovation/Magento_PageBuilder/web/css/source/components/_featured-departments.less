@@ -10,20 +10,20 @@
 
     .featured-departments img {
         .lib-css(border, 1px solid #00000000);
-        .lib-css(transition, 0.3s ease);
+        .lib-css(transition, 0.5s ease);
         .lib-css(box-sizing, border-box);
     }
 
     .featured-departments>div:not(.featured-departments-title) {
         p, span {
-            .lib-css(color, #000);
-            .lib-css(transition, 0.3s ease);
+            .lib-css(color, @color-black);
+            .lib-css(transition, 0.5s ease);
             .lib-css(margin, 0);
         }
 
         &:hover {
             img {
-                .lib-css(border, 1px solid @theme__color__primary);
+                .lib-css(border, 2px solid @theme__color__primary);
             }
 
             p, span {

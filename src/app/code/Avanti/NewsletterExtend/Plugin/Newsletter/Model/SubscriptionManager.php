@@ -57,58 +57,39 @@ class SubscriptionManager
     }
 
     /**
-     * Plugin do tipo AROUND
-     *
-     * around + NomeDoMetodoOriginal
-     * aroundSubscribe intercepta SubscriptionManager::subscribe()
+     * Plugin do tipo After
      *
      * Fluxo:
-     * 1. Código ANTES do $proceed()
-     * 2. Execução do método original ($proceed)
-     * 3. Código DEPOIS do $proceed()
-     *
+     * 1. Código do método subscribe() é executado
+     * 2. Execução do método plugin afterSubscribe()
+     * 3. Retorno do valor original do método subscribe()
+     * 
      * @param \Magento\Newsletter\Model\SubscriptionManager $subject
      *   Instância original da classe interceptada
      *
-     * @param callable $proceed
-     *   Callback para executar o método original
+     * @param mixed $result
+     *   Resultado do método original
      *
      * @param string $email
      *   Parâmetro original do método subscribe()
      *
      * @param int $storeId
-     *   Store atual
+     *   Store atual do método subscribe()
      */
-    public function aroundSubscribe(
+    public function afterSubscribe(
         \Magento\Newsletter\Model\SubscriptionManager $subject,
-        callable $proceed,
+        $result,
         $email,
         $storeId
     ) {
         /**
-         * 1️⃣ Executa o fluxo padrão do Magento
-         *
-         * IMPORTANTE:
-         * Se você NÃO chamar $proceed():
-         * - O subscribe não acontece
-         * - Você substitui totalmente o método original
-         */
-        $result = $proceed($email, $storeId);
-
-        /**
-         * 2️⃣ Recupera dados extras enviados no request
-         *
-         * Esses campos normalmente vêm de:
-         * - formulário customizado
-         * - AJAX
+         *  Obtém dados extras enviados no request
          */
         $name = $this->request->getParam('name');
         $privacy = $this->request->getParam('privacy');
 
         /**
-         * 3️⃣ Aplica lógica adicional APÓS o subscribe
-         *
-         * Só executa se os dados extras existirem
+         * Aplica lógica adicional APÓS o subscribe
          */
         if ($name && $privacy) {
 
@@ -153,9 +134,8 @@ class SubscriptionManager
         }
 
         /**
-         * 4️⃣ Retorna o resultado original do método subscribe()
-         *
-         * Mantém compatibilidade total com o core
+         * Retorna o resultado original do método subscribe()
+         * como previsto para o método after
          */
         return $result;
     }

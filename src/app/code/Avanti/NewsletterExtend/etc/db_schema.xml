@@ -52,11 +52,6 @@
 
             default:
             - Valor padrão aplicado quando nenhum valor é informado
-
-            Uso comum:
-            - Flags
-            - Booleanos (0 / 1)
-            - Estados simples
         -->
         <column
             xsi:type="smallint"

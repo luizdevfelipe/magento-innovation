@@ -4,8 +4,9 @@ namespace Avanti\NewsletterExtend\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Store\Model\ScopeInterface;
+use Magento\Newsletter\Block\Subscribe;
 
-class NewsletterExtend extends \Magento\Newsletter\Block\Subscribe
+class NewsletterExtend extends Subscribe
 {
     const XML_PATH_ENABLED           = 'avanti_newsletterextend/general/enabled';
     const XML_PATH_PRIVACY_POLICY_LINK    = 'avanti_newsletterextend/general/privacy_policy';

@@ -15,6 +15,7 @@
 
         h4 {
             .lib-css(font-weight, 400);
+            .lib-css(margin-bottom, 0);
         }
     }
 }
@@ -25,7 +26,7 @@
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
     .bottom-content.desktop {
-        .lib-css(margin-top, 70px);
+        .lib-css(margin, 70px 0 40px 0);
     }
 
     // Esconde a versão mobile do Bottom Content

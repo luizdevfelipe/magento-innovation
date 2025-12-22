@@ -1,0 +1,103 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    /* Overlay */
+    .page.messages {
+        .lib-css(position, fixed);
+        .lib-css(inset, 0);
+        .lib-css(z-index, 9999);
+
+        .lib-css(display, flex);
+        .lib-css(align-items, center);
+        .lib-css(justify-content, center);
+
+        .lib-css(background, rgba(0, 0, 0, 0.6));
+    }
+
+    .page.messages:has(.message) {
+        display: flex;
+    }
+
+    .page.messages:not(:has(.message)) {
+        display: none;
+    }
+
+    // Caixa da mensagem
+    .page.messages div[data-bind="scope: 'messages'"] {
+        .lib-css(position, relative);
+        .lib-css(text-align, center);
+    }
+
+    // Estilo do box 
+    .page.messages .message {
+        .lib-css(border-radius, 6px);
+        .lib-css(box-shadow, 0 10px 40px rgba(0, 0, 0, .3));
+        .lib-css(font-size, 16px);
+    }
+
+    // Remove espaçamentos padrões do Luma
+    .page.messages .messages,
+    .page.messages .message {
+        .lib-css(margin, 0);
+        .lib-css(min-height, 65px);
+    }
+
+    // Botão de fechar
+    button.close {
+        .lib-css(cursor, pointer);
+        .lib-css(border-radius, 0 4px 0 0);
+        .lib-css(padding, 4px);
+        .lib-css(background-color, rgba(0, 0, 0, 0.2));
+        .lib-css(color, @color-white);
+        .lib-css(text-align, center);
+        .lib-css(text-indent, 5px);
+        .lib-css(position, absolute);
+        .lib-css(top, 0);
+        .lib-css(right, 0);
+        .lib-css(z-index, 1);
+        .lib-css(width, 24px);
+        .lib-css(height, 24px);
+        .lib-css(border, none);
+        .lib-css(transition, background-color 0.2s ease);
+
+        &:hover {
+            .lib-css(background-color, rgba(0, 0, 0, 0.4));
+        }
+
+        &:focus {
+            .lib-css(outline, 2px solid @color-white);
+            .lib-css(outline-offset, -2px);
+        }
+
+        &:active {
+            .lib-css(background-color, rgba(0, 0, 0, 0.5));
+        }
+    }
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Caixa da mensagem
+    .page.messages div[data-bind="scope: 'messages'"] {
+        .lib-css(width, 80dvw);
+    }
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Caixa da mensagem
+    .page.messages div[data-bind="scope: 'messages'"] {
+        .lib-css(width, 60dvw);
+    }
+}
