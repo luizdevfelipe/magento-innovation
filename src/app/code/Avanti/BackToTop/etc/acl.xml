@@ -3,10 +3,6 @@
 <!-- 
     acl.xml
     Define permissões (ACL) do Magento Admin.
-    Controla:
-    - Quem pode VER
-    - Quem pode EDITAR
-    seções, menus, ações e configurações
 -->
 
 <config 
