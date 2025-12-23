@@ -45,6 +45,34 @@
         .lib-css(border-radius, 8px);
     }
 
+    // Input checkbox de privacidade
+    #newsletter-privacy {
+        .lib-css(appearance, none);
+        .lib-css(-webkit-appearance, none);
+        .lib-css(width, 16px);
+        .lib-css(height, 16px);
+        .lib-css(border, 1px solid #DDDDDD);
+        .lib-css(background-color, @color-white);
+        .lib-css(border-radius, 4px);
+        .lib-css(cursor, pointer);
+        .lib-css(position, relative);
+        .lib-css(padding, 0);
+
+        &:checked {
+            background-color: @theme__color__primary;
+            border-color: @theme__color__primary;
+        }
+
+        &:checked::after {
+            content: "\2713";
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            left: 2px;
+            top: -2px;
+        }
+    }
+
     // Remove o ícone do campo de e-mail
     .footer-columns-wrapper .block.newsletter .field .control:before {
         content: '';
@@ -60,6 +88,12 @@
         .lib-css(height, auto);
         .lib-css(min-width, 280px);
         .lib-css(margin-right, 0);
+
+        @media (min-width: @screen__m) and (max-width: @screen__l) {
+            & {
+                .lib-css(min-width, 210px);
+            }
+        }
     }
 
     // Container do botão
