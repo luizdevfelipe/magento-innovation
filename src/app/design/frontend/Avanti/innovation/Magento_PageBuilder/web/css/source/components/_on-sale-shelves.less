@@ -9,7 +9,7 @@
         & p,
         a {
             .lib-css(display, inline-block);
-            .lib-css(color, #000);
+            .lib-css(color, @color-black);
             .lib-css(font-weight, 700);
         }
 
@@ -24,16 +24,10 @@
     }
 
     // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide {
-        .lib-css(display, flex);
-        .lib-css(justify-content, center);
-
-        .product-item .product-item-info {
-            .lib-css(border, 1px solid #DDDDDD);
-            .lib-css(border-radius, 15px);
-            .lib-css(box-sizing, border-box);
-        }
-
+    .on-sale-shelves .slick-slide .product-item .product-item-info {
+        .lib-css(border, 1px solid @color-form-border);
+        .lib-css(border-radius, 15px);
+        .lib-css(box-sizing, border-box);
     }
 
     .on-sale-shelves .product-image-wrapper {
@@ -51,7 +45,7 @@
             .lib-css(margin, 0 0 10px 0);
 
             & a {
-                .lib-css(color, #303030);
+                .lib-css(color, @color-gray19);
             }
         }
     }
@@ -72,6 +66,7 @@
         .lib-css(justify-content, center);
         .lib-css(gap, 15px);
         .lib-css(margin-bottom, 20px);
+        .lib-css(padding, 0 12px);
 
         &::after {
             content: none;
@@ -83,7 +78,7 @@
         .lib-css(width, 27px);
         .lib-css(height, 27px);
         .lib-css(border-radius, 50%);
-        .lib-css(border, 1px solid #707070);
+        .lib-css(border, 1px solid @color-gray-middle5);
         .lib-css(box-sizing, border-box);
         .lib-css(padding, 0);
         .lib-css(margin, 0);
@@ -92,13 +87,13 @@
         &.text {
             .lib-css(min-width, 0);
             .lib-css(padding, 0);
-            .lib-css(color, #707070);
+            .lib-css(color, @color-gray-middle5);
             .lib-css(font-size, 11px);
             .lib-css(line-height, 26px);
 
             &.selected {
                 .lib-css(background-color, @theme__color__primary);
-                .lib-css(color, #FFFFFF);
+                .lib-css(color, @color-white);
                 .lib-css(border, none);
             }
         }
@@ -127,14 +122,14 @@
 
         &:hover {
             .lib-css(background-color, darken(@theme__color__primary, 10%));
-            .lib-css(color, #fff);
+            .lib-css(color, @color-white);
         }
     }
 
     // Dots do Slider
     .on-sale-shelves .slick-dots {
         button {
-            .lib-css(background-color, #838383);
+            .lib-css(background-color, @color-gray52);
             .lib-css(width, 8px);
             .lib-css(height, 8px);
         }
@@ -163,6 +158,12 @@
     // Container do Produto
     .on-sale-shelves .swatch-attribute-options.clearfix {
         .lib-css(gap, 10px);
+    }
+
+    // Container do Produto
+    .on-sale-shelves .slick-list .slick-slide {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
     }
 
     // Container do Produto
@@ -232,7 +233,7 @@
         .lib-css(padding, 15px 0 0 0);
 
         button {
-            .lib-css(background-color, #838383);
+            .lib-css(background-color, @color-gray52);
         }
     }
 }
