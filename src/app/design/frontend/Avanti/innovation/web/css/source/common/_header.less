@@ -42,11 +42,11 @@
     .page-header .header.content .block.block-search .block.block-content input[type="text"] {
         .lib-css(border-radius, 7px);
         .lib-css(padding, 18px 16px);
-        .lib-css(border-color, #dddddd);
+        .lib-css(border-color, @color-form-border);
         .lib-css(font-weight, 600);
 
         &::placeholder {
-            .lib-css(color, #0f0f0f);
+            .lib-css(color, @color-black);
         }
     }
 
@@ -218,7 +218,7 @@
 
     // Estrutura base do header
     .page-header {
-        .lib-css(box-shadow, 0px 6px 5px rgba(222, 222, 222, 0.58));
+        .lib-css(box-shadow, 0px 6px 5px #dedede94);
         .lib-css(margin-bottom, 12px);
     }
 
@@ -287,7 +287,7 @@
         .lib-css(min-width, fit-content);
         .lib-css(height, 24px);
         .lib-css(margin-top, 20px);
-        .lib-css(color, black);
+        .lib-css(color, @color-black);
         .lib-css(display, flex);
         .lib-css(flex-wrap, nowrap);
         .lib-css(align-items, baseline);
@@ -295,7 +295,7 @@
     }
 
     .page-header .header.content .header.links a {
-        .lib-css(color, black);
+        .lib-css(color, @color-black);
     }
 
     // Mini search field height
@@ -305,7 +305,7 @@
 
     // Ícone do menu de conta do usuário (desktop)
     .customer-welcome .action.switch::after {
-        .lib-css(color, #000);
+        .lib-css(color, @color-black);
         .lib-css(transform, translateY(-12px));
     }
 
@@ -340,10 +340,10 @@
     }
 
     .page-wrapper .sections.nav-sections .section-items.nav-sections-items.mage-tabs-disabled {
-        .lib-css(background-color, #fff);
+        .lib-css(background-color, @color-white);
 
         nav.navigation {
-            .lib-css(background-color, #fff);
+            .lib-css(background-color, @color-white);
         }
     }
 
@@ -352,7 +352,7 @@
         .lib-css(font-weight, 700);
 
         a {
-            .lib-css(color, #000);
+            .lib-css(color, @color-black);
             .lib-css(padding-left, 0px);
 
             &::before {
@@ -376,7 +376,7 @@
         h1 {
             .lib-css(font-size, 28px);
             .lib-css(margin-bottom, 20px);
-            .lib-css(color, #000);
+            .lib-css(color, @color-black);
             .lib-css(font-weight, bold);
         }
 
@@ -395,7 +395,7 @@
                 a {
                     .lib-css(display, block);
                     .lib-css(font-size, 14px);
-                    .lib-css(color, #000);
+                    .lib-css(color, @color-black);
                     .lib-css(text-decoration, none);
 
                     &:hover {
