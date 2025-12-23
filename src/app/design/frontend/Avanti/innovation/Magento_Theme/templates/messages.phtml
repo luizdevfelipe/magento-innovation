@@ -5,7 +5,7 @@
  */
 ?>
 <div data-bind="scope: 'messages'">
-    <button class="close">X</button>
+    <button class="close close-modal">X</button>
     <!-- ko if: cookieMessagesObservable() && cookieMessagesObservable().length > 0 -->
     <div aria-atomic="true" role="alert" class="messages" data-bind="foreach: {
         data: cookieMessagesObservable(), as: 'message'
@@ -15,6 +15,7 @@
             'data-ui-id': 'message-' + message.type
         }">
             <div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+            <button class="close-modal understood-btn"><?= __('I Understood.') ?></button>
         </div>
     </div>
     <!-- /ko -->
