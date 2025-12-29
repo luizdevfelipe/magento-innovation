@@ -1,0 +1,36 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    .sidebar .block.filter .block-subtitle.filter-subtitle {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+        .lib-css(font-size, 16px);
+    }
+
+    .sidebar .block.filter .filter-options-title {
+        .lib-css(text-transform, none);
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+    }
+
+    .sidebar .block-content.filter-content .filter-options-item .filter-options-content,
+    .sidebar .block-content.filter-content .filter-options-item .filter-options-content a,
+    .sidebar .block-content.filter-content .filter-options-item .filter-options-content .count {
+        .lib-css(color, @color-black);
+    }
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
