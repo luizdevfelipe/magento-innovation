@@ -1,0 +1,90 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    .product-item .product-item-info {
+        .lib-css(border, 1px solid @color-form-border);
+        .lib-css(border-radius, 15px);
+        .lib-css(box-sizing, border-box);
+    }
+
+    .product-image-wrapper {
+        .lib-css(border-radius, 15px 15px 0 0);
+    }
+
+    .product-item .product-item-info .product-item-details .product-item-name {
+        .lib-css(margin, 0);
+
+        h3 {
+            .lib-css(text-align, center);
+            .lib-css(font-size, 15px);
+            .lib-css(font-weight, 600);
+            .lib-css(margin, 0 0 10px 0);
+
+            & a {
+                .lib-css(color, @color-gray19);
+            }
+        }
+    }
+
+    .product-item .product-item-info .product-item-details .price-box.price-final_price {
+        .lib-css(text-align, center);
+
+        & .price {
+            .lib-css(font-size, 15px);
+            .lib-css(font-weight, 700);
+        }
+    }
+
+    .product-item .product-item-info .product-item-details .swatch-attribute-options.clearfix {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+        .lib-css(gap, 15px);
+        .lib-css(margin-bottom, 20px);
+        .lib-css(padding, 0 12px);
+
+        &::after {
+            content: none;
+        }
+    }
+
+    .product-item .product-item-info .product-item-details .swatch-option {
+        .lib-css(width, 27px);
+        .lib-css(height, 27px);
+        .lib-css(border-radius, 50%);
+        .lib-css(border, 1px solid @color-gray-middle5);
+        .lib-css(box-sizing, border-box);
+        .lib-css(padding, 0);
+        .lib-css(margin, 0);
+
+        // Texto das opções de tamanho
+        &.text {
+            .lib-css(min-width, 0);
+            .lib-css(padding, 0);
+            .lib-css(color, @color-gray-middle5);
+            .lib-css(font-size, 11px);
+            .lib-css(line-height, 26px);
+
+            &.selected {
+                .lib-css(background-color, @theme__color__primary);
+                .lib-css(color, @color-white);
+                .lib-css(border, none);
+            }
+        }
+
+        // Opção de cor
+        &.color {
+            .lib-css(width, 20px);
+            .lib-css(min-width, 20px);
+            .lib-css(height, 20px);
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}    
+
