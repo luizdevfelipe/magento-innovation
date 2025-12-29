@@ -1,0 +1,47 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Estilo do primeiro item da paginação (página atual)
+    .toolbar.toolbar-products .items.pages-items .item.current .page {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, @color-white);
+        .lib-css(border-radius, 50%);
+        .lib-css(line-height, 2.6rem);
+        .lib-css(width, 27px);
+        .lib-css(height, 27px);
+        .lib-css(padding, 0);
+        .lib-css(font-weight, 400);
+    }
+
+    // Estido da seta de navegação da paginação
+    .toolbar.toolbar-products .items.pages-items .item.pages-item-next .action.next,
+    .toolbar.toolbar-products .items.pages-items .item.pages-item-previous .action.previous {
+        .lib-css(padding, 0);
+        .lib-css(width, 31px);
+        .lib-css(height, 32px);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border-radius, 5px);
+        .lib-css(border, none);
+        
+        &::before {
+            .lib-css(color, @color-white);
+        }
+    }
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+
+
+
