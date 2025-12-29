@@ -7,12 +7,15 @@
 
 // @codingStandardsIgnoreFile
 /** @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block */
+/** @var \Magento\Framework\Escaper $escaper */
 
-
-// Modelos de preço
+// Retorna um objeto com o preço padrão do produto
 $priceModel = $block->getPriceType('regular_price');
+// Retorna um objeto com o preço final do produto (considera descontos e promoções)
 $finalPriceModel = $block->getPriceType('final_price');
+// Sufixo usado para evitar IDs duplicados em listas de produtos
 $idSuffix = $block->getIdSuffix() ?: '';
+// Define se o schema.org deve ser aplicado (apenas na página do produto)
 $schema = ($block->getZone() == 'item_view');
 
 
@@ -21,11 +24,10 @@ $regularPrice = $priceModel->getAmount()->getValue();
 $finalPrice = $finalPriceModel->getAmount()->getValue();
 $discountPercent = 0;
 
-
+// Calcula o percentual de desconto, se houver
 if ($regularPrice > 0 && $finalPrice < $regularPrice) {
    $discountPercent = round((($regularPrice - $finalPrice) / $regularPrice) * 100);
 }
-
 
 // Define o preço base para o parcelamento
 $parcelPriceBase = ($block->hasSpecialPrice() && $finalPrice < $regularPrice)
@@ -43,7 +45,7 @@ $installmentValue = $parcelPriceBase / $installments;
 $priceHelper = \Magento\Framework\App\ObjectManager::getInstance()
    ->get(\Magento\Framework\Pricing\Helper\Data::class);
 
-
+// Formata o valor da parcela para exibição de acordo com a moeda local
 $installmentFormatted = $priceHelper->currency($installmentValue, true, false);
 ?>
 
@@ -97,7 +99,7 @@ $installmentFormatted = $priceHelper->currency($installmentValue, true, false);
 
    <?php if ($block->showMinimalPrice()): ?>
        <?php if ($block->getUseLinkForAsLowAs()): ?>
-           <a href="<?= $block->escapeUrl($block->getSaleableItem()->getProductUrl()) ?>" class="minimal-price-link">
+           <a href="<?= $escaper->escapeUrl($block->getSaleableItem()->getProductUrl()) ?>" class="minimal-price-link">
                <?= /* @noEscape */ $block->renderAmountMinimal() ?>
            </a>
        <?php else: ?>
