@@ -37,7 +37,32 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Caixar de ornadeção
+    .toolbar.toolbar-products .toolbar-sorter.sorter {
+        .lib-css(color, @color-black);
+        .lib-css(margin-right, 12px);
+
+        select {
+            .lib-css(color, @color-gray46);
+            .lib-css(font-weight, 700);
+            .lib-css(border-radius, 5px);
+        }
+
+        .sorter-label {
+            .lib-css(position, absolute);
+            .lib-css(left, -69px);
+            .lib-css(top, 13px);
+            .lib-css(font-size, 12px);
+        }
+    }
+
+    // Texto da quantidade de produtos exibidos
+    .toolbar.toolbar-products .toolbar-amount {
+        .lib-css(text-align, center);
+    }
+}
 
 
 //
