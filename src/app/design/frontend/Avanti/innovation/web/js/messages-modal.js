@@ -3,8 +3,7 @@ define(['jquery'], function ($) {
 
     $(document).ready(function () {
         $(document).on('click', '.page.messages', function (e) {
-            console.log(e.target);
-            if ($(e.target).hasClass('messages') || $(e.target).hasClass('close')) {
+            if ($(e.target).hasClass('messages') || $(e.target).hasClass('close-modal')) {
                 $(this).hide();
             }
         });

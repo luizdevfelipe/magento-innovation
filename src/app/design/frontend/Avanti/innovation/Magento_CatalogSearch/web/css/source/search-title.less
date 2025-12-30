@@ -1,0 +1,27 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .page-main .page-title-wrapper .search-term {
+        .lib-css(color, @theme__color__primary);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Configuração do Título da Página
+    .page-main .page-title-wrapper:not(:has(.search-term)) {
+        .lib-css(text-align, center);
+
+        & .page-title {
+            .lib-css(font-size, 32px);
+        }
+    }
+
+    .page-main .page-title-wrapper:has(.search-term) h1 {
+        .lib-css(font-size, 20px);
+    }
+}

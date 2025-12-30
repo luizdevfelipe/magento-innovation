@@ -1,0 +1,82 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .toolbar.toolbar-products .modes-mode {
+        .lib-css(border, none);
+
+        &.active {
+            .lib-css(background-color, @theme__color__primary);
+        }
+
+        &::before {
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Cor de fundo do seletor de ordenação
+    .toolbar.toolbar-products .toolbar-sorter.sorter select.sorter-options {
+        .lib-css(background-color, @color-gray-middle1);
+    }
+
+    // Texto do seletor de itens por página
+    .toolbar.toolbar-products .field.limiter {
+        .lib-css(color, @color-gray-darken4);
+        .lib-css(font-weight, 700);
+    }
+
+    // Caixa de opções do seletor de itens por página
+    .toolbar.toolbar-products .field.limiter .control .limiter-options {
+        .lib-css(background-color, @color-white);
+        .lib-css(border-color, @color-black);
+        .lib-css(border-radius, 5px);
+    }
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Caixar de ornadeção
+    .toolbar.toolbar-products .toolbar-sorter.sorter {
+        .lib-css(color, @color-black);
+        .lib-css(margin-right, 12px);
+
+        select {
+            .lib-css(color, @color-gray46);
+            .lib-css(font-weight, 700);
+            .lib-css(border-radius, 5px);
+        }
+
+        .sorter-label {
+            .lib-css(position, absolute);
+            .lib-css(left, -69px);
+            .lib-css(top, 13px);
+            .lib-css(font-size, 12px);
+        }
+    }
+
+    // Texto da quantidade de produtos exibidos
+    .toolbar.toolbar-products .toolbar-amount {
+        .lib-css(text-align, center);
+    }
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+
+
+     // Caixa de opções do seletor de itens por página
+    .toolbar.toolbar-products .field.limiter .control .limiter-options {
+        .lib-css(width, 52px);
+        .lib-css(height, 28px);
+        .lib-css(font-size, 12px);
+        .lib-css(line-height, 19px);
+    }
+}

@@ -3,7 +3,7 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-    /* Overlay */
+    // Container modal
     .page.messages {
         .lib-css(position, fixed);
         .lib-css(inset, 0);
@@ -16,21 +16,42 @@
         .lib-css(background, rgba(0, 0, 0, 0.6));
     }
 
+    // Exibe ou oculta o modal conforme existência de mensagens
     .page.messages:has(.message) {
-        display: flex;
+        .lib-css(display, flex);
     }
 
     .page.messages:not(:has(.message)) {
-        display: none;
+        .lib-css(display, none);
     }
 
-    // Caixa da mensagem
+    // Container da mensagem
     .page.messages div[data-bind="scope: 'messages'"] {
         .lib-css(position, relative);
         .lib-css(text-align, center);
     }
 
-    // Estilo do box 
+    // Caixa da mensagem
+    .page.messages .message-success.success.message,
+    .page.messages .message-error.error.message,
+    .page.messages .message-notice.notice.message {
+        .lib-css(padding-left, 0);
+        .lib-css(padding, 38px 12px 16px 12px);
+        .lib-css(background-color, @color-white);
+
+        // Posiciona o ícone de acordo com o tipo da mensagem
+        &>div {
+            .lib-css(position, relative);
+
+            &::before {
+                .lib-css(left, 50%);
+                .lib-css(top, -12px);
+                .lib-css(transform, translateX(-50%));
+            }
+        }
+    }
+
+    // Estilo do box do modal
     .page.messages .message {
         .lib-css(border-radius, 6px);
         .lib-css(box-shadow, 0 10px 40px rgba(0, 0, 0, .3));
@@ -49,8 +70,8 @@
         .lib-css(cursor, pointer);
         .lib-css(border-radius, 0 4px 0 0);
         .lib-css(padding, 4px);
-        .lib-css(background-color, rgba(0, 0, 0, 0.2));
-        .lib-css(color, @color-white);
+        .lib-css(background-color, #00000000);
+        .lib-css(color, @color-gray19);
         .lib-css(text-align, center);
         .lib-css(text-indent, 5px);
         .lib-css(position, absolute);
@@ -60,19 +81,24 @@
         .lib-css(width, 24px);
         .lib-css(height, 24px);
         .lib-css(border, none);
-        .lib-css(transition, background-color 0.2s ease);
+        .lib-css(font-size, 16px);
+    }
+
+    button.understood-btn {
+        .lib-css(margin-top, 40px);
+        .lib-css(padding, 8px 16px);
+        .lib-css(border, none);
+        .lib-css(border-radius, 4px);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, @color-white);
+        .lib-css(font-size, 14px);
+        .lib-css(cursor, pointer);
+        .lib-css(letter-spacing, normal);
+        .lib-css(text-transform, none);
+        .lib-css(width, 80%);
 
         &:hover {
-            .lib-css(background-color, rgba(0, 0, 0, 0.4));
-        }
-
-        &:focus {
-            .lib-css(outline, 2px solid @color-white);
-            .lib-css(outline-offset, -2px);
-        }
-
-        &:active {
-            .lib-css(background-color, rgba(0, 0, 0, 0.5));
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
         }
     }
 
@@ -98,6 +124,6 @@
 
     // Caixa da mensagem
     .page.messages div[data-bind="scope: 'messages'"] {
-        .lib-css(width, 60dvw);
+        .lib-css(width, 380px);
     }
 }

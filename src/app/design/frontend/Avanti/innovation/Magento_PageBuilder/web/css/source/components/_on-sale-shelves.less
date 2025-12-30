@@ -9,7 +9,7 @@
         & p,
         a {
             .lib-css(display, inline-block);
-            .lib-css(color, #000);
+            .lib-css(color, @color-black);
             .lib-css(font-weight, 700);
         }
 
@@ -23,118 +23,10 @@
         }
     }
 
-    // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide {
-        .lib-css(display, flex);
-        .lib-css(justify-content, center);
-
-        .product-item .product-item-info {
-            .lib-css(border, 1px solid #DDDDDD);
-            .lib-css(border-radius, 15px);
-            .lib-css(box-sizing, border-box);
-        }
-
-    }
-
-    .on-sale-shelves .product-image-wrapper {
-        .lib-css(border-radius, 15px 15px 0 0);
-    }
-
-    // Título do Produto
-    .on-sale-shelves .product-item-name {
-        .lib-css(margin, 0);
-
-        h3 {
-            .lib-css(text-align, center);
-            .lib-css(font-size, 15px);
-            .lib-css(font-weight, 600);
-            .lib-css(margin, 0 0 10px 0);
-
-            & a {
-                .lib-css(color, #303030);
-            }
-        }
-    }
-
-    // Preço do Produto
-    .on-sale-shelves .price-box.price-final_price {
-        .lib-css(text-align, center);
-
-        & .price {
-            .lib-css(font-size, 15px);
-            .lib-css(font-weight, 700);
-        }
-    }
-
-    // Conteiner das opções de cor/tamanho
-    .on-sale-shelves .swatch-attribute-options.clearfix {
-        .lib-css(display, flex);
-        .lib-css(justify-content, center);
-        .lib-css(gap, 15px);
-        .lib-css(margin-bottom, 20px);
-
-        &::after {
-            content: none;
-        }
-    }
-
-    // Tamanho das opções de cor/tamanho
-    .on-sale-shelves .swatch-option {
-        .lib-css(width, 27px);
-        .lib-css(height, 27px);
-        .lib-css(border-radius, 50%);
-        .lib-css(border, 1px solid #707070);
-        .lib-css(box-sizing, border-box);
-        .lib-css(padding, 0);
-        .lib-css(margin, 0);
-
-        // Texto das opções de tamanho
-        &.text {
-            .lib-css(min-width, 0);
-            .lib-css(padding, 0);
-            .lib-css(color, #707070);
-            .lib-css(font-size, 11px);
-            .lib-css(line-height, 26px);
-
-            &.selected {
-                .lib-css(background-color, @theme__color__primary);
-                .lib-css(color, #FFFFFF);
-                .lib-css(border, none);
-            }
-        }
-
-        // Opção de cor
-        &.color {
-            .lib-css(width, 20px);
-            .lib-css(min-width, 20px);
-            .lib-css(height, 20px);
-        }
-    }
-
-    // Container do botão de Comprar
-    .on-sale-shelves .product-item-actions .actions-primary {
-        .lib-css(width, 100%);
-    }
-
-    // Botão de Comprar
-    .on-sale-shelves .action.tocart.primary {
-        .lib-css(border-radius, 0 0 15px 15px);
-        .lib-css(border, none);
-        .lib-css(width, 100%);
-        .lib-css(text-transform, none);
-        .lib-css(letter-spacing, normal);
-        .lib-css(transition, all 0.3s ease);
-
-        &:hover {
-            .lib-css(background-color, darken(@theme__color__primary, 10%));
-            .lib-css(color, #fff);
-        }
-    }
-
     // Dots do Slider
     .on-sale-shelves .slick-dots {
         button {
-            .lib-css(background-color, #838383);
+            .lib-css(background-color, @color-gray52);
             .lib-css(width, 8px);
             .lib-css(height, 8px);
         }
@@ -160,13 +52,19 @@
         }
     }
 
-    // Container do Produto
-    .on-sale-shelves .swatch-attribute-options.clearfix {
+    // Container do Produto 
+    .product-item .product-item-info .swatch-attribute-options.clearfix {
         .lib-css(gap, 10px);
     }
 
     // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide .product-item {
+    .on-sale-shelves .slick-list .slick-slide {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+    }
+
+    // Container do Produto 
+    .product-item {
         .lib-css(max-width, 166px);
 
         .product-item-info {
@@ -180,12 +78,12 @@
     }
 
     // Tamanho do título do produto
-    .on-sale-shelves .product-item-name h3 {
+    .product-item .product-item-info .product-item-name h3 {
         .lib-css(font-size, 11px);
     }
 
     // Tamanho do preço do produto
-    .on-sale-shelves .price-box.price-final_price {
+    .product-item .product-item-info .price-box.price-final_price {
         .lib-css(margin, 0 0 18px 0);
 
         & .price {
@@ -194,17 +92,17 @@
     }
 
     // Conteiner das opções de cor/tamanho
-    .on-sale-shelves .swatch-attribute-options.clearfix {
+    .product-item .product-item-info .swatch-attribute-options.clearfix {
         .lib-css(margin-bottom, 0);
     }
 
     // Container das opções de cores
-    .on-sale-shelves .product-item-info .swatch-attribute.color {
+    .product-item .product-item-info .swatch-attribute.color {
         .lib-css(margin-top, 20px);
     }
 
     // Tamanho das opções de cor/tamanho
-    .on-sale-shelves .swatch-option {
+    .product-item .product-item-info .swatch-option {
         .lib-css(width, 18px);
         .lib-css(height, 18px);
 
@@ -221,7 +119,7 @@
     }
 
     // Botão de Comprar
-    .on-sale-shelves .action.tocart.primary {
+    .product-item .product-item-info .action.tocart.primary {
         .lib-css(font-size, 10px);
         .lib-css(padding, 6px 16px);
         .lib-css(margin-top, 10px);
@@ -232,7 +130,7 @@
         .lib-css(padding, 15px 0 0 0);
 
         button {
-            .lib-css(background-color, #838383);
+            .lib-css(background-color, @color-gray52);
         }
     }
 }
@@ -251,7 +149,7 @@
     }
 
     // Container do Produto
-    .on-sale-shelves .slick-list .slick-slide .product-item .product-item-info {
+    .product-item .product-item-info {
         .lib-css(max-height, 524px);
     }
 
@@ -269,17 +167,17 @@
     }
 
     // Tamanho do preço do produto
-    .on-sale-shelves .price-box.price-final_price {
+    .product-item .product-item-info .price-box.price-final_price {
         .lib-css(margin, 19px 0 25px);
     }
 
     // Container das opções de cores
-    .on-sale-shelves .product-item-info .swatch-attribute.color {
+    .product-item .product-item-info .swatch-attribute.color {
         .lib-css(margin-top, 30px);
     }
 
     // Botão de Comprar
-    .on-sale-shelves .action.tocart.primary {
+    .product-item .product-item-info .action.tocart.primary {
         .lib-css(padding, 12px 24px);
         .lib-css(font-size, 14px);
     }

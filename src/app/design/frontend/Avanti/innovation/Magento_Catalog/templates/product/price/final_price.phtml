@@ -1,0 +1,111 @@
+<?php
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+
+
+// @codingStandardsIgnoreFile
+/** @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+// Retorna um objeto com o preço padrão do produto
+$priceModel = $block->getPriceType('regular_price');
+// Retorna um objeto com o preço final do produto (considera descontos e promoções)
+$finalPriceModel = $block->getPriceType('final_price');
+// Sufixo usado para evitar IDs duplicados em listas de produtos
+$idSuffix = $block->getIdSuffix() ?: '';
+// Define se o schema.org deve ser aplicado (apenas na página do produto)
+$schema = ($block->getZone() == 'item_view');
+
+
+// === Cálculos ===
+$regularPrice = $priceModel->getAmount()->getValue();
+$finalPrice = $finalPriceModel->getAmount()->getValue();
+$discountPercent = 0;
+
+// Calcula o percentual de desconto, se houver
+if ($regularPrice > 0 && $finalPrice < $regularPrice) {
+   $discountPercent = round((($regularPrice - $finalPrice) / $regularPrice) * 100);
+}
+
+// Define o preço base para o parcelamento
+$parcelPriceBase = ($block->hasSpecialPrice() && $finalPrice < $regularPrice)
+   ? $finalPrice
+   : $regularPrice;
+
+
+// Valor e formatação da parcela (10x)
+$installments = 10;
+$installmentValue = $parcelPriceBase / $installments;
+
+
+// PriceHelper nativo do Magento
+/** @var \Magento\Framework\Pricing\Helper\Data $priceHelper */
+$priceHelper = \Magento\Framework\App\ObjectManager::getInstance()
+   ->get(\Magento\Framework\Pricing\Helper\Data::class);
+
+// Formata o valor da parcela para exibição de acordo com a moeda local
+$installmentFormatted = $priceHelper->currency($installmentValue, true, false);
+?>
+
+
+<div class="price-box">
+   <?php if ($block->hasSpecialPrice() && $finalPrice < $regularPrice): ?>
+
+
+       <span class="old-price">
+           <?= /* @noEscape */ $block->renderAmount($priceModel->getAmount(), [
+               'display_label'     => __('Regular Price'),
+               'price_id'          => $block->getPriceId('old-price-' . $idSuffix),
+               'price_type'        => 'oldPrice',
+               'include_container' => true,
+               'skip_adjustments'  => false
+           ]); ?>
+       </span>
+
+
+       <span class="special-price">
+           <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
+               'display_label'     => __('Special Price'),
+               'price_id'          => $block->getPriceId('product-price-' . $idSuffix),
+               'price_type'        => 'finalPrice',
+               'include_container' => true,
+               'schema'            => $schema
+           ]); ?>
+       </span>
+
+
+       <?php if ($discountPercent > 0): ?>
+           <span class="percent-discount">-<?= $discountPercent ?>%</span>
+       <?php endif; ?>
+
+
+   <?php else: ?>
+       <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
+           'price_id'          => $block->getPriceId('product-price-' . $idSuffix),
+           'price_type'        => 'finalPrice',
+           'include_container' => true,
+           'schema'            => $schema
+       ]); ?>
+   <?php endif; ?>
+
+
+   <!-- Texto de parcelamento -->
+   <div class="installment-text">
+       <?= __('Ou em até %1x de %2', $installments, $installmentFormatted); ?>
+   </div>
+
+
+   <?php if ($block->showMinimalPrice()): ?>
+       <?php if ($block->getUseLinkForAsLowAs()): ?>
+           <a href="<?= $escaper->escapeUrl($block->getSaleableItem()->getProductUrl()) ?>" class="minimal-price-link">
+               <?= /* @noEscape */ $block->renderAmountMinimal() ?>
+           </a>
+       <?php else: ?>
+           <span class="minimal-price-link">
+               <?= /* @noEscape */ $block->renderAmountMinimal() ?>
+           </span>
+       <?php endif; ?>
+   <?php endif; ?>
+</div>
