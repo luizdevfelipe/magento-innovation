@@ -15,6 +15,23 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+    .page-wrapper .breadcrumbs {
+        .lib-css(display, block);
+        .lib-css(margin-top, 16px);
+    }
+
+    .page-wrapper .breadcrumbs .items {
+        .lib-css(font-size, 14px);
+        .lib-css(color, @color-black);
+
+        & li:first-child::after {
+            .lib-css(font-size, 8px);
+            .lib-css(color, @color-black);
+            .lib-css(margin, 0);
+            .lib-css(line-height, 20px);
+        }
+    }
+    
     .page-wrapper .breadcrumbs ul.items li strong {
         .lib-css(font-weight, 600);
     }
