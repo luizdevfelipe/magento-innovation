@@ -3,17 +3,20 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Container do Produto
     .product-item .product-item-info {
         .lib-css(border, 1px solid @color-form-border);
         .lib-css(border-radius, 15px);
         .lib-css(box-sizing, border-box);
     }
 
-    .product-image-wrapper {
+    // Borda da imagem 
+    .product-item .product-item-info .product-image-wrapper {
         .lib-css(border-radius, 15px 15px 0 0);
     }
 
-    .product-item .product-item-info .product-item-details .product-item-name {
+    // Título do Produto 
+    .product-item .product-item-info .product-item-name {
         .lib-css(margin, 0);
 
         h3 {
@@ -28,7 +31,8 @@
         }
     }
 
-    .product-item .product-item-info .product-item-details .price-box.price-final_price {
+    // Preço do Produto
+    .product-item .product-item-info .price-box.price-final_price {
         .lib-css(text-align, center);
 
         & .price {
@@ -37,7 +41,8 @@
         }
     }
 
-    .product-item .product-item-info .product-item-details .swatch-attribute-options.clearfix {
+    // Conteiner das opções de cor/tamanho  
+    .product-item .product-item-info .swatch-attribute-options.clearfix {
         .lib-css(display, flex);
         .lib-css(justify-content, center);
         .lib-css(gap, 15px);
@@ -49,7 +54,8 @@
         }
     }
 
-    .product-item .product-item-info .product-item-details .swatch-option {
+    // Tamanho das opções de cor/tamanho 
+    .product-item .product-item-info .swatch-option {
         .lib-css(width, 27px);
         .lib-css(height, 27px);
         .lib-css(border-radius, 50%);
@@ -81,10 +87,103 @@
         }
     }
 
+    @media (min-width: 640px) {
+
+        .abs-visually-hidden-desktop-s,
+        .products-grid .product-item-info:not(:hover):not(.active) .product-item-inner[class="product-item-inner"] {
+            .lib-css(border, 0);
+            .lib-css(clip, auto);
+            .lib-css(height, auto);
+            .lib-css(margin, 0);
+            .lib-css(overflow, hidden);
+            .lib-css(padding, 0);
+            .lib-css(position, static);
+            .lib-css(width, auto);
+        }
+    }
+
+    // Container do botão de Comprar
+    .product-item .product-item-info .product-item-actions .actions-primary {
+        .lib-css(width, 100%);
+    }
+
+    // Botão de Comprar 
+    .product-item .product-item-info .action.tocart.primary {
+        .lib-css(border-radius, 0 0 15px 15px);
+        .lib-css(border, none);
+        .lib-css(width, 100%);
+        .lib-css(text-transform, none);
+        .lib-css(letter-spacing, normal);
+        .lib-css(transition, all 0.3s ease);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Esconde o botão de wishlist e comparar
+    .product-item .product-item-info .actions-secondary {
+        .lib-visibility-hidden();
+    }
+
+    .products-grid {
+        .product-item {
+            position: relative;
+            box-sizing: border-box;
+
+            .product-item-photo img {
+                transform: none;
+                transition: none;
+            }
+
+            .product-item-info {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 0;
+                padding: 0;
+
+                .lib-css(border, 1px solid @color-form-border);
+                outline: 0;
+                box-sizing: border-box;
+
+                transform: none;
+                box-shadow: none;
+                transition: none;
+            }
+
+            &:hover {
+                .product-item-info {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+
+                    margin: 0;
+                    padding: 0;
+                    .lib-css(border, 1px solid @color-form-border);
+                    outline: 0;
+
+                    transform: none;
+                    box-shadow: none;
+                }
+
+                .product-item-photo img {
+                    transform: none;
+                }
+            }
+        }
+    }
+
 }
 
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}    
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Centralizar produtos na listagem
+    .products.wrapper.grid.products-grid .products.list.items.product-items {
+        .lib-css(text-align, center);
+    }
+}
