@@ -21,22 +21,37 @@
     // Fonte do Título da Página
     .page-main .page-title-wrapper .page-title {
         .lib-css(font-size, 20px);
+        .lib-css(padding-left, 12px);
     }
 
-}
+    .page-main .block-title.filter-title {
+        .lib-css(color, @color-black);
+        
+        & strong {
+            .lib-css(width, 102px);
+            .lib-css(height, 38px);
+            .lib-css(font-size, 14px);
+            .lib-css(font-weight, 700);
+            .lib-css(padding, 10px 0px 0px 16px);
+            .lib-css(box-sizing, border-box);
+            .lib-css(background-color, @color-white);
+            .lib-css(margin-left, 16px);
+            .lib-css(border, 1px solid @color-form-border);
+            .lib-css(border-radius, 8px);
+        }
 
-
-//
-//  Desktop
-//  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
-
-    // Configuração do Título da Página
-    .page-main .page-title-wrapper {
-        .lib-css(text-align, center);
-
-        & .page-title {
-            .lib-css(font-size, 32px);
+        & strong::before {
+            content: '';
+            .lib-css(position, absolute);
+            .lib-css(background-image, url('@{baseDir}images/icons/filter.svg'));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(width, 16px);
+            .lib-css(height, 14px);
+            .lib-css(top, 10px);
+            .lib-css(left, 6%);
         }
     }
+
 }
+
+
