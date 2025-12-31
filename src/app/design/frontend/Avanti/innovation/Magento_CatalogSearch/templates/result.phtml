@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+
+use Magento\CatalogSearch\Block\Result;
+
+/** These changes need to valid applying filters and configuration before search process is started. */
+
+/** @var $block  Result*/
+$productList = $block->getProductListHtml();
+?>
+<?php if ($block->getResultCount()) : ?>
+    <?= /* @noEscape */ $block->getChildHtml('tagged_product_list_rss_link') ?>
+    <div class="search results">
+        <?php if ($messages = $block->getNoteMessages()) : ?>
+            <div class="message notice">
+                <div>
+                    <?php foreach ($messages as $message) : ?>
+                        <?= /* @noEscape */ $message ?><br />
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?= /* @noEscape */ $productList ?>
+    </div>
+<?php else : ?>
+
+    <div class="message no-results">
+        <div>
+            <?php
+            $searchQuery = $block->getData('catalogSearchData')
+                ? $block->getData('catalogSearchData')->getEscapedQueryText()
+                : $block->getRequest()->getParam('q');
+            ?>
+
+            <p class="no-results-message"><?= __('We found no results for %1', '<span class="search-term">"' . $searchQuery . '"</span>'); ?></p>
+
+        </div>
+        <div class="search-tips-wrapper">
+            <p class="search-tips-title"><?= __('What should I do?') ?></p>
+            <ul class="search-tips">
+                <li><?= __("Check the terms you typed.") ?></li>
+                <li><?= __("Use synonyms for the desired term.") ?></li>
+                <li><?= __("Try using a single word.") ?></li>
+                <li><?= __("Use generic search terms.") ?></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.body.classList.add('search-no-results');
+    </script>
+
+
+    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slider_notfound')->toHtml(); ?>
+<?php endif; ?>
