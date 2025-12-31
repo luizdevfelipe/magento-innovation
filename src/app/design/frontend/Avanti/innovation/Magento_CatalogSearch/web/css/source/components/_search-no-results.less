@@ -1,0 +1,112 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    body.search-no-results h1,
+    body.search-no-results .breadcrumbs {
+        .lib-visibility-hidden();
+        .lib-css(display, none);
+    }
+
+    // Mensagem de nenhum resultado encontrado
+    body.search-no-results .no-results-message {
+        .lib-css(text-align, center);
+        .lib-css(font-weight, 700);
+        .lib-css(color, @color-black);
+    }
+
+    // Container das dicas para melhorar a busca
+    body.search-no-results .search-tips-wrapper {
+        .lib-css(margin, auto);
+    }
+
+    // Título das dicas para melhorar a busca
+    body.search-no-results .search-tips-title {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+    }
+
+    // Dicas para melhorar a busca
+    body.search-no-results .search-tips {
+        .lib-css(color, @color-gray40);
+        .lib-css(text-align, left);
+        .lib-css(list-style-type, '- ');
+        .lib-css(list-style-position, inside);
+        .lib-css(margin, 0);
+        .lib-css(padding, 0);
+
+        & li {
+            .lib-css(margin-bottom, 0);
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    body.search-no-results .columns {
+        .lib-css(padding-top, 24px);
+    }
+
+    // Mensagem de nenhum resultado encontrado
+    body.search-no-results .no-results-message {
+        .lib-css(font-size, 16px);
+    }
+
+    // Container das dicas para melhorar a busca
+    body.search-no-results .search-tips-wrapper { 
+        .lib-css(text-align, center);
+    }
+
+    // Título das dicas para melhorar a busca
+    body.search-no-results .search-tips-title {
+        .lib-css(font-size, 16px);
+    }
+
+
+    // Dicas para melhorar a busca
+    body.search-no-results .search-tips {
+        .lib-css(max-width, 250px);
+        .lib-css(margin, auto);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Ajuste da largura da coluna principal
+    body.search-no-results .columns .column.main {
+        .lib-css(width, 100%);
+        .lib-css(padding, 0);
+    }
+
+    // Mensagem de nenhum resultado encontrado
+    body.search-no-results .no-results-message {
+        .lib-css(font-size, 20px);
+        .lib-css(margin-bottom, 24px);
+    }
+
+    // Container das dicas para melhorar a busca
+    body.search-no-results .search-tips-wrapper {
+        .lib-css(display, flex);
+        .lib-css(max-width, 458px);
+        .lib-css(align-items, center);
+        .lib-css(justify-content, center);
+        .lib-css(gap, 25px);
+    }
+
+    // Título das dicas para melhorar a busca
+    body.search-no-results .search-tips-title {        
+        .lib-css(font-size, 18px);
+    }
+
+    // Dicas para melhorar a busca
+    body.search-no-results .search-tips {
+        .lib-css(font-size, 14px);
+    }
+}
