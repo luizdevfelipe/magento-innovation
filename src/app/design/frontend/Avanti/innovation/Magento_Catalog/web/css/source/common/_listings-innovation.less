@@ -3,6 +3,15 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Centralizar produtos na listagem
+    .products.wrapper.grid.products-grid .products.list.items.product-items {
+        .lib-css(text-align, center);
+
+        & li {
+            .lib-css(margin-bottom, 24px);
+        }
+    }
+
     // Container do Produto
     .product-item .product-item-info {
         .lib-css(border, 1px solid @color-form-border);
@@ -29,6 +38,11 @@
                 .lib-css(color, @color-gray19);
             }
         }
+    }
+
+    // Reviews do Produto
+    .product-item .product-reviews-summary.short {
+        .lib-visibility-hidden();
     }
 
     // Preço do Produto
@@ -87,18 +101,35 @@
         }
     }
 
+    // Container interno do Produto
+    .product-item .product-item-info .product-item-inner {
+        .lib-css(padding, 0);
+        .lib-css(margin, 0);
+        .lib-css(box-shadow, none);
+        .lib-css(border, none);
+        .lib-css(position, static);
+
+        .product.actions.product-item-actions {
+            .lib-css(margin, 0);
+        }
+    }
+
     @media (min-width: 640px) {
 
         .abs-visually-hidden-desktop-s,
         .products-grid .product-item-info:not(:hover):not(.active) .product-item-inner[class="product-item-inner"] {
             .lib-css(border, 0);
             .lib-css(clip, auto);
-            .lib-css(height, auto);
+            .lib-css(height, 40px);
             .lib-css(margin, 0);
             .lib-css(overflow, hidden);
             .lib-css(padding, 0);
             .lib-css(position, static);
-            .lib-css(width, auto);
+            .lib-css(width, 100%);
+
+            &:hover {
+                .lib-css(position, static);
+            }
         }
     }
 
@@ -129,7 +160,7 @@
 
     .products-grid {
         .product-item {
-            position: relative;
+            position: static;
             box-sizing: border-box;
 
             .product-item-photo img {
@@ -138,7 +169,7 @@
             }
 
             .product-item-info {
-                position: relative;
+                position: static;
                 top: 0;
                 left: 0;
                 margin: 0;
@@ -180,10 +211,16 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
 
-    // Centralizar produtos na listagem
-    .products.wrapper.grid.products-grid .products.list.items.product-items {
-        .lib-css(text-align, center);
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+
+    .item.product.product-item {
+        .lib-css(max-width, 242px);
+        .lib-css(margin, 0 5px);
     }
 }
