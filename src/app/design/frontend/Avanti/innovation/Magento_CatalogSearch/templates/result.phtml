@@ -8,9 +8,12 @@
 
 use Magento\CatalogSearch\Block\Result;
 
+
 /** These changes need to valid applying filters and configuration before search process is started. */
 
 /** @var $block  Result*/
+/** @var \Magento\Framework\Escaper $escaper */
+
 $productList = $block->getProductListHtml();
 ?>
 <?php if ($block->getResultCount()) : ?>
@@ -37,16 +40,16 @@ $productList = $block->getProductListHtml();
                 : $block->getRequest()->getParam('q');
             ?>
 
-            <p class="no-results-message"><?= __('We found no results for %1', '<span class="search-term">"' . $searchQuery . '"</span>'); ?></p>
+            <p class="no-results-message"><?= __('We found no results for %1', '<span class="search-term">"' . $escaper->escapeHtml($searchQuery) . '"</span>'); ?></p>
 
         </div>
         <div class="search-tips-wrapper">
-            <p class="search-tips-title"><?= __('What should I do?') ?></p>
+            <p class="search-tips-title"><?= $escaper->escapeHtml(__('What should I do?')) ?></p>
             <ul class="search-tips">
-                <li><?= __("Check the terms you typed.") ?></li>
-                <li><?= __("Use synonyms for the desired term.") ?></li>
-                <li><?= __("Try using a single word.") ?></li>
-                <li><?= __("Use generic search terms.") ?></li>
+                <li><?= $escaper->escapeHtml(__("Check the terms you typed.")) ?></li>
+                <li><?= $escaper->escapeHtml(__("Use synonyms for the desired term.")) ?></li>
+                <li><?= $escaper->escapeHtml(__("Try using a single word.")) ?></li>
+                <li><?= $escaper->escapeHtml(__("Use generic search terms.")) ?></li>
             </ul>
         </div>
     </div>
