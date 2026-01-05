@@ -94,6 +94,17 @@ use Magento\Framework\App\Action\Action;
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
+                                <?php if ($showWishlist || $showCompare): ?>
+                                    <div class="actions-secondary" data-role="add-to-links">
+                                        <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
+                                            <a href="#"
+                                               data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $escaper->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                <span><?= $escaper->escapeHtml(__('Add to Wish List')) ?></span>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                    
+                                <?php endif; ?>
                                 
                             </div>
                         </div>

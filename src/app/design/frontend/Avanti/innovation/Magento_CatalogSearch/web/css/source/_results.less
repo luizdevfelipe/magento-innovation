@@ -1,0 +1,16 @@
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Margem esquerda da página de resultados de busca
+    body.catalogsearch-result-index .page-wrapper .page-main,
+    body.catalogsearch-result-index .breadcrumbs {
+        .lib-css(padding-left, 35px);
+    }
+
+    // Largura máxima da página de resultados de busca
+    body.catalogsearch-result-index .search.results {
+        .lib-css(max-width, 1185px);
+    }
+}

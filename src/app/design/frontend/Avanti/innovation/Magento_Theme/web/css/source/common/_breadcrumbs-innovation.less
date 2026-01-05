@@ -2,10 +2,15 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
-    .page-wrapper .breadcrumbs .items a {
-        .lib-css(color, @color-black);
+
+    // Padding e cor do breadcrumb
+    .page-wrapper .breadcrumbs {
+        .items a {
+            .lib-css(color, @color-black);
+        }
     }
 
+    // Cor do texto do breadcrumb
     .page-wrapper .breadcrumbs ul.items li strong {
         .lib-css(color, @color-black);
     }
@@ -15,11 +20,20 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Display e espaçamento do breadcrumb
     .page-wrapper .breadcrumbs {
         .lib-css(display, block);
         .lib-css(margin-top, 16px);
+        .lib-css(padding-left, 16px);
     }
 
+    // Esconder breadcrumb quando há resultados na busca
+    body.catalogsearch-result-index .page-wrapper .breadcrumbs {
+        .lib-css(display, none);
+    }
+
+    // Fonte e cor dos itens do breadcrumb
     .page-wrapper .breadcrumbs .items {
         .lib-css(font-size, 14px);
         .lib-css(color, @color-black);
@@ -31,7 +45,8 @@
             .lib-css(line-height, 20px);
         }
     }
-    
+
+    // Fonte do texto do breadcrumb
     .page-wrapper .breadcrumbs ul.items li strong {
         .lib-css(font-weight, 600);
     }

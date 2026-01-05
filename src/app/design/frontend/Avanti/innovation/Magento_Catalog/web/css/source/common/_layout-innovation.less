@@ -13,4 +13,10 @@
     .columns .column.main:has(.products.list) {
         .lib-css(width, 85%);
     }
+
+    // Main Content quando existe resultado na busca
+    body.catalogsearch-result-index:has(:not(.search-no-results)) .columns .column.main:has(.products.list) {
+        .lib-css(width, 100%);
+        .lib-css(padding, 0);
+    }
 }
