@@ -40,6 +40,10 @@
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
     // Caixar de ornadeção
+    body.catalogsearch-result-index .toolbar-sorter.sorter {
+        .lib-css(display, none);
+    }
+    
     .toolbar.toolbar-products .toolbar-sorter.sorter {
         .lib-css(color, @color-black);
         .lib-css(margin-right, 12px);
@@ -72,7 +76,7 @@
 
 
 
-     // Caixa de opções do seletor de itens por página
+    // Caixa de opções do seletor de itens por página
     .toolbar.toolbar-products .field.limiter .control .limiter-options {
         .lib-css(width, 52px);
         .lib-css(height, 28px);
