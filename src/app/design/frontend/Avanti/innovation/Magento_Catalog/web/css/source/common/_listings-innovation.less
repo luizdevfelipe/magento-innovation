@@ -5,10 +5,12 @@
 
     // Centralizar produtos na listagem
     .products.wrapper.grid.products-grid .products.list.items.product-items {
-        .lib-css(text-align, center);
+        .lib-css(display, flex);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(justify-content, space-between);
 
         & li {
-            .lib-css(margin-bottom, 24px);
+            .lib-css(margin, 0 0 24px 0);
         }
     }
 
@@ -17,6 +19,7 @@
         .lib-css(border, 1px solid @color-form-border);
         .lib-css(border-radius, 15px);
         .lib-css(box-sizing, border-box);
+        .lib-css(position, relative);
     }
 
     // Borda da imagem 
@@ -114,6 +117,7 @@
         }
     }
 
+    // Faz o botão de comprar aparecer sempre
     @media (min-width: 640px) {
 
         .abs-visually-hidden-desktop-s,
@@ -153,11 +157,21 @@
         }
     }
 
-    // Esconde o botão de wishlist e comparar
-    .product-item .product-item-info .actions-secondary {
-        .lib-visibility-hidden();
+    // Botão de adicionar à lista de desejos
+    .product-item-inner .actions-secondary .action.towishlist {
+        .lib-css(position, absolute);
+        .lib-css(top, 1px);
+        .lib-css(left, 83%);
+        .lib-css(z-index, 1);
+        .lib-css(width, auto);
+        .lib-css(color, @theme__color__primary);
+
+        &:hover {
+            .lib-css(color, darken(@theme__color__primary, 10%));
+        }
     }
 
+    // Remover efeitos hover da listagem de produtos
     .products-grid {
         .product-item {
             position: static;
@@ -169,7 +183,7 @@
             }
 
             .product-item-info {
-                position: static;
+                position: relative;
                 top: 0;
                 left: 0;
                 margin: 0;
@@ -211,14 +225,40 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Centralizar produtos na listagem
+    .products.wrapper.grid.products-grid .products.list.items.product-items {
+        .lib-css(justify-content, space-around);
+    }
+}
 
 //
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
+    // Centralizar produtos na listagem de busca
+    body.catalogsearch-result-index .products.list.items.product-items {
+        .lib-css(max-width, 1162px);
+        .lib-css(margin, auto);
 
+        & li {
+            .lib-css(max-width, 268px);
+            .lib-css(max-height, 581px);
+            .lib-css(width, 268px);
+            .lib-css(height, 581px);
+        }
+
+        .product-item-info {
+            .lib-css(width, 268px);
+            .lib-css(max-height, 581px);
+            .lib-css(height, 581px);
+        }
+
+    }
+
+    // Tamanho dos itens na listagem de produtos, <li>
     .item.product.product-item {
         .lib-css(max-width, 242px);
         .lib-css(margin, 0 5px);
