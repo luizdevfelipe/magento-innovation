@@ -8,6 +8,19 @@
 }
 
 //
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Configuração do Título da Página com Termo de Busca
+    .page-main .page-title-wrapper:has(.search-term) h1 {
+        .lib-css(font-size, 16px);
+        .lib-css(text-align, center);
+        .lib-css(padding-top, 24px);
+    }
+}
+
+//
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
@@ -21,6 +34,7 @@
         }
     }
 
+    // Configuração do Título da Página com Termo de Busca
     .page-main .page-title-wrapper:has(.search-term) h1 {
         .lib-css(font-size, 20px);
     }
