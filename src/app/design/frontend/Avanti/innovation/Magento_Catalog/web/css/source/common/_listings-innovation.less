@@ -20,6 +20,7 @@
         .lib-css(border-radius, 15px);
         .lib-css(box-sizing, border-box);
         .lib-css(position, relative);
+        .lib-css(text-align, center);
     }
 
     // Borda da imagem 
@@ -104,7 +105,7 @@
         }
     }
 
-    // Container interno do Produto
+    // Container dos botões de ações
     .product-item .product-item-info .product-item-inner {
         .lib-css(padding, 0);
         .lib-css(margin, 0);
@@ -203,14 +204,13 @@
                     position: relative;
                     top: 0;
                     left: 0;
-
                     margin: 0;
                     padding: 0;
                     .lib-css(border, 1px solid @color-form-border);
                     outline: 0;
-
                     transform: none;
                     box-shadow: none;
+                    z-index: auto;
                 }
 
                 .product-item-photo img {
@@ -254,6 +254,24 @@
             .lib-css(width, 268px);
             .lib-css(max-height, 581px);
             .lib-css(height, 581px);
+        }
+
+        // Container da imagem do Produto
+        .product-image-container {
+            .lib-css(width, 266px);
+        }
+
+        // Container do preço 
+        .price-box.price-final_price {
+            .lib-css(margin, 19px 0 30px);
+        }
+
+        // Posicionamento do botão 
+        .action.tocart.primary {
+            .lib-css(position, absolute);
+            .lib-css(bottom, 0);
+            .lib-css(left, 0);
+            .lib-css(padding, 15px 24px);
         }
 
     }
