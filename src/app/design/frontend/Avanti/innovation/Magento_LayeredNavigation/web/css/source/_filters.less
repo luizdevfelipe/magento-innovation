@@ -9,12 +9,16 @@
 
         .lib-css(font-weight, 700);
     }
-    
+
     // Configuração do Título dos Filtros
     .sidebar .block.filter .block-subtitle.filter-subtitle {
         .lib-css(color, @color-black);
         .lib-css(font-weight, 700);
         .lib-css(font-size, 16px);
+    }
+
+    .sidebar .block.filter .block-content.filter-content {
+        .lib-css(color, @color-black);
     }
 
     // Configuração dos Itens dos Filtros
@@ -37,16 +41,69 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Borda do Título dos Filtros
+    .sidebar .block-title.filter-title {
+        .lib-css(border, 1px solid @color-white-smoke);
+    }
+
+    // Container dos Filtros Ativos
+    .block.filter .block-content.filter-content .filter-current {
+        .lib-css(margin, 0);
+        .lib-css(border, 1px solid @color-white-smoke);
+
+        .filter-current-subtitle {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, 400);
+            .lib-css(text-transform, none);
+        }
+    }
+
+    // Configuração dos Itens dos Filtros
+    .block-content.filter-content .filter-options-item {
+        .lib-css(border-color, @color-white-smoke);
+        .lib-css(font-size, 16px);
+
+        & .filter-options-title {
+            .lib-css(font-weight, 400);
+        }
+    }
+
+    // Animação do Filtro Lateral
+    body.filter-active .columns .sidebar.sidebar-main {
+        .lib-css(transform, none);
+    }
+
+    // Posição do botão dos Filtros ao estar ativo
+    body.filter-active .page-main .block-title.filter-title strong {
+        .lib-css(position, absolute);
+        .lib-css(top, 10px);
+        .lib-css(right, 3px);
+        .lib-css(left, auto);
+    }
+
+    // Configuração do Filtro Lateral
+    .columns .sidebar.sidebar-main {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s all ease-in-out;
+    }
+
     // Fonte do Título da Página
     .page-main .page-title-wrapper .page-title {
         .lib-css(font-size, 20px);
         .lib-css(padding-left, 16px);
     }
 
+    // Configuração do botão dos Filtros
     .page-main .block-title.filter-title {
         .lib-css(color, @color-black);
-        
+
         & strong {
+            .lib-css(position, absolute);
+            .lib-css(top, 0);
+            .lib-css(left, -99.2vw);
             .lib-css(width, 102px);
             .lib-css(height, 38px);
             .lib-css(font-size, 14px);
@@ -71,6 +128,7 @@
         }
     }
 
+    // Configuração do Título dos Filtros no Mobile
     .page-main .block.filter.active .block-title.filter-title strong {
         .lib-css(padding, 0);
         .lib-css(margin, 0);
@@ -79,6 +137,7 @@
         &::before {
             .lib-css(background-image, none);
         }
+
         &::after {
             .lib-css(color, @color-black);
             .lib-css(font-size, 12px);
