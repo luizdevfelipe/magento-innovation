@@ -25,7 +25,7 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
-    // Configuração do Título da Página
+    // Configuração do Título da Página de Categorias
     .page-main .page-title-wrapper:not(:has(.search-term)) {
         .lib-css(text-align, center);
 
@@ -34,8 +34,9 @@
         }
     }
 
-    // Configuração do Título da Página com Termo de Busca
+    // Configuração do Título da Página de busca com resultados
     .page-main .page-title-wrapper:has(.search-term) h1 {
         .lib-css(font-size, 20px);
+        .lib-css(margin, 30px 0 65px 0);
     }
 }
