@@ -18,5 +18,8 @@
             </block>
         </referenceContainer>
 
+
+        <!-- Remoção do container com wishlist -->
+        <referenceBlock name="sidebar.additional" remove="true" />
     </body>
 </page>
