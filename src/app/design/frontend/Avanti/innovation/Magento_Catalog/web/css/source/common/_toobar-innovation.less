@@ -74,7 +74,10 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
-
+    // Espaçamento inferior da toolbar na listagem de busca
+    body.catalogsearch-result-index .toolbar.toolbar-products {
+        .lib-css(margin-bottom, 65px);
+    }
 
     // Caixa de opções do seletor de itens por página
     .toolbar.toolbar-products .field.limiter .control .limiter-options {
@@ -82,5 +85,11 @@
         .lib-css(height, 28px);
         .lib-css(font-size, 12px);
         .lib-css(line-height, 19px);
+    }
+
+    // Alinhamento dos botões de paginação na página de busca
+    body.catalogsearch-result-index .toolbar.toolbar-products:has(.pages) {
+        .lib-css(margin, 133px auto 252px auto);
+        .lib-css(max-width, 1126px);
     }
 }
