@@ -59,6 +59,26 @@
         }
     }
 
+    // Preço riscado do Produto
+    .product-item .product-item-info .old-price {
+        .lib-css(display, block);
+        .lib-css(text-decoration, line-through);
+    }
+
+    // Desconto do Produto
+    .product-item .product-item-info .percent-discount {
+        .lib-css(background-color, @theme__color__green);
+        .lib-css(color, @color-white);
+        .lib-css(padding, 2px 8px);
+        .lib-css(border-radius, 8px);
+    }
+
+    // Texto de parcelamento
+    .product-item .product-item-info .installment-text {
+        .lib-css(color, @color-gray40);
+        .lib-css(margin-top, 2px);
+    }
+
     // Conteiner das opções de cor/tamanho  
     .product-item .product-item-info .swatch-attribute-options.clearfix {
         .lib-css(display, flex);
@@ -81,6 +101,7 @@
         .lib-css(box-sizing, border-box);
         .lib-css(padding, 0);
         .lib-css(margin, 0);
+        .lib-css(background-color, @color-gray-darken0);
 
         // Texto das opções de tamanho
         &.text {
