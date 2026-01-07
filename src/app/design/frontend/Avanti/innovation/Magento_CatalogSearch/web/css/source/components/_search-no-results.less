@@ -3,6 +3,12 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Esconder título da página e breadcrumbs
+    body.search-no-results .page-title-wrapper {
+        .lib-visibility-hidden();
+        .lib-css(display, none);
+    }
+
     body.search-no-results h1,
     body.search-no-results .breadcrumbs {
         .lib-visibility-hidden();
@@ -64,6 +70,7 @@
     // Título das dicas para melhorar a busca
     body.search-no-results .search-tips-title {
         .lib-css(font-size, 16px);
+        .lib-css(margin, 16px 0 4px 0);
     }
 
 
@@ -85,10 +92,15 @@
         .lib-css(padding, 0);
     }
 
+    // Ajuste do margin do footer 
+    body.search-no-results .footer-columns-wrapper {
+        .lib-css(margin, 24px 0 0 0);
+    }
+
     // Mensagem de nenhum resultado encontrado
     body.search-no-results .no-results-message {
         .lib-css(font-size, 20px);
-        .lib-css(margin-bottom, 24px);
+        .lib-css(margin, 34px 0 24px 0);
     }
 
     // Container das dicas para melhorar a busca
