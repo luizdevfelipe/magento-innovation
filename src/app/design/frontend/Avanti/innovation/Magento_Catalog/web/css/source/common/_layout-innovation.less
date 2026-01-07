@@ -5,13 +5,14 @@
     
     // Sidebar
     .columns .sidebar.sidebar-main:has(.filter) {
-        .lib-css(width, 15%);
+        .lib-css(width, 188px);
+        .lib-css(min-width, 188px);
         .lib-css(padding, 0);
     }
 
     // Main Content
     .columns .column.main:has(.products.list) {
-        .lib-css(width, 85%);
+        .lib-css(width, calc(100% - 190px));
     }
 
     // Main Content quando existe resultado na busca
