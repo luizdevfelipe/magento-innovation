@@ -44,6 +44,12 @@
         .lib-css(display, none);
     }
     
+    // Altura da caixa de opções do seletor de ordenação
+    .toolbar.toolbar-products .toolbar-sorter.sorter select.sorter-options {
+        .lib-css(line-height, 27px);
+    }
+
+    // Texto do seletor de ordenação
     .toolbar.toolbar-products .toolbar-sorter.sorter {
         .lib-css(color, @color-black);
         .lib-css(margin-right, 12px);
@@ -65,6 +71,11 @@
     // Texto da quantidade de produtos exibidos
     .toolbar.toolbar-products .toolbar-amount {
         .lib-css(text-align, center);
+        
+    }
+
+    body.catalogsearch-result-index .toolbar-amount {
+        .lib-css(color, @color-black);
     }
 }
 
@@ -76,7 +87,7 @@
 
     // Espaçamento inferior da toolbar na listagem de busca
     body.catalogsearch-result-index .toolbar.toolbar-products {
-        .lib-css(margin-bottom, 65px);
+        .lib-css(margin-bottom, 16px);
     }
 
     // Caixa de opções do seletor de itens por página
@@ -89,7 +100,7 @@
 
     // Alinhamento dos botões de paginação na página de busca
     body.catalogsearch-result-index .toolbar.toolbar-products:has(.pages) {
-        .lib-css(margin, 133px auto 252px auto);
+        .lib-css(margin, 81px auto 252px auto);
         .lib-css(max-width, 1126px);
     }
 }
