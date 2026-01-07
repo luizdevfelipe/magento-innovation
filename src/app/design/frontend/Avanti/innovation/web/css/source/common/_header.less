@@ -55,7 +55,6 @@
     }
 
     // Autocomplete
-
     .page-header .field.search .search-autocomplete {
         .lib-css(color, @color-black);
 
@@ -68,6 +67,10 @@
     // Container do conteúdo do header
     .page-wrapper .page-header .header.content {
         .lib-css(padding-bottom, 0px);
+
+        & .logo {
+            .lib-css(z-index, 1);
+        }
     }
 
     // Links de conta/usuario
@@ -165,6 +168,11 @@
         .lib-css(margin, 22px 0 0 0);
         .lib-css(left, 50%);
         .lib-css(transform, translateX(-50%));
+    }
+
+    // Autocomplete
+    .page-header .field.search .search-autocomplete {
+        .lib-css(margin-top, -5px);
     }
 
     // Busca: espaçamento e controle visual em mobile
