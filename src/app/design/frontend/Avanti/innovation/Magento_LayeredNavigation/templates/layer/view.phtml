@@ -40,6 +40,7 @@
                     <?php if (!$wrapOptions) : ?>
                         <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= $block->escapeHtml(__('Shopping Options')) ?></strong>
                         
+                        <?php // Mover bloco de filtros ativos para dentro do container de filtros ?>
                         <?= $block->getChildHtml('state') ?>
 
                         <?php if ($block->getLayer()->getState()->getFilters()) : ?>
