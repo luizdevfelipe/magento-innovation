@@ -2,6 +2,8 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
+
+    // Botões de modo de exibição (grid/lista)
     .toolbar.toolbar-products .modes-mode {
         .lib-css(border, none);
 
@@ -74,6 +76,7 @@
         
     }
 
+    // Texto da quantidade de produtos exibidos na listagem de busca
     body.catalogsearch-result-index .toolbar-amount {
         .lib-css(color, @color-black);
     }
@@ -88,6 +91,13 @@
     // Espaçamento inferior da toolbar na listagem de busca
     body.catalogsearch-result-index .toolbar.toolbar-products {
         .lib-css(margin-bottom, 16px);
+        .lib-css(max-width, 1241px);
+        .lib-css(position, static);
+    }
+
+    // Alinhamento da barra de ferramentas na página de categoria
+    body.catalog-category-view .toolbar.toolbar-products {
+        .lib-css(margin-top, 12px);
     }
 
     // Caixa de opções do seletor de itens por página

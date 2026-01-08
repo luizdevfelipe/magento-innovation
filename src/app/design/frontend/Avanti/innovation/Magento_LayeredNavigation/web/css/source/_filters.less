@@ -28,6 +28,7 @@
         .lib-css(font-weight, 700);
     }
 
+    // Configuração dos Links e Contadores dos Itens dos Filtros
     .sidebar .block-content.filter-content .filter-options-item .filter-options-content,
     .sidebar .block-content.filter-content .filter-options-item .filter-options-content a,
     .sidebar .block-content.filter-content .filter-options-item .filter-options-content .count {
@@ -41,12 +42,14 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Configuração da página ao ativar os filtros
     body.filter-active .page-wrapper {
         .lib-css(height, auto);
         .lib-css(margin-top, auto);
         .lib-css(visibility, visible);
     }
 
+    // Configuração do cabeçalho da página ao ativar os filtros
     body.filter-active .page-header {
         .lib-css(display, block);
     }
@@ -71,6 +74,7 @@
         .lib-css(margin, 0);
         .lib-css(border, none);
         .lib-css(border-bottom, 1px solid @color-white-smoke);
+        .lib-css(padding-bottom, 0);
 
         .filter-current-subtitle {
             .lib-css(font-size, 16px);
@@ -108,8 +112,15 @@
 
     // Link para limpar os filtros
     body.filter-active .block-actions.filter-actions {
-        .lib-css(margin-left, 0);
-        .lib-css(padding-left, 19px);
+        .lib-css(position, absolute);
+        .lib-css(top, 64px);
+        .lib-css(left, 152px);
+        .lib-css(border, 1px solid @theme__color__primary);
+        .lib-css(border-radius, 24px);
+        .lib-css(padding, 2px 6px);
+        .lib-css(margin, 0);
+        .lib-css(font-size, 11px);
+        .lib-css(z-index, 1);
     }
 
     // Container dos filtros possíveis
@@ -123,7 +134,7 @@
         .lib-css(font-size, 16px);
         .lib-css(padding-left, 8px);
 
-        & .filter-options-title {
+        .filter-options-title {
             .lib-css(font-weight, 400);
         }
     }
@@ -165,7 +176,7 @@
         .lib-css(border, 1px solid @color-white-smoke);
         .lib-css(margin-bottom, 30px);
 
-        & strong {
+        strong {
             .lib-css(background-color, transparent);
             .lib-css(transition, none);
         }
@@ -182,7 +193,7 @@
         .lib-css(color, @color-black);
         .lib-css(border, none);
 
-        & strong {
+        strong {
             .lib-css(width, 102px);
             .lib-css(height, 38px);
             .lib-css(font-size, 14px);
@@ -195,7 +206,7 @@
             .lib-css(border-radius, 8px);
         }
 
-        & strong::before {
+        strong::before {
             content: '';
             .lib-css(position, absolute);
             .lib-css(background-image, url('@{baseDir}images/icons/filter.svg'));

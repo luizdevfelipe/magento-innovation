@@ -38,7 +38,7 @@
             .lib-css(font-weight, 600);
             .lib-css(margin, 0 0 10px 0);
 
-            & a {
+            a {
                 .lib-css(color, @color-gray19);
             }
         }
@@ -53,7 +53,7 @@
     .product-item .product-item-info .price-box.price-final_price {
         .lib-css(text-align, center);
 
-        & .price {
+        .price {
             .lib-css(font-size, 15px);
             .lib-css(font-weight, 700);
         }
@@ -261,25 +261,20 @@
 
     // Centralizar produtos na listagem de busca
     body.catalogsearch-result-index .products.list.items.product-items {
-        .lib-css(max-width, 1162px);
-        .lib-css(margin, auto);
+        .lib-css(max-width, 1227px);
+        .lib-css(margin, 0 0 0 5px);
 
-        & li {
-            .lib-css(max-width, 268px);
+        li {
+            .lib-css(max-width, 284px);
             .lib-css(max-height, 581px);
-            .lib-css(width, 268px);
+            .lib-css(width, 284px);
             .lib-css(height, 581px);
         }
 
         .product-item-info {
-            .lib-css(width, 268px);
+            .lib-css(width, 284px);
             .lib-css(max-height, 581px);
             .lib-css(height, 581px);
-        }
-
-        // Container da imagem do Produto
-        .product-image-container {
-            .lib-css(width, 266px);
         }
 
         // Container do preço 
