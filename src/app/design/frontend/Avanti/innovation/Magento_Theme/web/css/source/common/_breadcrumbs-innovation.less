@@ -2,7 +2,6 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
-
     // Padding e cor do breadcrumb
     .page-wrapper .breadcrumbs {
         .items a {
@@ -20,7 +19,6 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
-
     // Display e espaçamento do breadcrumb
     .page-wrapper .breadcrumbs {
         .lib-css(display, block);
@@ -57,8 +55,12 @@
 //  Desktop
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
-    .page-wrapper .breadcrumbs ul.items li strong {
-        .lib-css(font-weight, 700);
+    .page-wrapper .breadcrumbs ul.items li {
+        .lib-css(font-size, 14px);
+
+        strong {
+            .lib-css(font-weight, 700);
+        }
     }
 
     // Espaçamento do breadcrumb na página de busca
