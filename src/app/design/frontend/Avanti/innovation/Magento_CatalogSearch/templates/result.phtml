@@ -58,6 +58,5 @@ $productList = $block->getProductListHtml();
         document.body.classList.add('search-no-results');
     </script>
 
-
-    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slider_notfound')->toHtml(); ?>
+    <?= $block->getChildHtml('slider_notfound') ?>
 <?php endif; ?>
