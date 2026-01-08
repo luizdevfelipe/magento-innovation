@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+      <!-- Definição de layout em apenas 1 coluna -->
 
+    <!-- Carregamento de scripts apenas na página de resultados de busca -->
     <head>
-        <script src="Magento_Theme::js/pager/total-items-message.js" defer="defer"/>
+        <script src="Magento_Theme::js/pager/total-items-message.js" defer="defer" />
     </head>
 
     <body>
@@ -11,5 +14,14 @@
         <referenceBlock name="sidebar.additional" remove="true" />
         <!-- Remoção do container com filtros laterais -->
         <referenceContainer name="div.sidebar.main" remove="true" />
+
+        <!-- Adição do bloco de slider quando não há resultados -->
+        <referenceBlock name="search.result">
+            <block class="Magento\Cms\Block\Block" name="slider_notfound">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">slider_notfound</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
