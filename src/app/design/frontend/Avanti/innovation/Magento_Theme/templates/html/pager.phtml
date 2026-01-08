@@ -18,6 +18,7 @@
     <?php if ($block->getUseContainer()): ?>
     <div class="pager">
     <?php endif ?>
+        <?php // Span para exibir o total de produtos encontrados ?>
         <?php echo '<span data-total-items="'. __('%1 products found', $localeFormatter->formatNumber($block->getTotalNum())).'"></span>' ?>
         <?php if ($block->getShowAmounts()): ?>
         <p class="toolbar-amount">
