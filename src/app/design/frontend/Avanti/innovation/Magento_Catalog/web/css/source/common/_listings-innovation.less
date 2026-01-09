@@ -166,6 +166,11 @@
 
     // Botão de Comprar 
     .product-item .product-item-info .action.tocart.primary {
+        .lib-css(position, absolute);
+        .lib-css(bottom, 0);
+        .lib-css(left, 0);
+        .lib-css(padding, 15px 24px);
+
         .lib-css(border-radius, 0 0 15px 15px);
         .lib-css(border, none);
         .lib-css(width, 100%);
@@ -252,6 +257,68 @@
     .products.wrapper.grid.products-grid .products.list.items.product-items {
         .lib-css(justify-content, space-around);
     }
+
+    // Tamanho do título do produto
+    .product-item .product-item-info .product-item-name h3 {
+        .lib-css(font-size, 11px);
+    }
+
+    // Tamanho do preço do produto
+    .product-item .product-item-info .price-box.price-final_price {
+        .lib-css(margin, 0 0 18px 0);
+
+        & .price {
+            .lib-css(font-size, 11px);
+        }
+    }
+
+    // Conteiner das opções de cor/tamanho
+    .product-item .product-item-info .swatch-attribute-options.clearfix {
+        .lib-css(margin-bottom, 0);
+    }
+
+    // Container das opções de cores
+    .product-item .product-item-info .swatch-attribute.color {
+        .lib-css(margin-top, 20px);
+    }
+
+    // Tamanho das opções de cor/tamanho
+    .product-item .product-item-info .swatch-option {
+        .lib-css(width, 18px);
+        .lib-css(height, 18px);
+
+        &.text {
+            .lib-css(font-size, 8px);
+            .lib-css(line-height, 17px);
+        }
+
+        &.color {
+            .lib-css(width, 14px);
+            .lib-css(min-width, 14px);
+            .lib-css(height, 14px);
+        }
+    }
+
+    // Botão de Comprar
+    .product-item .product-item-info .action.tocart.primary {
+        .lib-css(font-size, 10px);
+        .lib-css(padding, 6px 16px);
+        .lib-css(margin-top, 10px);
+    }
+
+    // Container do Produto 
+    .product-item .product-item-info .swatch-attribute-options.clearfix {
+        .lib-css(gap, 10px);
+    }
+
+    // Container do Produto 
+    .product-item {
+        .lib-css(max-width, 166px);
+
+        .product-item-info {
+            .lib-css(min-height, 426px);
+        }
+    }
 }
 
 //
@@ -266,14 +333,12 @@
 
         li {
             .lib-css(max-width, 284px);
-            .lib-css(max-height, 581px);
             .lib-css(width, 284px);
             .lib-css(height, 581px);
         }
 
         .product-item-info {
             .lib-css(width, 284px);
-            .lib-css(max-height, 581px);
             .lib-css(height, 581px);
         }
 
@@ -282,19 +347,32 @@
             .lib-css(margin, 19px 0 30px);
         }
 
-        // Posicionamento do botão 
-        .action.tocart.primary {
-            .lib-css(position, absolute);
-            .lib-css(bottom, 0);
-            .lib-css(left, 0);
-            .lib-css(padding, 15px 24px);
-        }
+    }
 
+    // Container do Produto
+    .product-item .product-item-info {
+        .lib-css(min-height, 590px);
     }
 
     // Tamanho dos itens na listagem de produtos, <li>
     .item.product.product-item {
         .lib-css(max-width, 242px);
         .lib-css(margin, 0 5px);
+    }
+
+    // Tamanho do preço do produto
+    .product-item .product-item-info .price-box.price-final_price {
+        .lib-css(margin, 19px 0 25px);
+    }
+
+    // Container das opções de cores
+    .product-item .product-item-info .swatch-attribute.color {
+        .lib-css(margin-top, 30px);
+    }
+
+    // Botão de Comprar
+    .product-item .product-item-info .action.tocart.primary {
+        .lib-css(padding, 12px 24px);
+        .lib-css(font-size, 14px);
     }
 }
