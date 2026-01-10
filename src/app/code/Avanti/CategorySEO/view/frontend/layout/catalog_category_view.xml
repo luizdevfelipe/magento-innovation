@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <!-- Adição do bloco CMS sobre SEO -->
+        <referenceContainer name="main.content">
+            <block class="Avanti\CategorySEO\Block\Category\SeoContent"
+                name="category.seo.content"
+                template="Avanti_CategorySEO::category/seo-content.phtml"
+                before="footer.newsletter" />
+        </referenceContainer>
+
+    </body>
+</page>
