@@ -379,6 +379,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'Avanti_BackToTop' => 1,
+        'Avanti_CategorySEO' => 1,
         'Avanti_NewsletterExtend' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,

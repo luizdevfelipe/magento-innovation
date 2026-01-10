@@ -1,0 +1,9 @@
+<?php
+/** @var \Avanti\CategorySEO\Block\Category\SeoContent $block */
+?>
+
+<?php if ($content = $block->getSeoContent()): ?>
+    <div class="category-seo-content">
+        <?= /* @noEscape */ $content ?>
+    </div>
+<?php endif; ?>

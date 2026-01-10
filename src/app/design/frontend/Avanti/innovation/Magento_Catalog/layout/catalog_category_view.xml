@@ -3,22 +3,6 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
-        
-        <!-- Adição do bloco CMS sobre SEO -->
-        <referenceContainer name="main.content">
-            <block
-                class="Magento\Cms\Block\Block"
-                name="bottom-content-categories"
-                before="footer.newsletter">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">
-                        bottom-content-categories
-                    </argument>
-                </arguments>
-            </block>
-        </referenceContainer>
-
-
         <!-- Remoção do container com wishlist -->
         <referenceBlock name="sidebar.additional" remove="true" />
     </body>
