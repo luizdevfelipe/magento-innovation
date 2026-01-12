@@ -1,0 +1,57 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container do bloco do minecart
+    .block.block-minicart.ui-dialog-content.ui-widget-content {
+        .lib-css(padding, 0);
+    }
+
+    // Container de conteúdo do minecart
+    #minicart-content-wrapper {
+
+
+        // Título do bloco do minecart
+        .block-title {
+            .lib-css(display, block);
+            .lib-css(text-align, center);
+            .lib-css(text-transform, uppercase);
+            .lib-css(font-size, 14px);
+            .lib-css(color, @color-white);
+            .lib-css(background-color, @theme__color__primary);
+            .lib-css(width, 100%);
+            .lib-css(height, 50px);
+            .lib-css(line-height, 47px);
+            .lib-css(font-weight, 600);
+
+            .qty {
+                .lib-css(display, none);
+            }
+        }
+
+        // Botão de fechar o minecart
+        .block-content .action.close {
+            .lib-css(top, 15px);
+            .lib-css(right, 25px);
+            .lib-css(width, 12px);
+            .lib-css(height, 12px);
+
+            &::before {
+                .lib-css(color, @color-white);
+
+            }
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}

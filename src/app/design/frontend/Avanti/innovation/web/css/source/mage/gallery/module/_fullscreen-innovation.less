@@ -1,0 +1,25 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Cor dos botões fullscreen
+    .fotorama__fullscreen .fotorama__zoom-in,
+    .fotorama__fullscreen .fotorama__zoom-out {
+        .lib-css(background-color, @color-black_dark);
+        .lib-css(color, @color-white);
+    }
+
+    .fotorama__fullscreen .fotorama__stage .fotorama__fullscreen .fotorama__zoom-in {
+        .lib-css(background-image, url('@{baseDir}images/icons/plus.svg'));
+    }
+
+    .fotorama__fullscreen .fotorama__stage .fotorama__fullscreen .fotorama__zoom-out {
+        .lib-css(background-image, url('@{baseDir}images/icons/minus.svg'));
+    }
+
+    // Borda da miniatura ativa
+    .fotorama-item .fotorama__thumb-border {
+        .lib-css(border-color, @theme__color__primary);
+    }
+}
