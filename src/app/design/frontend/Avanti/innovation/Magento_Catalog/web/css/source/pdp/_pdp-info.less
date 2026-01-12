@@ -1,0 +1,75 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container de informações do produto na PDP
+    .column.main .product-info-main {
+        .lib-css(color, @color-black);
+    }
+
+    // SKU na PDP
+    .product-info-stock-sku .product.attribute.sku .type {
+        &::after {
+            content: ':';
+        }
+    }
+
+    // Botão de Wishlist 
+    .product-social-links .product-addto-links .action.towishlist {
+        .lib-css(color, @theme__color__primary);
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 14px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(font-weight, 700);
+
+        &::before {
+            content: '';
+            .lib-css(display, inline-block);
+            .lib-css(width, 16px);
+            .lib-css(height, 16px);
+
+            .lib-css(background-image, url('@{baseDir}images/icons/heart-blue.svg'));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(background-position, center);
+            .lib-css(background-size, contain);
+        }
+    }
+
+    // Botão de compartilhar 
+    .product-info-main .product-share .action.share-native {
+        .lib-css(color, @color-white);
+        .lib-css(background-color, @color-gray34);
+        .lib-css(border-radius, 10px);
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 14px);
+        .lib-css(text-decoration, underline);
+        .lib-css(width, 202px);
+        .lib-css(height, 35px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(font-weight, 400);
+
+        &::before {
+            content: '';
+            .lib-css(display, inline-block);
+            .lib-css(width, 26px);
+            .lib-css(height, 26px);
+            .lib-css(margin-right, 17px);
+
+            .lib-css(background-image, url('@{baseDir}images/icons/share-white.svg'));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(background-position, center);
+            .lib-css(background-size, contain);
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
