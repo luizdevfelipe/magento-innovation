@@ -6,6 +6,10 @@
 @import 'components/_bottom-content-category.less';
 
 @import 'plp-qty-stepper/_plp-qty-stepper.less';
+@import 'pdp/_pdp-reviews.less';
+@import 'pdp/_pdp-price.less';
+@import 'pdp/_pdp-description.less';
+@import 'pdp/_pdp-info.less';
 
 
 .product-share {
@@ -14,4 +18,9 @@
 
 .product-share .share-feedback {
     margin-left: 10px;
+}
+
+// Garante que a lista de produtos na página do produto fique em bloco
+.catalog-product-view .products.wrapper.grid.products-grid .products.list.items.product-items {
+    .lib-css(display, block);
 }
