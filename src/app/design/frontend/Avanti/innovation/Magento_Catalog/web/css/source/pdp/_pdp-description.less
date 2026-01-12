@@ -1,16 +1,74 @@
-.product-details-columns {
-    display: flex;
-    gap: 24px;
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Tabela de especificações na PDP
+    #product-attribute-specs-table {
+        caption {
+            .lib-visually-hidden-reset();
+            .lib-css(color, @color-black);
+            .lib-css(font-weight, 600);
+            .lib-css(font-size, 16px);
+            .lib-css(text-align, left);
+        }
+
+        tbody {
+            .lib-css(color, @color-gray40);
+        }
+
+
+        tr:nth-child(even) {
+            .lib-css(background-color, @theme__color__light-gray);
+            .lib-css(border-radius, 8px);
+        }
+    }
+
+    .additional-attributes-wrapper .additional-attributes {
+        .lib-css(border, none);
+        .lib-css(width, 100%);
+
+        >tbody>tr {
+
+            >th {
+                .lib-css(border, none);
+                .lib-css(padding, 0);
+            }
+
+            >td {
+                .lib-css(border, none);
+                .lib-css(padding, 0);
+                .lib-css(vertical-align, unset);
+            }
+        }
+    }
+
+
 }
 
-.product-details-columns__col {
-    flex: 1 1 0;
-    min-width: 0;
-}
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
 
-/* Mobile: empilha */
-@media (max-width: 768px) {
-    .product-details-columns {
-        display: block;
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+
+    // Formatação da tabela de especificações na PDP
+    .additional-attributes-wrapper .additional-attributes {
+        .lib-css(max-width, 560px);
+
+        >tbody>tr {
+            .lib-css(height, 35px);
+            .lib-css(line-height, 33px);
+            .lib-css(padding-left, 16px);
+        }
+    }
+
+    .product-details-columns__col.product-details-columns__col--left {
+        .lib-css(max-width, 560px);
     }
 }
