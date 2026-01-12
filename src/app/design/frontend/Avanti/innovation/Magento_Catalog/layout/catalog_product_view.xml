@@ -1,23 +1,28 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+        <script src="Magento_Catalog::js/related-products-slick.js" defer="defer"></script>
+    </head>
+
     <body>
-        
+
         <!-- Criação de bloco para botão de compartilhamento do produto -->
         <referenceContainer name="product.info.main">
             <block class="Magento\Catalog\Block\Product\View"
-                   name="product.share"
-                   template="Magento_Catalog::product/view/share.phtml"
-                   after="product.info.sku"/>
+                name="product.share"
+                template="Magento_Catalog::product/view/share.phtml"
+                after="product.info.sku" />
         </referenceContainer>
 
         <!-- Troca do template do bloco de detalhes do produto -->
         <referenceBlock name="product.info.details">
             <action method="setTemplate">
-                <argument name="template" xsi:type="string">Magento_Catalog::product/view/details-columns.phtml</argument>
+                <argument name="template" xsi:type="string">
+                    Magento_Catalog::product/view/details-columns.phtml</argument>
             </action>
         </referenceBlock>
-
 
     </body>
 </page>
