@@ -17,14 +17,7 @@
         .lib-css(font-weight, 400);
         .lib-css(text-transform, none);
 
-        &::before {
-            .lib-css(background-image, url('@{baseDir}images/icons/blue-dot.svg'));
-            .lib-css(background-repeat, no-repeat);
-            .lib-css(background-size, contain);
-            .lib-css(width, 6px);
-            .lib-css(height, 6px);
-            .lib-css(position, absolute);
-        }
+        .icon-image-before('images/icons/blue-dot.svg', 6px, 6px);
     }
 
     // SKU na PDP
