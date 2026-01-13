@@ -24,5 +24,20 @@
             </action>
         </referenceBlock>
 
+
+        <referenceContainer name="content">
+            <container name="related.products.wrapper"
+                as="related_products"
+                label="Related Products Wrapper"
+                htmlTag="div"
+                htmlClass="related-products-wrapper"
+                after="-" />
+
+
+        </referenceContainer>
+
+        <move element="catalog.product.related"
+            destination="related.products.wrapper" />
+            
     </body>
 </page>
