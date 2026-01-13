@@ -1,0 +1,53 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container de itens relacionados na PDP
+    .block.related {
+        .lib-css(overflow, hidden);
+        .lib-css(padding, 0 6px);
+        .lib-css(max-width, @layout__max-width);
+    }
+
+    // Título dos itens relacionados na PDP
+    .block.related .block-title.title {
+        .lib-css(color, @color-black);
+        .lib-css(margin, 0);
+
+        strong {
+            .lib-css(font-size, 20px);
+        }
+    }
+
+    // Setas dos itens relacionados na PDP
+    .block.related .slick-prev.slick-arrow {
+        .lib-css(transform, translate(-26px, -96px));
+    }
+    .block.related .slick-next.slick-arrow {
+        .lib-css(transform, translate(19px, -96px));
+    }
+    
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Itens relacionados na PDP
+    .block.related .product-item .product-item-info {
+        .lib-css(width, 242px);
+    }
+
+    // Altura mínima dos itens relacionados na PDP
+    .block.related .product-item .product-item-info {
+        .lib-css(min-height, 524px);
+    }
+
+}
