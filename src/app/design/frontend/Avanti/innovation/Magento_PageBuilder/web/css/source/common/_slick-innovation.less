@@ -59,6 +59,15 @@
             .lib-css(background-image, url('@{baseDir}images/icons/right-arrow-white.svg'));
         }
     }
+
+    // Dots do Slider
+    .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
+        button {
+            .lib-css(background-color, @color-gray52);
+            .lib-css(width, 8px);
+            .lib-css(height, 8px);
+        }
+    }
 }
 
 //
@@ -72,9 +81,35 @@
         .lib-css(overflow, hidden);
     }
 
+    // Centraliza o conteúdo de cada slide
+    .slick-list.draggable .slick-track .slick-slide {
+        .lib-css(text-align, center);
+    }
+
     // Esconde as setas dos carrosseis em mobile
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-visibility-hidden();
     }    
+
+     // Dots do Slider
+    .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
+        .lib-css(padding, 15px 0 0 0);
+
+        button {
+            .lib-css(background-color, @color-gray52);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    
+    // Dots do Slider
+    .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
+        .lib-css(margin-top, 15px);
+    }
 }

@@ -3,6 +3,19 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Coluna esquerda de detalhes do produto na PDP
+    .product-details-columns__col.product-details-columns__col--left {
+        .lib-css(color, @color-gray40);
+    }
+
+    // Título das colunas de detalhes do produto na PDP
+    .product-details-columns__title {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+        .lib-css(font-size, 16px);
+    }
+
+
     // Tabela de especificações na PDP
     #product-attribute-specs-table {
         caption {
@@ -56,6 +69,16 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
+    // Container das colunas de detalhes do produto na PDP
+    .column.main .product-details-columns {
+        .lib-css(display, flex);
+        .lib-css(flex-wrap, wrap);
+        .lib-css(width, 100%);
+        .lib-css(max-width, @layout__max-width);
+        .lib-css(gap, 40px);
+        .lib-css(justify-content, center);
+
+    }
 
     // Formatação da tabela de especificações na PDP
     .additional-attributes-wrapper .additional-attributes {
@@ -68,7 +91,13 @@
         }
     }
 
+    // Coluna esquerda de detalhes do produto na PDP
     .product-details-columns__col.product-details-columns__col--left {
+        .lib-css(max-width, 560px);        
+    }
+    // Coluna direita de detalhes do produto na PDP
+    .product-details-columns__col.product-details-columns__col--right {
         .lib-css(max-width, 560px);
+        .lib-css(width, 100%);
     }
 }

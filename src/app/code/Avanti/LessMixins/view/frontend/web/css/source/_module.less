@@ -1,0 +1,25 @@
+.icon-image-before(@image-path, @width, @height) {
+    &::before {
+        content: '';
+        .lib-css(display, inline-block);
+        .lib-css(width, @width);
+        .lib-css(height, @height);
+
+        .lib-css(background-image, url('@{baseDir}@{image-path}'));
+        .lib-css(background-repeat, no-repeat);
+        .lib-css(background-position, center);
+        .lib-css(background-size, contain);
+    }
+}
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}

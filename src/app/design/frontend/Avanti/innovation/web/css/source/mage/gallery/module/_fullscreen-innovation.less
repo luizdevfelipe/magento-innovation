@@ -10,12 +10,16 @@
         .lib-css(color, @color-white);
     }
 
-    .fotorama__fullscreen .fotorama__stage .fotorama__fullscreen .fotorama__zoom-in {
+    // ícone de zoom in
+    .catalog-product-view .fotorama__stage .fotorama__zoom-in.zoom-in-loaded {
         .lib-css(background-image, url('@{baseDir}images/icons/plus.svg'));
+        .lib-css(background-position, 23px 35px) !important;
     }
 
-    .fotorama__fullscreen .fotorama__stage .fotorama__fullscreen .fotorama__zoom-out {
+    // ícone de zoom out
+    .catalog-product-view .fotorama__stage .fotorama__zoom-out.zoom-out-loaded {
         .lib-css(background-image, url('@{baseDir}images/icons/minus.svg'));
+        .lib-css(background-position, 23px 35px) !important;
     }
 
     // Borda da miniatura ativa

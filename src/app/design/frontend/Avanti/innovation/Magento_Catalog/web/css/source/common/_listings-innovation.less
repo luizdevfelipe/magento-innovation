@@ -44,6 +44,11 @@
         }
     }
 
+    // Container dos detalhes do Produto (às vezes disponível)
+    .product-item-info .product.details.product-item-details {
+        .lib-css(position, static);
+    }
+
     // Reviews do Produto
     .product-item .product-reviews-summary.short {
         .lib-visibility-hidden();
@@ -185,7 +190,7 @@
     }
 
     // Botão de adicionar à lista de desejos
-    .product-item-inner .actions-secondary .action.towishlist {
+    .product-item .product-item-info .actions-secondary .action.towishlist {
         .lib-css(position, absolute);
         .lib-css(top, 1px);
         .lib-css(left, 83%);
@@ -317,6 +322,7 @@
 
         .product-item-info {
             .lib-css(min-height, 426px);
+            .lib-css(width, auto);
         }
     }
 }

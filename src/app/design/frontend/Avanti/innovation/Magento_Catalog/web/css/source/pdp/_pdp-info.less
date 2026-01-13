@@ -8,10 +8,46 @@
         .lib-css(color, @color-black);
     }
 
+    // Texto de "Fora de estoque" na PDP
+    .product-info-main .product-info-stock-sku .stock.unavailable {
+        .lib-css(color, #FF2121);
+        .lib-css(font-size, 12px);
+        .lib-css(font-weight, 400);
+        .lib-css(text-transform, none);
+
+        .icon-image-before('images/icons/red-dot.svg', 6px, 6px);
+    }
+
     // SKU na PDP
     .product-info-stock-sku .product.attribute.sku .type {
         &::after {
             content: ':';
+        }
+    }
+
+    // Container do botão de Comprar na PDP
+    .product-options-bottom .box-tocart {
+        .lib-css(margin, 0);
+
+        div {
+            .lib-css(margin, 0);
+        }
+
+        // Botão de Comprar
+        .action.primary.tocart {
+            .lib-css(width, 100%);
+            .lib-css(text-transform, none);
+            .lib-css(font-size, 16px);
+            .lib-css(letter-spacing, normal);
+            .lib-css(font-weight, 700);
+            .lib-css(margin, 0);
+            .lib-css(border-radius, 8px);
+
+            &:hover {
+                .lib-css(background-color, darken(@theme__color__primary, 10%));
+                .lib-css(border, none);
+                .lib-css(color, @color-white);
+            }
         }
     }
 
@@ -23,17 +59,7 @@
         .lib-css(letter-spacing, normal);
         .lib-css(font-weight, 700);
 
-        &::before {
-            content: '';
-            .lib-css(display, inline-block);
-            .lib-css(width, 16px);
-            .lib-css(height, 16px);
-
-            .lib-css(background-image, url('@{baseDir}images/icons/heart-blue.svg'));
-            .lib-css(background-repeat, no-repeat);
-            .lib-css(background-position, center);
-            .lib-css(background-size, contain);
-        }
+        .icon-image-before('images/icons/heart-blue.svg', 16px, 16px);
     }
 
     // Botão de compartilhar 
@@ -49,18 +75,48 @@
         .lib-css(letter-spacing, normal);
         .lib-css(font-weight, 400);
 
-        &::before {
-            content: '';
-            .lib-css(display, inline-block);
-            .lib-css(width, 26px);
-            .lib-css(height, 26px);
-            .lib-css(margin-right, 17px);
+        .icon-image-before('images/icons/share-white.svg', 26px, 26px);
+    }
 
-            .lib-css(background-image, url('@{baseDir}images/icons/share-white.svg'));
-            .lib-css(background-repeat, no-repeat);
-            .lib-css(background-position, center);
-            .lib-css(background-size, contain);
+    // Container do formulário de calcular frete na PDP
+    .product-info-main .shipping-estimator {
+        .lib-css(margin-top, 16px);
+
+        .fields-wrapper {
+            .lib-css(display, flex);
+            .lib-css(gap, 8px);
         }
+    }
+
+    // Input de CEP na PDP
+    .product-info-main .field {
+        .lib-css(width, 100%);
+
+        .input-text.cep {
+            .lib-css(border, 1px solid @color-form-border);
+            .lib-css(border-radius, 8px);
+            .lib-css(padding, 10px);
+            .lib-css(height, auto);
+
+            &::placeholder {
+                .lib-css(color, @color-gray-middle3);
+            }
+        }
+    }
+
+
+
+    // Botão de calcular frete na PDP
+    .product-info-main .shipping-estimator .action.primary.estimate {
+        .lib-css(border-radius, 8px);
+        .lib-css(border, 1px solid @theme__color__primary);
+        .lib-css(background-color, @color-white);
+        .lib-css(color, @theme__color__primary);
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 14px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(width, 100px);
+        .lib-css(height, 40px);
     }
 }
 
@@ -72,4 +128,15 @@
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    .catalog-product-view .columns .column.main {
+        .lib-css(display, flex);
+        .lib-css(flex-wrap, wrap);
+    }
+
+    // Container do formulário de adicionar ao carrinho na PDP
+    .product-info-main .product-add-form {
+        .lib-css(padding-top, 0);
+    }
+}

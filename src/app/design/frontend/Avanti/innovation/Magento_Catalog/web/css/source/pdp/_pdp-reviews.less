@@ -1,15 +1,27 @@
 //
 //  Common
 //  _____________________________________________
-& when (@media-common =true) { 
+& when (@media-common =true) {
 
     // Oculta texto de avaliação na parte superior do produto
     .product-reviews-summary {
         .lib-visibility-hidden();
+        .lib-css(display, none);
     }
 
     // Oculta seção de avaliações na página do produto
     #reviews.product-full-width-section {
         .lib-visibility-hidden();
+        .lib-css(display, none);
     }
 }
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
