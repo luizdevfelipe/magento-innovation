@@ -6,6 +6,83 @@
     // Container do bloco do minecart
     .block.block-minicart.ui-dialog-content.ui-widget-content {
         .lib-css(padding, 0);
+        .lib-css(width, 390px);
+    }
+
+    // Container dos itens do minecart
+    #minicart-content-wrapper .block-content {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column);
+
+        .minicart-items-wrapper {
+            .lib-css(order, -1);
+            .lib-css(width, 100%);
+            .lib-css(margin, 0);
+            .lib-css(padding, 0);
+            .lib-css(color, @color-black);
+
+        }
+    }
+
+    // Container de cada item no minecart
+    .minicart-items-wrapper .item.product.product-item {
+        .lib-css(max-width, 100%);
+        .lib-css(padding, 30px 0);
+        .lib-css(margin, 0, 10px);
+    }
+
+    // Nome do produto no minecart
+    #minicart-content-wrapper .product-item-details .product-item-name a {
+        .lib-css(color, @color-black);
+    }
+
+    // Toggle de opções do produto no minecart
+    .product-item-details .product.options .toggle {
+        .lib-css(color, @theme__color__primary);
+
+        &::after {
+            .lib-css(color, @theme__color__primary);
+        }
+    }
+
+    // Esconder o total de itens no minecart
+    #minicart-content-wrapper .items-total {
+        .lib-css(display, none);
+    }
+
+    // Container do subtotal no minecart
+    #minicart-content-wrapper .block-content .subtotal {
+        .lib-css(display, flex);
+        .lib-css(justify-content, space-between);
+        .lib-css(padding, 81px 16px 0 16px);
+        .lib-css(color, @color-black);
+        .lib-css(box-shadow, 0px -13px 16px -4px #00000014);
+        .lib-css(margin, 0);
+    }
+
+    // Botão de Checkout no minecart
+    #minicart-content-wrapper .block-content .action.primary.checkout {
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 16px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(font-weight, 700);
+        .lib-css(border-radius, 8px);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Container das ações no minecart
+    #minicart-content-wrapper .block-content .actions {
+        .lib-css(margin, 0);
+
+        .secondary .action.viewcart {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, 700);
+        }
     }
 
     // Container de conteúdo do minecart
