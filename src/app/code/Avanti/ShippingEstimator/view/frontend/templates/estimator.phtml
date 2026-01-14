@@ -2,6 +2,14 @@
 
 /** @var \Magento\Framework\Escaper $escaper */
 $ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
+
+/** @var \Magento\Catalog\Model\Product $product */
+$product = $block->getSaleableItem();
+
+if (!$product || !$product->isAvailable()) {
+    return;
+}
+
 ?>
 <div class="shipping-estimator" data-estimator='{"ajaxUrl":"<?=
                                                             $escaper->escapeUrl($ajaxUrl) ?>"}'>
@@ -28,7 +36,7 @@ value="1" />
     </div>
 
     <div class="find-zip-code">
-        <a href="#"><?= $escaper->escapeHtml(__("I don't know my ZIP")) ?></a>
+        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t"><?= $escaper->escapeHtml(__("I don't know my ZIP")) ?></a>
     </div>
 
     <div class="results" style="margin-top:10px;"></div>
