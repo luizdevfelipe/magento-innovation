@@ -49,8 +49,7 @@ class Estimate extends Action
             if (!$productId || !$postcode) {
                 return $result->setData([
                     'success' => false,
-                    'message' => 'Product and postcode are 
-required.'
+                    'message' => 'Product and postcode are required.'
                 ]);
             }
 
@@ -98,8 +97,7 @@ required.'
         } catch (\Throwable $e) {
             return $result->setData([
                 'success' => false,
-                'message' => 'Error estimating shipping: ' .
-                    $e->getMessage()
+                'message' => 'Error estimating shipping: ' . $e->getMessage()
             ]);
         }
     }
