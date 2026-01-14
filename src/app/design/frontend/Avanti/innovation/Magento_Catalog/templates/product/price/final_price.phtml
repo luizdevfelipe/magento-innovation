@@ -9,6 +9,14 @@
 /** @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block */
 /** @var \Magento\Framework\Escaper $escaper */
 
+/** @var \Magento\Catalog\Model\Product $product */
+$product = $block->getSaleableItem();
+
+if (!$product || !$product->isAvailable()) {
+    echo "<script>document.body.classList.add('out-of-stock');</script>";
+    return;
+}
+
 // Retorna um objeto com o preço padrão do produto
 $priceModel = $block->getPriceType('regular_price');
 // Retorna um objeto com o preço final do produto (considera descontos e promoções)

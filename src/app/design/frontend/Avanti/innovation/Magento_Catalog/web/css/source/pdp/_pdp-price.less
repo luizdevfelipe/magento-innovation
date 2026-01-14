@@ -2,22 +2,12 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
-    
+
     // Container do preço e sku na PDP
     .product-info-main .product-info-price {
         .lib-css(display, flex);
         .lib-css(flex-direction, column);
         .lib-css(border, none);
-    }
-
-    // Texto de "Em estoque" na PDP
-    .product-info-price .product-info-stock-sku .stock.available {
-        .lib-css(color, @theme__color__primary);
-        .lib-css(font-size, 12px);
-        .lib-css(font-weight, 400);
-        .lib-css(text-transform, none);
-
-        .icon-image-before('images/icons/blue-dot.svg', 6px, 6px);
     }
 
     // SKU na PDP
@@ -30,8 +20,26 @@
     }
 
     // Container do preço na PDP
-    .product-info-price .price-box .normal-price .price-container .price {
+    .product-info-price .price-box .normal-price .price-container .price,
+    .catalog-product-view .special-price .price-wrapper .price {
         .lib-css(color, @theme__color__primary);
+    }
+
+    // Container do preço final na PDP
+    .catalog-product-view .price-box.price-final_price {
+        .lib-css(padding, 0);
+    }
+
+    // Textos de preço especial ocultos na PDP
+    .catalog-product-view .price-box.price-final_price .old-price .price-label,
+    .catalog-product-view .price-box.price-final_price .price-box .percent-discount,
+    .catalog-product-view .price-box.price-final_price .price-box .installment-text {
+        .lib-css(display, none);
+    }
+
+    .catalog-product-view .price-box.price-final_price .old-price .price {
+        .lib-css(font-size, 14px);
+        .lib-css(text-decoration, line-through);
     }
 }
 
@@ -46,7 +54,8 @@
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
     // Container do preço na PDP
-    .product-info-price .price-box .normal-price .price-container .price {
+    .product-info-price .price-box .normal-price .price-container .price,
+    .catalog-product-view .special-price .price-wrapper .price {
         .lib-css(font-size, 24px);
     }
 }
