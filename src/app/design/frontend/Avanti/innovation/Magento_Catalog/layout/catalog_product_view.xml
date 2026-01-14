@@ -25,6 +25,7 @@
         </referenceBlock>
 
 
+        <!-- Cria um novo container para os produtos relacionados -->
         <referenceContainer name="content">
             <container name="related.products.wrapper"
                 as="related_products"
@@ -32,10 +33,9 @@
                 htmlTag="div"
                 htmlClass="related-products-wrapper"
                 after="-" />
-
-
         </referenceContainer>
 
+        <!-- Move o bloco de produtos relacionados para o novo container -->
         <move element="catalog.product.related"
             destination="related.products.wrapper" />
             
