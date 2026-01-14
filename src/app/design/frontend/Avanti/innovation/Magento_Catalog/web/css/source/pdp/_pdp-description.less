@@ -3,6 +3,12 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+
+    // Oculta a seção de descrição fora de <main> do produto na PDP
+    .page-wrapper .page-main.page-main-details {
+        .lib-visibility-hidden();
+    }
+
     // Coluna esquerda de detalhes do produto na PDP
     .product-details-columns__col.product-details-columns__col--left {
         .lib-css(color, @color-gray40);
