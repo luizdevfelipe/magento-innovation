@@ -3,6 +3,11 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Wrapper dos itens relacionados na PDP
+    .column.main .related-products-wrapper {
+        .lib-css(width, 100%);
+    }
+
     // Container de itens relacionados na PDP
     .block.related {
         .lib-css(overflow, hidden);
@@ -26,6 +31,21 @@
     }
     .block.related .slick-next.slick-arrow {
         .lib-css(transform, translate(19px, -96px));
+    }
+
+    // Oculta opções de selecionar produtos relacionados na PDP
+    .catalog-product-view .block.related .block-actions,
+    .catalog-product-view .block.related .product.details.product-item-details .choice.related {
+        .lib-css(display, none);
+    }
+
+    // Centraliza os itens relacionados na PDP
+    .catalog-product-view .products.list.items.product-items {
+        .lib-css(text-align, center);
+
+        &>li.item.product.product-item {
+            .lib-css(margin, 0 5px);
+        }
     }
     
 }
