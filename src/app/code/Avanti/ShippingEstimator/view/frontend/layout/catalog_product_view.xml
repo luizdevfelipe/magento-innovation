@@ -4,7 +4,7 @@
 /page_configuration.xsd">
     <body>
         <referenceContainer name="product.info.main">
-            <block class="Magento\Framework\View\Element\Template"
+            <block class="Avanti\ShippingEstimator\Block\ShippingEstimator"
                 name="avanti.shipping.estimator"
                 template="Avanti_ShippingEstimator::estimator.phtml"
                 after="product.share" />
