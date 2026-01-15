@@ -1,12 +1,11 @@
 <?php
 
 /** @var \Magento\Framework\Escaper $escaper */
+/** @var \Avanti\ShippingEstimator\Block\ShippingEstimator $block */
+
 $ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
 
-/** @var \Magento\Catalog\Model\Product $product */
-$product = $block->getSaleableItem();
-
-if (!$product || !$product->isAvailable()) {
+if (!$block->productHasStock()) {
     return;
 }
 

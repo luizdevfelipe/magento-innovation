@@ -24,6 +24,9 @@
 
     // Tabela de especificações na PDP
     #product-attribute-specs-table {
+        .lib-css(border, none);
+        .lib-css(width, 100%);
+
         caption {
             .lib-visually-hidden-reset();
             .lib-css(color, @color-black);
@@ -41,11 +44,6 @@
             .lib-css(background-color, @theme__color__light-gray);
             .lib-css(border-radius, 8px);
         }
-    }
-
-    .additional-attributes-wrapper .additional-attributes {
-        .lib-css(border, none);
-        .lib-css(width, 100%);
 
         >tbody>tr {
 
@@ -62,13 +60,52 @@
         }
     }
 
-
 }
+
 
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container das colunas de detalhes do produto na PDP
+    .column.main .product-details-columns {
+        .lib-css(padding, 0 16px);
+    }
+
+    // Container da tabela na segunda coluna de detalhes do produto na PDP
+    .product-details-columns .additional-attributes-wrapper.table-wrapper {
+        .lib-css(border, none);
+    }
+
+    // Tabela de especificações na PDP
+    #product-attribute-specs-table {
+        caption {
+            .lib-css(display, block);
+            .lib-css(margin-bottom, 16px);
+        }
+
+        >tbody>tr {
+            .lib-css(line-height, 33px);
+            .lib-css(padding-left, 16px);
+            .lib-css(display, flex);
+            .lib-css(justify-content, flex-start);
+            .lib-css(gap, 73px);
+
+            >th {
+                .lib-css(display, inline-block);
+                .lib-css(background-color, transparent);
+            }
+
+            >td::before {
+                content: "";
+            } 
+        }
+
+    }
+
+}
+
 
 //
 //  Desktop
@@ -99,8 +136,9 @@
 
     // Coluna esquerda de detalhes do produto na PDP
     .product-details-columns__col.product-details-columns__col--left {
-        .lib-css(max-width, 560px);        
+        .lib-css(max-width, 560px);
     }
+
     // Coluna direita de detalhes do produto na PDP
     .product-details-columns__col.product-details-columns__col--right {
         .lib-css(max-width, 560px);

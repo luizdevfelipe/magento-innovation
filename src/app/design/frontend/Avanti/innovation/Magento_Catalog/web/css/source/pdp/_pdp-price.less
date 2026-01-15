@@ -46,7 +46,18 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container do preço e sku na PDP
+    .product-info-main .product-info-price {
+        .lib-css(margin, 0);
+    }
+
+    // SKU na PDP
+    .product-info-price .product-info-stock-sku {
+        .lib-css(margin-bottom, 24px);
+    }
+}
 
 //
 //  Desktop
@@ -57,5 +68,10 @@
     .product-info-price .price-box .normal-price .price-container .price,
     .catalog-product-view .special-price .price-wrapper .price {
         .lib-css(font-size, 24px);
+    }
+
+    // SKU na PDP
+    .product-info-price .product-info-stock-sku {
+        .lib-css(margin-bottom, 16px);
     }
 }

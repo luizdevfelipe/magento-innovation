@@ -52,6 +52,13 @@
     .catalog-product-view .swatch-attribute-options.clearfix {
         .lib-css(padding, 0);
     }
+
+    // Adicionar dois pontos após o label dos swatches na PDP
+    .catalog-product-view .swatch-attribute-label {
+        &::after {
+            content: ":";
+        }
+    }
 }
 
 //
