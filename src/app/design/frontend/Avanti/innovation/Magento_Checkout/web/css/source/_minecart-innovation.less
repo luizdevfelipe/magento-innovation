@@ -5,11 +5,29 @@
 
     // Container do bloco do minecart
     .block.block-minicart.ui-dialog-content.ui-widget-content {
+        .lib-css(display, flex) !important;
+        .lib-css(justify-content, flex-end);
+        .lib-css(background-color, #00000052);
         .lib-css(padding, 0);
-        .lib-css(width, 390px);
+        .lib-css(width, 100dvw);
+        .lib-css(height, 100dvh);
+        .lib-css(position, fixed);
         .lib-css(border, none);
-        .lib-css(box-shadow, 0px 4px 16px #00000014);
-        .lib-css(top, -58px);
+        .lib-css(top, -4px);
+    }
+
+    #minicart-content-wrapper {
+        .lib-css(width, 390px);
+        .lib-css(max-height, 900px);
+        .lib-css(margin-right, 10px);
+        .lib-css(background-color, @color-white);
+        .lib-css(box-shadow, 0px 4px 16px #00000052);
+        .lib-css(transition, transform 0.5s);
+        .lib-css(transform, translateX(390px));
+    }
+
+    .minicart-wrapper.active #minicart-content-wrapper {
+        .lib-css(transform, translateX(0));
     }
 
     // Container dos itens do minecart
@@ -19,13 +37,15 @@
 
         .minicart-items-wrapper {
             .lib-css(order, -1);
+            .lib-css(max-height, 600px);
             .lib-css(width, 100%);
             .lib-css(margin, 0);
             .lib-css(padding, 0);
             .lib-css(color, @color-black);
-
         }
     }
+
+
 
     // Container de cada item no minecart
     .minicart-items-wrapper .item.product.product-item {
@@ -185,7 +205,22 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    .block.block-minicart.ui-dialog-content.ui-widget-content {
+        .lib-css(left, 0);
+    }
+
+    // Container interno do minecart
+    #minicart-content-wrapper {
+        .lib-css(margin, 0);
+    }
+
+    // Container das ações no minecart
+    .block-content .minicart-items-wrapper .product-item-details .product.actions {
+        .lib-css(float, right);
+    }
+}
 
 //
 //  Desktop
