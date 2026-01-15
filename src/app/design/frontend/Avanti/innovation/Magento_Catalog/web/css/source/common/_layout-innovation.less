@@ -1,7 +1,13 @@
 //
 //  Common
 //  _____________________________________________
-& when (@media-common =true) {}
+& when (@media-common =true) {
+
+    // Oculta overflow horizontal na PDP
+    .catalog-product-view .page-wrapper {
+        .lib-css(overflow, hidden);
+    }
+}
 
 //
 //  Mobile
