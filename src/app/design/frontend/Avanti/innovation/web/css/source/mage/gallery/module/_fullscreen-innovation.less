@@ -40,12 +40,13 @@
 
     // Ícone da seta direita na visualização fullscreen
     .fotorama__nav-wrap.fotorama__nav-wrap--vertical .fotorama__thumb__arr.fotorama__thumb__arr--left .fotorama__thumb--icon {
-        .lib-css(background-image, url('@{baseDir}images/icons/up-arrow-black.svg'));
+        .lib-css(background-image, url('@{baseDir}images/icons/down-arrow-black.svg'));
         .lib-css(width, 16px);
         .lib-css(height, 10px);
         .lib-css(background-repeat, no-repeat);
         .lib-css(background-position, center);
         .lib-css(background-size, contain);
+        .lib-css(transform, rotate(180deg));
     }
 
     // Borda arredondada das miniaturas na visualização fullscreen
@@ -57,9 +58,22 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container do fullscreen com borda lateral 
+    .catalog-product-view .fotorama__stage .fotorama__img {
+        .lib-css(border, 1px solid @color-gray-darken2) !important;
+    }
+}
 
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Container do fullscreen com borda lateral
+    // .catalog-product-view.out-of-stock .fotorama__stage {
+    //     .lib-css(max-width, 600px);
+    //     .lib-css(border, 1px solid @color-gray-darken1);
+    // }
+}
