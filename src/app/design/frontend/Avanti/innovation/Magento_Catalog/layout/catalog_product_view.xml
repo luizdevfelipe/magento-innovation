@@ -4,6 +4,7 @@
 
     <head>
         <script src="Magento_Catalog::js/related-products-slick.js" defer="defer"></script>
+        <script src="Magento_Catalog::js/fatorama-wishlist.js" defer="defer"></script>
     </head>
 
     <body>
