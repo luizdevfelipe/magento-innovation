@@ -61,12 +61,19 @@
     }
 
     // Dots do Slider
-    .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
+    .on-sale-shelves .slick-dots,
+    .block.related .slick-dots {
         button {
             .lib-css(background-color, @color-gray52);
             .lib-css(width, 8px);
             .lib-css(height, 8px);
         }
+    }
+
+    // Dot ativo do Slider
+    .on-sale-shelves .slick-dots li.slick-active button,
+    .block.related .slick-dots li.slick-active button {
+        .lib-css(background-color, #1c1918);
     }
 }
 
@@ -74,7 +81,7 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
-    
+
     // Evita overflow horizontal em blocos estáticos com carrossel
     // Pode dar conflito com as setas caso usado em conjunto
     .widget.block.block-static-block:has(.slick-list.draggable) {
@@ -90,10 +97,11 @@
     .slick-next.slick-arrow,
     .slick-prev.slick-arrow {
         .lib-visibility-hidden();
-    }    
+    }
 
-     // Dots do Slider
-    .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
+    // Dots do Slider
+    .on-sale-shelves .slick-dots,
+    .block.related .slick-dots {
         .lib-css(padding, 15px 0 0 0);
 
         button {
@@ -107,7 +115,7 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
-    
+
     // Dots do Slider
     .products.list.items.product-items.slick-initialized.slick-slider.slick-dotted .slick-dots {
         .lib-css(margin-top, 15px);
