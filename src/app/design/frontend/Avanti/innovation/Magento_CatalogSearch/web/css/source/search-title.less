@@ -2,6 +2,7 @@
 //  Common
 //  _____________________________________________
 & when (@media-common =true) {
+
     // Configuração do Título da Página com Termo de Busca
     .page-main .search-term {
         .lib-css(color, @theme__color__primary);
@@ -26,13 +27,6 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
-    // Configuração do Título na PDP
-    .catalog-product-view .page-title {
-        .lib-css(font-size, 16px);
-        .lib-css(text-align, left);
-    }
-
-    
     // Configuração do Título da Página de Categorias
     .catalog-category-view .page-title-wrapper:not(:has(.search-term)) {
         .lib-css(text-align, center);
