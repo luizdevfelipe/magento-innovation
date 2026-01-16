@@ -5,49 +5,62 @@ namespace Avanti\ShippingEstimator\Block;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Registry;
 use Magento\Catalog\Api\ProductRepositoryInterface;
+use \Magento\Framework\App\Config\ScopeConfigInterface;
+
+use Magento\Catalog\Block\Product\View as ProductView;
+
 
 class ShippingEstimator extends Template
 {
-    private Registry $registry;
-    private ProductRepositoryInterface $productRepository;
+    const XML_PATH_ENABLED  = 'avanti_shippingestimator/general/enabled';
+    const XML_PATH_CEP_LINK    = 'avanti_shippingestimator/general/cep_link';
+
+    private ProductView $productView;
+    private ScopeConfigInterface $scopeConfig;
 
     public function __construct(
         Template\Context $context,
-        Registry $registry,
-        ProductRepositoryInterface $productRepository,
+        ProductView $productView,
+        ScopeConfigInterface $scopeConfig,
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->registry = $registry;
-        $this->productRepository = $productRepository;
+        $this->productView = $productView;
+        $this->scopeConfig = $scopeConfig;
     }
 
-    /**
-     * Produto atual da PDP
-     */
     public function getCurrentProduct(): ?\Magento\Catalog\Model\Product
     {
-        $product = $this->registry->registry('current_product');
-        return $product instanceof \Magento\Catalog\Model\Product ? $product : null;
+        return $this->productView->getProduct();
     }
 
-    /**
-     * Verifica se o produto possui estoque
-     */
-    public function productHasStock(?string $sku = null): bool
+    public function productHasStock(): bool
     {
-        try {
-            $product = $sku
-                ? $this->productRepository->get($sku)
-                : $this->getCurrentProduct();
+        $product = $this->getCurrentProduct();
 
-            if (!$product) {
-                return false;
-            }
-
-            return (bool) $product->isSaleable();
-        } catch (\Throwable $e) {
+        if (!$product) {
             return false;
         }
+
+        return (bool) $product->isSaleable();
     }
+
+    public function isEnabled()
+    {
+        return (bool) $this->getConfig(self::XML_PATH_ENABLED);
+    }
+
+    public function getCepLink()
+    {
+        return $this->getConfig(self::XML_PATH_CEP_LINK);
+    }
+
+    private function getConfig($path)
+    {
+        return $this->scopeConfig->getValue(
+            $path,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
+    }
+
 }

@@ -19,6 +19,11 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
+    // Breadcrumbs em PDP
+    .catalog-product-view .breadcrumbs {
+        .lib-css(padding, 0);
+    }
+
     // Sidebar
     .columns .sidebar.sidebar-main:has(.filter) {
         .lib-css(width, 188px);

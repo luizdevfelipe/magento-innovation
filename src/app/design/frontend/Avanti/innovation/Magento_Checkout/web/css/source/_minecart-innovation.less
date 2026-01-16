@@ -7,13 +7,14 @@
     .block.block-minicart.ui-dialog-content.ui-widget-content {
         .lib-css(display, flex) !important;
         .lib-css(justify-content, flex-end);
-        .lib-css(background-color, #00000052);
+        .lib-css(background-color, rgba(0, 0, 0, 0.322));
         .lib-css(padding, 0);
         .lib-css(width, 100dvw);
         .lib-css(height, 100dvh);
         .lib-css(position, fixed);
         .lib-css(border, none);
         .lib-css(top, -4px);
+        .lib-css(z-index, 1001);
     }
 
     #minicart-content-wrapper {
@@ -21,7 +22,7 @@
         .lib-css(max-height, 900px);
         .lib-css(margin-right, 10px);
         .lib-css(background-color, @color-white);
-        .lib-css(box-shadow, 0px 4px 16px #00000052);
+        .lib-css(box-shadow, 0px 4px 16px rgba(0, 0, 0, 0.322));
         .lib-css(transition, transform 0.5s);
         .lib-css(transform, translateX(390px));
     }
@@ -45,8 +46,6 @@
         }
     }
 
-
-
     // Container de cada item no minecart
     .minicart-items-wrapper .item.product.product-item {
         .lib-css(max-width, 100%);
@@ -68,6 +67,9 @@
     // Input de quantidade do produto no minecart
     .minicart-items-wrapper .product-item-pricing .item-qty {
         .lib-css(border, 1px solid @color-form-border);
+        .lib-css(border-radius, 2px);
+        .lib-css(width, 48px);
+        .lib-css(height, 34px);
     }
 
     // Toggle de opções do produto no minecart
@@ -92,6 +94,12 @@
         .lib-css(color, @color-black);
         .lib-css(box-shadow, 0px -13px 16px -4px #00000014);
         .lib-css(margin, 0);
+
+        // Subtotal 
+        .price-wrapper .price {
+            .lib-css(font-weight, 400);
+            .lib-css(font-size, 14px);
+        }
     }
 
     // Botão de Checkout no minecart
@@ -102,6 +110,7 @@
         .lib-css(font-weight, 700);
         .lib-css(border-radius, 8px);
         .lib-css(margin, 85px 0 45px 0);
+        .lib-css(width, 95%);
 
         &:hover {
             .lib-css(background-color, darken(@theme__color__primary, 10%));
@@ -112,7 +121,11 @@
 
     // Container das ações no minecart
     #minicart-content-wrapper .block-content .actions {
-        .lib-css(margin, -34px 0 0 0);
+        .lib-css(margin, -34px -11px 0 0);
+
+        .primary {
+            .lib-css(margin-right, 0);
+        }
 
         .primary .action.edit {
             .lib-css(width, 126px);
@@ -149,20 +162,39 @@
         }
     }
 
+    // Botões de aumentar/diminuir quantidade no minecart
+    #minicart-content-wrapper .cart-qty-stepper button.action {
+        .lib-css(background-color, transparent);
+        .lib-css(width, 20px);
+        .lib-css(padding, 0);
+        .lib-css(color, #827D7D);
+        .lib-css(font-size, 16px);
+    }
+
     // Botão de atualizar item no minecart
     #minicart-content-wrapper .product-item-pricing .update-cart-item {
         .lib-css(padding, 0);
         .lib-css(margin, 0 0 0 15px);
-        .lib-css(width, 127px);
         .lib-css(height, 32px);
         .lib-css(background-color, @theme__color__primary);
         .lib-css(color, @color-white);
         .lib-css(text-transform, none);
         .lib-css(letter-spacing, normal);
+        .lib-css(position, absolute);
+        .lib-css(z-index, 1);
+        .lib-css(top, 3px);
 
         span {
             .lib-css(font-size, 14px);
         }
+    }
+
+    // Container da quantidade do item no minecart
+    #minicart-content-wrapper .product-item-pricing .details-qty.qty {
+        .lib-css(position, relative);
+        .lib-css(display, flex);
+        .lib-css(align-items, center);
+        .lib-css(justify-content, flex-start);
     }
 
     // Container de conteúdo do minecart
@@ -220,9 +252,27 @@
     .block-content .minicart-items-wrapper .product-item-details .product.actions {
         .lib-css(float, right);
     }
+
+    // Container dos botões no minecart
+    #minicart-content-wrapper .block-content .actions {
+        .lib-css(margin, -34px 0px 0 0);
+    }
+
+    // Botão de atualizar item no minecart
+    #minicart-content-wrapper .product-item-pricing .update-cart-item {
+        .lib-css(width, 83px);
+        .lib-css(right, 40px);
+    }
 }
 
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Botão de atualizar item no minecart
+    #minicart-content-wrapper .product-item-pricing .update-cart-item {
+        .lib-css(width, 106px);
+        .lib-css(right, 21px);
+    }
+}

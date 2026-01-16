@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
+    <default>
+        <avanti_shippingestimator>
+            <general>
+                <enabled>1</enabled>
+                <cep_link></cep_link>
+            </general>
+        </avanti_shippingestimator>
+    </default>
+</config>

@@ -5,7 +5,7 @@
 
 $ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
 
-if (!$block->productHasStock()) {
+if (!$block->productHasStock() || !$block->isEnabled()) {
     return;
 }
 
@@ -35,7 +35,7 @@ value="1" />
     </div>
 
     <div class="find-zip-code">
-        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t"><?= $escaper->escapeHtml(__("I don't know my ZIP")) ?></a>
+        <a href="<?= $escaper->escapeUrl($block->getCepLink()) ?>"><?= $escaper->escapeHtml(__("I don't know my ZIP")) ?></a>
     </div>
 
     <div class="results" style="margin-top:10px;"></div>

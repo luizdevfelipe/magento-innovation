@@ -3,6 +3,12 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
+    // Configuração do Título na PDP
+    .catalog-product-view .page-title {
+        .lib-css(font-size, 16px);
+        .lib-css(text-align, left);
+    }
+
     // Container de informações do produto na PDP
     .column.main .product-info-main {
         .lib-css(color, @color-black);
@@ -81,8 +87,13 @@
         }
     }
 
+    // Remove margem inferior do último fieldset na PDP
+    .catalog-product-view .fieldset:last-child {
+        .lib-css(margin-bottom, 0);
+    }
+
     // Container do botão de Comprar na PDP
-    .product-options-bottom .box-tocart {
+    .product-info-main .box-tocart {
         .lib-css(margin, 0);
 
         // Botão de Comprar
@@ -110,17 +121,20 @@
         .lib-css(justify-content, center);
         .lib-css(gap, 6px);
         .lib-css(width, 100%);
+        .lib-css(max-width, 447px);
         .lib-css(height, 34px);
         .lib-css(background-color, @theme__color__primary);
         .lib-css(color, @color-form-border);
         .lib-css(text-align, center);
         .lib-css(line-height, 32px);
+        .lib-css(margin-bottom, 22px);
 
         .icon-image-before('images/icons/alert-gray.svg', 16px, 16px);
     }
 
     // Botão de Wishlist 
-    .product-social-links .product-addto-links .action.towishlist {
+    .product-social-links .product-addto-links .action.towishlist,
+    .product.media .action.towishlist {
         .lib-css(color, @theme__color__primary);
         .lib-css(text-transform, none);
         .lib-css(font-size, 14px);
@@ -208,13 +222,19 @@
         .lib-css(padding, 0 16px);
     }
 
+    // Container da imagem do produto na PDP
+    .catalog-product-view .column.main .product.media {
+        .lib-css(padding, 0 16px);
+    }
+
     // Quantity na PDP
-    .fieldset .field.qty .control.qty-stepper  {
+    .fieldset .field.qty .control.qty-stepper {
         .lib-css(margin-bottom, 24px);
     }
 
     // Container do botão de wishlist
-    .product-info-main .product-social-links .product-addto-links {
+    .product-info-main .product-social-links .product-addto-links,
+    .product-info-main .product-social-links {
         .lib-css(text-align, left);
     }
 
@@ -234,6 +254,19 @@
         .lib-css(flex-wrap, wrap);
     }
 
+    // Container da imagem do produto na PDP
+    .catalog-product-view.out-of-stock .product.media {
+        .lib-css(position, relative);
+    }
+
+    // Botão de wishlist dentro do container da imagem do produto quando o produto está fora de estoque
+    .out-of-stock .product.media .action.towishlist {
+        .lib-css(position, absolute);
+        .lib-css(right, 25px);
+        .lib-css(top, 5px);
+        .lib-css(z-index, 1);
+    }
+
     // Container do formulário de adicionar ao carrinho na PDP
     .catalog-product-view .product-info-main .product-add-form {
         .lib-css(margin-top, 30px);
@@ -242,5 +275,20 @@
     // Link de encontrar CEP na PDP
     .product-info-main .shipping-estimator .find-zip-code {
         .lib-css(margin-top, 8px);
+    }
+
+    // Ajusta margem do SKU quando o produto está fora de estoque
+    .out-of-stock .product-info-main .product-info-stock-sku {
+        .lib-css(margin-bottom, 10px);
+    }
+
+    // Ajusta margem do preço e do aviso de estoque esgotado
+    .out-of-stock .product-info-price,
+    .out-of-stock .product.alert.stock {
+        .lib-css(margin, 0);
+    }
+
+    .out-of-stock.catalog-product-view .product-info-main .product-add-form {
+        .lib-css(margin-top, 13px);
     }
 }
