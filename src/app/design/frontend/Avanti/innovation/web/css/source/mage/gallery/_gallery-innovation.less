@@ -1,0 +1,30 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    .fotorama__nav.fotorama__nav--dots .fotorama__nav__frame.fotorama__nav__frame--dot.fotorama__active .fotorama__dot {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border-color, @theme__color__primary);
+    }
+
+    .fotorama__nav.fotorama__nav--dots .fotorama__nav__frame.fotorama__nav__frame--dot .fotorama__dot {
+        .lib-css(border, none);
+        .lib-css(background-color, @color-gray-darken2);
+        .lib-css(width, 8px);
+        .lib-css(height, 8px);
+    }
+
+    .fotorama__nav-wrap.fotorama__nav-wrap--vertical .fotorama__thumb__arr.fotorama__thumb__arr--left {
+        .lib-css(top, -14px);
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
