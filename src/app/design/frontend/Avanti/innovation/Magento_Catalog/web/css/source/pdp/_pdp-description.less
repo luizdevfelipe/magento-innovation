@@ -56,6 +56,7 @@
                 .lib-css(border, none);
                 .lib-css(padding, 0);
                 .lib-css(vertical-align, unset);
+                .lib-css(margin, auto);
             }
         }
     }
@@ -71,6 +72,15 @@
     // Container das colunas de detalhes do produto na PDP
     .column.main .product-details-columns {
         .lib-css(padding, 0 16px);
+    }
+
+    // Coluna esquerda de detalhes do produto na PDP
+    .product-details-columns__col.product-details-columns__col--left {
+        .lib-css(margin, 60px 0 48px 0);
+    }
+
+    .product-details-columns__col.product-details-columns__col--right {
+        .lib-css(margin-bottom, 60px);
     }
 
     // Container da tabela na segunda coluna de detalhes do produto na PDP
@@ -90,7 +100,6 @@
             .lib-css(padding-left, 16px);
             .lib-css(display, flex);
             .lib-css(justify-content, flex-start);
-            .lib-css(gap, 73px);
 
             >th {
                 .lib-css(display, inline-block);
@@ -99,7 +108,7 @@
 
             >td::before {
                 content: "";
-            } 
+            }
         }
 
     }
@@ -120,17 +129,20 @@
         .lib-css(max-width, @layout__max-width);
         .lib-css(gap, 40px);
         .lib-css(justify-content, center);
-
+        .lib-css(margin-bottom, 82px);
     }
 
     // Formatação da tabela de especificações na PDP
-    .additional-attributes-wrapper .additional-attributes {
+    #product-attribute-specs-table {
         .lib-css(max-width, 560px);
 
         >tbody>tr {
             .lib-css(height, 35px);
             .lib-css(line-height, 33px);
-            .lib-css(padding-left, 16px);
+
+            th {
+                .lib-css(padding-left, 16px);
+            }
         }
     }
 
