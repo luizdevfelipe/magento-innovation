@@ -2,9 +2,7 @@
 
 namespace Avanti\ShippingEstimator\Block;
 
-use Magento\Framework\View\Element\Template;
-use Magento\Framework\Registry;
-use Magento\Catalog\Api\ProductRepositoryInterface;
+use \Magento\Framework\View\Element\Template;
 use \Magento\Framework\App\Config\ScopeConfigInterface;
 
 use Magento\Catalog\Block\Product\View as ProductView;
@@ -29,11 +27,19 @@ class ShippingEstimator extends Template
         $this->scopeConfig = $scopeConfig;
     }
 
+    /**
+     * Get the current product from the product view block.
+     * @return \Magento\Catalog\Model\Product|null
+     */        
     public function getCurrentProduct(): ?\Magento\Catalog\Model\Product
     {
         return $this->productView->getProduct();
     }
 
+    /**
+     * Check if the current product has stock available.
+     * @return bool
+     */
     public function productHasStock(): bool
     {
         $product = $this->getCurrentProduct();
@@ -45,16 +51,29 @@ class ShippingEstimator extends Template
         return (bool) $product->isSaleable();
     }
 
+    /**
+     * Check if the shipping estimator feature is enabled.
+     * @return bool
+     */
     public function isEnabled()
     {
         return (bool) $this->getConfig(self::XML_PATH_ENABLED);
     }
 
+    /**
+     * Get the CEP link from configuration.
+     * @return string|null
+     */
     public function getCepLink()
     {
         return $this->getConfig(self::XML_PATH_CEP_LINK);
     }
 
+    /**
+     * Retrieve configuration value by path.
+     * @param string $path
+     * @return mixed
+     */
     private function getConfig($path)
     {
         return $this->scopeConfig->getValue(
