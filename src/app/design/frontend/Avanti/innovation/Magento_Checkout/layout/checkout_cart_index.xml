@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <!-- Troca de template no footer de checkout -->
+        <referenceBlock name="footer_row_1">
+            <arguments>
+                <argument name="block_id" xsi:type="string">footer_row_1_checkout</argument>
+            </arguments>
+        </referenceBlock>
+
+
+    </body>
+</page>
