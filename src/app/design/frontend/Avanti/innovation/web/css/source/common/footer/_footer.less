@@ -19,6 +19,12 @@
         .lib-css(height, auto);
     }
 
+    // Container principal quando o footer é do bloco de checkout
+    .page-footer:has(.footer-checkout) {
+        .lib-css(height, auto);
+        .lib-css(padding, 0);
+    }
+
     // Estilos do conteúdo
     .footer.content {
         .lib-css(border, none);
@@ -42,6 +48,16 @@
                 }
 
             }
+
+        }
+
+        .footer.content:has(.footer-checkout) {}
+
+        // Estilos quando o footer é do bloco de checkout
+        .footer-rows-wrapper:has(.footer-checkout) {
+            .lib-css(display, flex);
+            .lib-css(align-items, center);
+            .lib-css(flex-wrap, wrap);
 
         }
 
@@ -116,6 +132,11 @@
             .lib-css(gap, 21px);
         }
 
+        // Estilos quando o footer é do bloco de checkout
+        .footer-checkout {
+            .lib-css(margin-top, 40px);
+            .lib-css(text-align, center);
+        }
     }
 
     // Estilos sobre o container de conteúdo
@@ -185,6 +206,12 @@
 
         }
 
+    }
+
+    // Estilos quando o footer é do bloco de checkout
+    .page-footer .footer.content .footer-rows-wrapper:has(.footer-checkout) {
+        .lib-css(min-height, auto);
+        .lib-css(padding, 64px 0);
     }
 
 }
