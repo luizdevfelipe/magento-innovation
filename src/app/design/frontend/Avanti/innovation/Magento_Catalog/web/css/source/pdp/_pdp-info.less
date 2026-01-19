@@ -165,51 +165,6 @@
         .icon-image-before('images/icons/share-white.svg', 26px, 26px);
     }
 
-    // Container do formulário de calcular frete na PDP
-    .product-info-main .shipping-estimator {
-        .lib-css(margin-top, 16px);
-
-        .fields-wrapper {
-            .lib-css(display, flex);
-            .lib-css(gap, 8px);
-            .lib-css(margin-top, 16px);
-        }
-    }
-
-    // Input de CEP na PDP
-    .product-info-main .field {
-        .lib-css(width, 100%);
-
-        .input-text.cep {
-            .lib-css(border, 1px solid @color-form-border);
-            .lib-css(border-radius, 8px);
-            .lib-css(padding, 10px);
-            .lib-css(height, auto);
-
-            &::placeholder {
-                .lib-css(color, @color-gray-middle3);
-            }
-        }
-    }
-
-    // Botão de calcular frete na PDP
-    .product-info-main .shipping-estimator .action.primary.estimate {
-        .lib-css(border-radius, 8px);
-        .lib-css(border, 1px solid @theme__color__primary);
-        .lib-css(background-color, @color-white);
-        .lib-css(color, @theme__color__primary);
-        .lib-css(text-transform, none);
-        .lib-css(font-size, 14px);
-        .lib-css(letter-spacing, normal);
-        .lib-css(width, 100px);
-        .lib-css(height, 40px);
-    }
-
-    // Link de "Encontrar CEP" na PDP
-    .product-info-main .shipping-estimator .find-zip-code a {
-        .lib-css(color, @color-black);
-        .lib-css(font-weight, 600);
-    }
 }
 
 //
@@ -238,10 +193,6 @@
         .lib-css(text-align, left);
     }
 
-    // Link de encontrar CEP na PDP
-    .product-info-main .shipping-estimator .find-zip-code {
-        .lib-css(margin-top, 18px);
-    }
 }
 
 //
@@ -262,7 +213,7 @@
     // Botão de wishlist dentro do container da imagem do produto quando o produto está fora de estoque
     .out-of-stock .product.media .action.towishlist {
         .lib-css(position, absolute);
-        .lib-css(right, 25px);
+        .lib-css(right, 19px);
         .lib-css(top, 5px);
         .lib-css(z-index, 1);
     }
@@ -270,11 +221,6 @@
     // Container do formulário de adicionar ao carrinho na PDP
     .catalog-product-view .product-info-main .product-add-form {
         .lib-css(margin-top, 30px);
-    }
-
-    // Link de encontrar CEP na PDP
-    .product-info-main .shipping-estimator .find-zip-code {
-        .lib-css(margin-top, 8px);
     }
 
     // Ajusta margem do SKU quando o produto está fora de estoque

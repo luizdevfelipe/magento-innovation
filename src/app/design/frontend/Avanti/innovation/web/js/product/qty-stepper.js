@@ -130,6 +130,7 @@ define(['jquery'], function ($) {
             // Importante: dispara eventos para validação e possíveis listeners do Magento
             // 'change' - notifica mudança de valor
             // 'input' - dispara validação em tempo real
+            // 'keyup' - módulos de checkout escuta esse evento para atualizar valores
             $input.trigger('change');
             $input.trigger('input');
             $input.trigger('keyup');

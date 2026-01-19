@@ -1,0 +1,90 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Botão de calcular frete na PDP
+    .shipping-estimator .action.primary.estimate {
+        .lib-css(border-radius, 8px);
+        .lib-css(border, 1px solid @theme__color__primary);
+        .lib-css(background-color, @color-white);
+        .lib-css(color, @theme__color__primary);
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 14px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(width, 100px);
+        .lib-css(height, 40px);
+    }
+
+    // Link de "Encontrar CEP" na PDP
+    .shipping-estimator .find-zip-code a {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 600);
+    }
+
+    // Container do formulário de calcular frete na PDP
+    .shipping-estimator {
+        .lib-css(margin-top, 16px);
+
+        .fields-wrapper {
+            .lib-css(display, flex);
+            .lib-css(gap, 8px);
+            .lib-css(margin-top, 16px);
+        }
+    }
+
+    // Input de CEP na PDP
+    .shipping-estimator .field {
+        .lib-css(width, 100%);
+
+        .input-text.cep {
+            .lib-css(border, 1px solid #DDDDDD);
+            .lib-css(border-radius, 8px);
+            .lib-css(padding, 10px);
+            .lib-css(height, auto);
+
+            &::placeholder {
+                .lib-css(color, @color-gray-middle3);
+            }
+        }
+    }
+
+    .shipping-estimator .results ul {
+        .lib-css(list-style, none);
+        .lib-css(padding, 0);
+
+        li {
+            .lib-css(display, flex);
+            .lib-css(justify-content, space-between);
+
+            .lib-css(padding, 8px);
+        }
+
+        & li:nth-child(odd) {
+            .lib-css(border-radius, 8px);
+            .lib-css(background-color, @color-white-smoke);
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Link de encontrar CEP na PDP
+    .shipping-estimator .find-zip-code {
+        .lib-css(margin-top, 18px);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Link de encontrar CEP na PDP
+    .shipping-estimator .find-zip-code {
+        .lib-css(margin-top, 8px);
+    }
+}

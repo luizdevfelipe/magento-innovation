@@ -20,8 +20,6 @@ require([
             var $container = $('.out-of-stock .product.media');
             var $originalLink = $('.action.towishlist').first();
 
-            console.log($container)
-
             // validações
             if (!$container.length || !$originalLink.length) {
                 return;
@@ -35,7 +33,7 @@ require([
             // cria o clone
             var $clonedLink = $originalLink.clone(true, true);
 
-            // remove o span APENAS do clone
+            // remove o span apenas do clone
             $clonedLink.find('span').remove();
 
             // adiciona ao container

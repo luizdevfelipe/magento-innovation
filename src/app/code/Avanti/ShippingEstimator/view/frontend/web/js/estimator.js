@@ -53,7 +53,7 @@ define([
 
                 var html = '<ul>';
                 res.rates.forEach(function (r) {
-                    html += '<li><strong>' + r.title + '</strong> — ' + r.price + '</li> '; 
+                    html += '<li><strong>' + r.title + '</strong> ' + r.price + '</li> '; 
                 });
                 html += '</ul>';
 
