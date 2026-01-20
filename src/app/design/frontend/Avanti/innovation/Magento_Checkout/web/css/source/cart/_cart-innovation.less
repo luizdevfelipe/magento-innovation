@@ -1,0 +1,225 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container do Resumo do Carrinho
+    .cart-container .cart-summary {
+        .lib-css(position, static);
+        .lib-css(background-color, @color-white);
+        .lib-css(border, 1px solid @color-gray79);
+        .lib-css(border-radius, 10px);
+        .lib-css(color, @color-gray46);
+
+        select,
+        input[type="text"] {
+            .lib-css(border, 1px solid #9D9D9D);
+            .lib-css(color, @color-gray46);
+        }
+    }
+
+    // Texto de consulta de frete
+    #block-shipping-heading {
+        color: black;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    // Remover seta do título de consulta do bloco de frete
+    .cart-summary .block.shipping.active .title::after {
+        content: "";
+    }
+
+    // Labels do campo de consulta de frete
+    .cart-container .fieldset.estimate .label {
+        .lib-css(color, @color-black);
+    }
+
+    // Container dos métodos de frete
+    .cart-summary .fieldset.rate .items.methods {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+    }
+
+    // Total do pedido
+    .cart-summary .table-wrapper tr.grand.totals {
+        .lib-css(color, @color-black);
+    }
+
+    // Botão de Finalizar Compra
+    .cart-summary .item .action.primary.checkout {
+        .lib-css(font-size, 16px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(border-radius, 8px);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Texto de Multicheckout
+    .cart-summary .item .action.multicheckout {
+        .lib-css(color, black);
+        .lib-css(font-size, 13px);
+        .lib-css(text-decoration, underline);
+    }
+
+    // Botão de Atualizar Carrinho
+    .cart-container .cart.main.actions .action.update {
+        .lib-css(letter-spacing, normal);
+        .lib-css(font-size, 16px);
+        .lib-css(font-weight, 700);
+        .lib-css(color, white);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(border-radius, 8px);
+        .lib-css(padding, 14px 24px);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Título do Cupom de Desconto
+    #block-discount-heading {
+        .lib-css(color, #353535);
+        .lib-css(font-size, 14px);
+        .lib-css(font-weight, 500);
+    }
+
+    // Input do Cupom de Desconto
+    #coupon_code {
+        .lib-css(height, 30px);
+        .lib-css(border-color, #A9A9A9);
+
+        &::placeholder {
+            .lib-css(color, transparent);
+        }
+    }
+
+    // Botão de Aplicar Cupom de Desconto
+    .fieldset.coupon .actions-toolbar .primary .action.apply.primary {
+        .lib-css(letter-spacing, normal);
+        .lib-css(font-size, 13px);
+        .lib-css(font-weight, 500);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
+    }
+
+    // Container de Produtos CrossSell
+    .column.main .cart-container .block.crosssell {
+        .lib-css(width, 100%);
+        .lib-css(padding, 0);
+    }
+
+    // Título de Produtos CrossSell
+    .cart-container .block.crosssell #block-crosssell-heading {
+        .lib-css(font-size, 20px);
+        .lib-css(color, @color-black);
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container do Resumo do Carrinho
+    .cart-container .cart-summary {
+        .lib-css(padding, 27px 34px 26px 34px);
+        .lib-css(margin, 0 15px);
+    }
+
+    // Container do conteúdo do Resumo do Carrinho
+    #block-summary.content {
+        .lib-css(padding, 0);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Container do Resumo do Carrinho
+    .cart-container .cart-summary {
+        .lib-css(padding, 0 16px 24px 16px);
+    }
+
+    // Título do Resumo do Carrinho
+    .cart-container .cart-summary .summary.title {
+        .lib-css(font-size, 18px);
+        .lib-css(margin-top, 30px);
+        .lib-css(color, black);
+        .lib-css(font-weight, 700);
+    }
+
+    // Tabela do Carrinho de Compras
+    #shopping-cart-table {
+        .lib-css(border-collapse, separate);
+        .lib-css(border-spacing, 0);
+
+        thead {
+            .lib-css(color, @color-black);
+            .lib-css(background-color, @theme__color__light-gray);
+        }
+
+        thead th {
+            .lib-css(padding, 12px 0);
+        }
+
+        thead th:first-child {
+            .lib-css(border-top-left-radius, 8px);
+            .lib-css(padding-left, 41px);
+        }
+
+        thead th:last-child {
+            .lib-css(border-top-right-radius, 8px);
+            .lib-css(padding-right, 10px);
+        }
+
+
+
+        // Nome do Produto
+        .product-item-name {
+            .lib-css(font-size, 16px);
+        }
+
+        // Preço do Produto  .col.subtotal .cart-price .price 
+        .cart-price .price {
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, 400);
+        }
+
+        // Quantidade do Produto
+        .control.qty input {
+            .lib-css(border-color, #B8B8B8);
+        }
+
+        // Alinhamento das Colunas de Quantidade e Preço
+        .cart.item .col.qty,
+        thead tr th.col.qty,
+        .cart.item .col.price,
+        thead tr th.col.price {
+            .lib-css(text-align, center);
+        }
+
+        // Opções do Produto
+        .item-options {
+            .lib-css(font-size, 13px);
+            .lib-css(color, #565656);
+        }
+
+        // Link para mover o produto para a lista de desejos
+        .item-actions .actions-toolbar a {
+            .lib-css(color, #565656);
+        }
+    }
+}
