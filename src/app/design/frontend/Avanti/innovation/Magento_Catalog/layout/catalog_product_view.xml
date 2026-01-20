@@ -3,7 +3,7 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <head>
-        <script src="Magento_Catalog::js/related-products-slick.js" defer="defer"></script>
+        <script src="js/product/related-products-slick.js" defer="defer"></script>
         <script src="Magento_Catalog::js/fatorama-wishlist.js" defer="defer"></script>
     </head>
 
