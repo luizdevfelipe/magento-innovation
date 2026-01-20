@@ -1,0 +1,50 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <!-- Adiciona um container para as linhas do footer -->
+        <referenceContainer name="page.wrapper">
+
+            <container name="footer" htmlTag="footer" htmlClass="page-footer" after="-">
+                <container name="footer.content" htmlTag="div" htmlClass="footer content" before="-">
+
+                    <container name="footer.rows.wrapper" label="Footer Rows Wrapper" htmlTag="div"
+                        htmlClass="footer-rows-wrapper">
+
+                        <!-- linha 1 (Links) -->
+                        <block class="Magento\Cms\Block\Block" name="footer_row_1">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">footer_row_1_checkout</argument>
+                            </arguments>
+                        </block>
+
+                        <!-- linha 2 (Métodos de Pagamento) -->
+                        <block class="Magento\Framework\View\Element\Template"
+                            name="flag.cards"
+                            template="Magento_Theme::html/footer/flags-cards.phtml" />
+
+                    </container>
+
+                    <!-- linha 3 (Texto) -->
+                    <block class="Magento\Cms\Block\Block" name="footer_row_3">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer_row_3</argument>
+                        </arguments>
+                    </block>
+
+                    <!-- linha 4 (Parceiros Stamps) -->
+                    <block class="Magento\Framework\View\Element\Template"
+                        name="stamps.partners"
+                        template="Magento_Theme::html/footer/stamps-partners.phtml" />
+                </container>
+
+            </container>
+        </referenceContainer>
+
+
+        <!-- Remove a newsletter -->
+        <referenceContainer name="footer.newsletter" remove="true" />
+
+    </body>
+</page>
