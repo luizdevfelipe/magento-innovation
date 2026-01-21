@@ -8,6 +8,23 @@
         .lib-css(background-color, @color-white);
         .lib-css(border, 1px solid @color-gray79);
         .lib-css(border-radius, 10px);
+        .lib-css(color, @color-black);
+
+        // Título do Resumo do Pedido
+        .title {
+            .lib-css(font-weight, 700);
+            .lib-css(font-size, 24px);
+        }
+
+        // th da área de resumo do pedido 
+        .mark {
+            .lib-css(font-weight, 700);
+        }
+
+        // Título do frete no Resumo do Pedido
+        .totals.shipping.excl .mark .value {
+            .lib-css(font-weight, 400);
+        }
 
         .block.items-in-cart {
             &::after {
@@ -109,7 +126,7 @@
         .lib-css(border-radius, 8px);
         .lib-css(padding, 14px 24px);
         .lib-css(font-size, 24px);
-        
+
         &:hover {
             .lib-css(background-color, darken(@theme__color__primary, 10%));
             .lib-css(border, none);
@@ -117,7 +134,20 @@
         }
     }
 
+    // Botão Continuar para o Método de Envio no Resumo do Pedido
+    .checkout-index-index .payment-method-content .primary .action.primary.checkout {
+        .lib-css(letter-spacing, normal);
+        .lib-css(border-radius, 8px);
+        .lib-css(padding, 14px 24px);
+        .lib-css(font-size, 24px);
+        .lib-css(width, 342px);
 
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
+    }
 
 }
 
@@ -135,6 +165,7 @@
     .checkout-container .opc-estimated-wrapper {
         .lib-css(background-color, @theme__color__primary);
         .lib-css(color, @color-white);
+        .lib-css(box-sizing, border-box);
     }
 
     // Remover ícone do carrinho no Resumo do Pedido
@@ -184,6 +215,11 @@
     // Contianer do Resumo do Pedido no Checkout
     .checkout-container .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide .opc-block-summary {
         .lib-css(padding-top, 66px);
+    }
+
+    // Container da Informação de Envio no Resumo do Pedido
+    .opc-block-shipping-information .shipping-information {
+        .lib-css(color, @color-black);
     }
 
     // Botão Continuar para o Método de Envio no Resumo do Pedido
