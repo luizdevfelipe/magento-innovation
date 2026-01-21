@@ -1,0 +1,98 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container Principal da Página de sucesso de compra
+    .checkout-onepage-success .page-main {
+        .lib-css(text-align, center);
+    }
+
+    // Container do Título da Página de sucesso de compra
+    .page-title-wrapper {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column);
+        .lib-css(justify-content, center);
+    }
+
+    // Título da Página de sucesso de compra
+    .checkout-onepage-success .page-main .page-title-wrapper .page-title {
+        .lib-css(color, @theme__color__primary);
+        .lib-css(text-align, center);
+    }
+
+    // Botão Imprimir na Página de sucesso de compra
+    .page-title-wrapper .action.print {
+        .lib-css(display, inline);
+        .lib-css(order, -1);
+        .lib-css(color, @color-black);
+        .lib-css(text-decoration, underline);
+        .lib-css(font-weight, 700);
+    }
+
+    // Container da mensagem de sucesso de compra
+    .checkout-success {
+        .lib-css(color, @color-black);
+
+        p:nth-child(1) {
+            .lib-css(font-weight, 700);
+            .lib-css(margin-bottom, 22px);
+        }
+
+        a {
+            .lib-css(color, @color-black);
+        }
+
+    }
+
+    // Botão de continuar comprando na Página de sucesso de compra
+    .checkout-onepage-success .checkout-success .actions-toolbar .action.primary.continue {
+        max-width: 195px;
+        letter-spacing: normal;
+        text-transform: none;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-top: 20px;
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Título da Página de sucesso de compra
+    .checkout-onepage-success .page-main .page-title-wrapper .page-title {
+        .lib-css(font-size, 21px);
+        .lib-css(margin-top, 21px);
+    }
+
+    // Botão Imprimir na Página de sucesso de compra
+    .page-title-wrapper .action.print {
+        .lib-css(font-size, 14px);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Container do Título da Página de sucesso de compra
+    .page-title-wrapper {
+        .lib-css(align-items, center);
+        .lib-css(gap, 34px);
+    }
+
+    // Botão Imprimir na Página de sucesso de compra
+    .page-title-wrapper .action.print {
+        .lib-css(align-self, flex-end);
+    }
+
+    // Container do Botão de continuar comprando na Página de sucesso de compra
+    .checkout-success .actions-toolbar {
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+    }
+}
