@@ -1,0 +1,83 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container dos passos do checkout
+    .header.content .checkout-steps-wrapper {
+        .lib-css(display, flex);
+        .lib-css(align-items, center);
+        .lib-css(width, 100%);
+    }
+
+    // Lista com os passos do checkout
+    .header.content .checkout-steps-wrapper .checkout-steps {
+        .lib-list-reset-styles();
+        .lib-css(display, flex);
+        .lib-css(width, 100%);
+        .lib-css(gap, 73px);
+        .lib-css(justify-content, center);
+        .lib-css(color, @color-gray40);
+        .lib-css(font-weight, 700);
+        .lib-css(font-size, 12px);
+    }
+
+    // Passos do checkout
+    .checkout-steps-wrapper .checkout-steps .step {
+        .lib-css(width, 24px);
+        .lib-css(height, 24px);
+        .lib-css(border-radius, 50%);
+        .lib-css(background-color, @color-gray40);
+        .lib-css(color, @color-white);
+        .lib-css(margin, auto);
+        .lib-css(font-size, 12px);
+        .lib-css(font-weight, 700);
+        .lib-css(text-align, center);
+        .lib-css(line-height, 25px);
+    }
+
+    // Mensagem de compra segura
+    .header.content .checkout-steps-wrapper .safe-purchase-message {
+        .lib-css(min-width, fit-content);
+        .lib-css(display, flex);
+        .lib-css(align-items, center);
+        .lib-css(gap, 10px);
+        .lib-css(color, black);
+        .lib-css(font-weight, 700);
+    }
+
+    // Passo ativo do checkout
+    .checkout-steps li.active {
+        span {
+            .lib-css(color, @theme__color__primary);
+        }
+
+        .step {
+            .lib-css(background-color, @theme__color__primary); 
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Esconder a mensagem de compra segura no mobile
+    .header.content .checkout-steps-wrapper .safe-purchase-message {
+        .lib-css(display, none);
+    }
+
+    // Posicionar os passos do checkout
+    .header.content .checkout-steps-wrapper {
+        .lib-css(position, absolute);
+        .lib-css(top, 65px);
+    }
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}

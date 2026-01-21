@@ -3,9 +3,33 @@
 
     <head>
         <script src="js/product/related-products-slick.js" defer="defer"></script>
+        <script src="Magento_Checkout::js/checkout-steps.js" defer="defer"></script>
     </head>
 
     <body>
+
+         <!-- 1. REMOVE o header padrão -->
+        <referenceBlock name="page.header" remove="true"/>
+        <!-- Em alguns temas o container é este -->
+        <referenceContainer name="header.container" remove="true"/>
+
+        <referenceContainer name="page.wrapper">
+            <container name="checkout.header.container" as="checkout_header_container"
+                label="Checkout Page Header Container" htmlTag="header" htmlClass="page-header"
+                before="main.content">
+                <container name="checkout.header.wrapper" label="Checkout Page Header"
+                    as="checkout_header_wrapper" htmlTag="div" htmlClass="header content">
+                    <block
+                        class="Magento\Framework\View\Element\Template"
+                        name="checkout.steps.indicator"
+                        template="Magento_Checkout::checkout/steps.phtml"
+                    />
+                </container>
+            </container>
+        </referenceContainer>    
+
+        <move element="logo" destination="checkout.header.wrapper" before="-" />
+
 
         <!-- Troca de template no footer de checkout -->
         <referenceBlock name="footer_row_1">
@@ -14,7 +38,7 @@
             </arguments>
         </referenceBlock>
 
-         <!-- Remove a newsletter -->
+        <!-- Remove a newsletter -->
         <referenceContainer name="footer.newsletter" remove="true" />
 
     </body>

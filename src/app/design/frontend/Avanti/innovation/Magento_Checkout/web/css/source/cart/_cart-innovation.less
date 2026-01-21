@@ -105,6 +105,8 @@
         .lib-css(letter-spacing, normal);
         .lib-css(font-size, 13px);
         .lib-css(font-weight, 500);
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, white);
 
         &:hover {
             .lib-css(background-color, darken(@theme__color__primary, 10%));
@@ -141,6 +143,90 @@
     #block-summary.content {
         .lib-css(padding, 0);
     }
+
+    // Tabela do Carrinho de Compras
+    #shopping-cart-table {
+        .lib-css(color, @color-black);
+
+        // Imagem do Produto
+        .product-item-photo {
+            .lib-css(max-width, 88px);
+        }
+
+        .product-item-details {
+            .lib-css(margin, 30px 0 0 36px)
+        }
+
+        // Nome do Produto
+        .product-item-name a {
+            .lib-css(font-size, 14px);
+            .lib-css(color, @color-black);
+        }
+
+        // Container de opções do produto
+        .item-options {
+            .lib-css(display, none);
+        }
+
+        // Preço do Produto
+        .col.price {
+            .lib-css(padding-left, 40px);
+            .lib-css(padding-top, 27px);
+        }
+
+        .col.subtotal {
+            .lib-css(padding-top, 24px);
+        }
+
+        .cart-price .price {
+            .lib-css(color, @color-black);
+            .lib-css(font-size, 16px);
+            .lib-css(font-weight, 900);
+        }
+
+        // Quantidade do Produto
+        .control.qty input {
+            .lib-css(border-color, @color-form-border);
+        }
+
+        // Link para mover o produto para a lista de desejos
+        .use-ajax.action.towishlist.action-towishlist {
+            .lib-css(padding-left, 24px);
+
+            &::before {
+                .lib-css(color, @theme__color__primary);
+            }
+        }
+
+        // Botão de Editar Produto
+        .action.action-edit {
+            .lib-css(padding-right, 27px);
+        }
+
+        // Botão de Remover Produto
+        .action.action-delete {
+            .lib-css(padding-right, 39px);
+        }
+
+    }
+
+    // Container do Cupom de Desconto
+    .cart-container .cart-discount {
+        .lib-css(border, none);
+        .lib-css(margin, 94px 0 129px 0);
+        .lib-css(padding, 0 33px);
+
+        .title {
+            .lib-css(margin-bottom, 31px);
+        }
+    }
+
+    // Título dos Produtos CrossSell
+    .block.crosssell .block-title {
+        .lib-css(padding-left, 16px);
+    }
+
+
 }
 
 //

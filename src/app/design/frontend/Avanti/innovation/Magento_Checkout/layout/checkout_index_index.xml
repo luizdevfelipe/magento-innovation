@@ -1,7 +1,26 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
+    <head>
+        <script src="Magento_Checkout::js/checkout-steps.js" />
+    </head>
+
+
     <body>
+
+        <referenceContainer name="checkout.header.wrapper">
+            <block
+                class="Magento\Framework\View\Element\Template"
+                name="checkout.steps.indicator"
+                template="Magento_Checkout::checkout/steps.phtml"
+            />
+        </referenceContainer>
+
+        <move
+            element="checkout.steps.indicator"
+            destination="checkout.header.wrapper"
+            after="logo"
+        />
 
         <!-- Adiciona um container para as linhas do footer -->
         <referenceContainer name="page.wrapper">
