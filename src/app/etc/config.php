@@ -380,6 +380,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Avanti_BackToTop' => 1,
         'Avanti_CategorySEO' => 1,
+        'Avanti_CustomCheckout' => 1,
         'Avanti_LessMixins' => 1,
         'Avanti_NewsletterExtend' => 1,
         'Avanti_ShippingEstimator' => 1,
