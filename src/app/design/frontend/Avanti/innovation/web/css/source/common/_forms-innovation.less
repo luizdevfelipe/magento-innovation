@@ -1,0 +1,79 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Container dos Métodos de Pagamento no Checkout
+    .checkout-payment-method .opc-payment .items.payment-methods,
+    .checkout-payment-method .opc-payment .items.payment-methods a {
+        .lib-css(color, @color-black);
+    }
+
+    // Títulos dos Métodos de Pagamento no Checkout
+    .checkout-payment-method .opc-payment .payment-group .payment-method-title.field.choice {
+        .lib-css(font-weight, 700);
+        .lib-css(border-color, @color-black);
+    }
+
+    // Container de aplicar discontos
+    .opc-wrapper .payment-option-title.field.choice {
+        .lib-css(border-color, @color-black);
+    }
+
+    .billing-address-same-as-shipping-block.field.choice input[type="checkbox"] {
+        .lib-css(width, 13px);
+        .lib-css(height, 13px);
+        .lib-css(appearance, none);
+        .lib-css(border, 1px solid @theme__color__primary);
+
+        &:checked {
+            .lib-css(background-color, @theme__color__primary);
+
+            .icon-image-before('images/icons/checkbox-check.svg', 10px, 10px);
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Títulos dos Métodos de Pagamento no Checkout
+    .checkout-payment-method .payment-method._active .payment-method-title.field.choice {
+        .lib-css(margin, 15px 0);
+        .lib-css(border, none);
+    }
+
+    // Remover borda superior do título do método de pagamento ativo no Checkout
+    .checkout-payment-method .payment-method-title.field.choice {
+        .lib-css(border-top, none);
+        .lib-css(border-bottom, 1px solid @color-black);
+    }
+
+    // Container do checkbox "O endereço de cobrança é o mesmo do de entrega"
+    .payment-method-content .checkout-billing-address .billing-address-same-as-shipping-block.field.choice {
+        .lib-css(margin-bottom, 25px);
+    }
+
+    // Remover borda do container de aplicar discontos
+    .opc-wrapper .payment-option-title.field.choice {
+        .lib-css(border, none);
+    }
+
+    // Container do campo de aplicar cupom de desconto
+    .form.payments .payment-option._collapsible.opc-payment-additional.discount-code {
+        .lib-css(margin-top, 34px);
+    }
+
+    #co-payment-form .fieldset,
+    #checkout-step-payment,
+    #checkout .opc-wrapper {
+        .lib-css(margin-bottom, 0);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
