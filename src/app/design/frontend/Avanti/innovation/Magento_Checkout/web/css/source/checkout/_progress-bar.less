@@ -1,0 +1,70 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Barras de progresso do checkout
+    .opc-progress-bar-item {
+        &::before {
+            .lib-css(border-color, @color-gray94);
+            .lib-css(background-color, @color-gray94);
+        }
+
+        span::before {
+            .lib-css(background-color, @color-gray94);
+            .lib-css(border-color, @color-gray94);
+        }
+    }
+
+    // Cor do texto dos itens da barra de progresso do Checkout
+    .opc-progress-bar-item span,
+    .opc-progress-bar-item._active>span,
+    .opc-progress-bar-item._complete>span {
+        .lib-css(color, @color-black);
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container da barra de progresso do Checkout
+    .checkout-index-index .opc-progress-bar {
+        .lib-css(padding, 0 19px);
+        .lib-css(margin-top, 47px);
+    }
+
+    // Itens da barra de progresso do Checkout
+    .opc-progress-bar .opc-progress-bar-item {
+        .lib-css(width, 50%);
+
+        span {
+            .lib-css(font-size, 14px);
+        }
+    }
+
+    // Item ativo da barra de progresso do Checkout
+    .opc-progress-bar-item._active span {
+        .lib-css(font-weight, 700);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Container da barra de progresso do Checkout
+    .checkout-index-index .opc-progress-bar {
+        .lib-css(margin-top, 45px);
+    }
+    
+    // Itens da barra de progresso do Checkout
+    .opc-progress-bar-item {
+        span {
+            .lib-css(font-size, 16px);
+        }
+    }
+}
