@@ -8,11 +8,11 @@
 
     <body>
 
-         <!-- 1. REMOVE o header padrão -->
+         <!-- Remover o header padrão -->
         <referenceBlock name="page.header" remove="true"/>
-        <!-- Em alguns temas o container é este -->
         <referenceContainer name="header.container" remove="true"/>
 
+        <!-- Adicionar um header customizado como na página de checkout -->
         <referenceContainer name="page.wrapper">
             <container name="checkout.header.container" as="checkout_header_container"
                 label="Checkout Page Header Container" htmlTag="header" htmlClass="page-header"
@@ -27,7 +27,7 @@
                 </container>
             </container>
         </referenceContainer>    
-
+        <!-- Move a logo para o novo header customizado -->
         <move element="logo" destination="checkout.header.wrapper" before="-" />
 
 

@@ -1,0 +1,61 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Container do Resumo do Pedido no Checkout
+    .checkout-container .opc-estimated-wrapper {
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, @color-white);
+        .lib-css(box-sizing, border-box);
+        .lib-css(margin, auto);
+    }
+
+    // Título Estimado no Resumo do Pedido
+    .opc-estimated-wrapper .estimated-block .estimated-label {
+        .lib-css(font-size, 16px);
+        .lib-css(font-weight, 700);
+        .lib-css(margin-bottom, 0);
+    }
+
+    // Preço Estimado no Resumo do Pedido
+    .opc-estimated-wrapper .estimated-block .estimated-price {
+        .lib-css(font-size, 16px);
+        .lib-css(font-weight, 400);
+    }
+
+    // Remover ícone do carrinho no Resumo do Pedido
+    .checkout-index-index .minicart-wrapper .action.showcart::before {
+        .lib-css(background-image, none);
+    }
+
+    // Estilização do contador de itens no Resumo do Pedido
+    .checkout-index-index .minicart-wrapper .action.showcart .counter.qty {
+        .lib-css(color, @theme__color__primary);
+        .lib-css(position, absolute);
+        .lib-css(right, -5px);
+        .lib-css(top, 10px);
+        .lib-css(width, 35px);
+        .lib-css(height, 35px);
+        .lib-css(line-height, 34px);
+        .lib-css(font-size, 16px);
+        .lib-css(background-color, @color-white);
+        .lib-css(padding, 0);
+        .lib-css(margin, 0);
+
+        .counter-number {
+            .lib-css(text-shadow, none);
+            .lib-css(letter-spacing, normal);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}

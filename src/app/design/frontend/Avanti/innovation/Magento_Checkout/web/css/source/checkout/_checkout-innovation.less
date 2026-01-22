@@ -9,7 +9,7 @@
     }
 
     // Container do Título da Página de sucesso de compra
-    .page-title-wrapper {
+    .checkout-onepage-success .page-title-wrapper {
         .lib-css(display, flex);
         .lib-css(flex-direction, column);
         .lib-css(justify-content, center);
@@ -22,7 +22,7 @@
     }
 
     // Botão Imprimir na Página de sucesso de compra
-    .page-title-wrapper .action.print {
+    .checkout-onepage-success .page-title-wrapper .action.print {
         .lib-css(display, inline);
         .lib-css(order, -1);
         .lib-css(color, @color-black);
@@ -31,7 +31,7 @@
     }
 
     // Container da mensagem de sucesso de compra
-    .checkout-success {
+    .checkout-onepage-success .checkout-success {
         .lib-css(color, @color-black);
 
         p:nth-child(1) {
@@ -47,12 +47,22 @@
 
     // Botão de continuar comprando na Página de sucesso de compra
     .checkout-onepage-success .checkout-success .actions-toolbar .action.primary.continue {
-        max-width: 195px;
-        letter-spacing: normal;
-        text-transform: none;
-        font-size: 14px;
-        border-radius: 4px;
-        margin-top: 20px;
+        .lib-css(max-width, 195px);
+        .lib-css(letter-spacing, normal);
+        .lib-css(text-transform, none);
+        .lib-css(font-size, 14px);
+        .lib-css(border-radius, 4px);
+        .lib-css(margin-top, 20px);
+        .lib-css(color, @color-white);
+
+        .lib-css(background-color, @theme__color__primary);
+        .lib-css(color, white);
+
+        &:hover {
+            .lib-css(background-color, darken(@theme__color__primary, 10%));
+            .lib-css(border, none);
+            .lib-css(color, @color-white);
+        }
     }
 
 }
@@ -69,9 +79,20 @@
     }
 
     // Botão Imprimir na Página de sucesso de compra
-    .page-title-wrapper .action.print {
+    .checkout-onepage-success .page-title-wrapper .action.print {
         .lib-css(font-size, 14px);
     }
+
+    // Título de método de pagamento no Checkout
+    .checkout-index-index .opc-wrapper .step-title {
+        .lib-css(font-size, 24px);
+    }
+
+    // Remover margin do container principal no Checkout
+    .checkout-index-index .checkout-container {
+        .lib-css(margin, 0);
+    }
+
 }
 
 //
@@ -80,19 +101,34 @@
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
     // Container do Título da Página de sucesso de compra
-    .page-title-wrapper {
+    .checkout-onepage-success .page-title-wrapper {
         .lib-css(align-items, center);
         .lib-css(gap, 34px);
     }
 
     // Botão Imprimir na Página de sucesso de compra
-    .page-title-wrapper .action.print {
+    .checkout-onepage-success .page-title-wrapper .action.print {
         .lib-css(align-self, flex-end);
     }
 
     // Container do Botão de continuar comprando na Página de sucesso de compra
-    .checkout-success .actions-toolbar {
+    .checkout-onepage-success .checkout-success .actions-toolbar {
         .lib-css(display, flex);
         .lib-css(justify-content, center);
+    }
+
+    // Parágrafo da mensagem de sucesso de compra
+    .checkout-onepage-success .checkout-success p:nth-child(1) {
+        .lib-css(margin-bottom, 10px);
+    }
+
+    // Container Principal da Página de sucesso de compra
+    .checkout-onepage-success .column.main {
+        .lib-css(padding-bottom, 80px);
+    }
+
+    // Botão de continuar comprando na Página de sucesso de compra
+    .checkout-onepage-success .checkout-success .actions-toolbar .action.primary.continue {
+        .lib-css(width, 195px);
     }
 }

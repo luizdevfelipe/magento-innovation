@@ -161,30 +161,6 @@
         .lib-css(text-align, center);
     }
 
-    // Container do Resumo do Pedido no Checkout
-    .checkout-container .opc-estimated-wrapper {
-        .lib-css(background-color, @theme__color__primary);
-        .lib-css(color, @color-white);
-        .lib-css(box-sizing, border-box);
-    }
-
-    // Remover ícone do carrinho no Resumo do Pedido
-    .checkout-index-index .minicart-wrapper .action.showcart::before {
-        .lib-css(background-image, none);
-    }
-
-    // Estilização do contador de itens no Resumo do Pedido
-    .checkout-index-index .minicart-wrapper .action.showcart .counter.qty {
-        .lib-css(color, @theme__color__primary);
-        .lib-css(position, absolute);
-        .lib-css(right, 24px);
-        .lib-css(width, 35px);
-        .lib-css(height, 35px);
-        .lib-css(line-height, 34px);
-        .lib-css(font-size, 16px);
-        .lib-css(background-color, @color-white);
-    }
-
     // Container dos tipos de envio no Checkout
     .checkout-container .opc-wrapper {
         .lib-css(padding, 0 19px);
@@ -199,6 +175,10 @@
         .lib-css(padding, 5px 0);
     }
 
+    // Botão finalizar compra no Resumo do Pedido
+    .checkout-payment-method .payment-group .actions-toolbar .action.primary.checkout {
+        .lib-css(font-size, 20px);
+    }
 
 }
 
@@ -210,7 +190,19 @@
     // Container dos tipos de envio no Checkout
     .checkout-container .opc-wrapper {
         .lib-css(padding-right, 7px);
+        .lib-css(max-width, 734px);
+        .lib-css(margin-top, 40px);
     }
+
+    // Container do Resumo do Pedido no Checkout
+    .checkout-index-index .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide {
+        .lib-css(margin, -18px 0 20px);
+    }
+
+    .checkout-index-index .checkout-container .opc-block-summary .minicart-items-wrapper {
+        .lib-css(max-height, 450px);
+    }
+       
 
     // Contianer do Resumo do Pedido no Checkout
     .checkout-container .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide .opc-block-summary {
