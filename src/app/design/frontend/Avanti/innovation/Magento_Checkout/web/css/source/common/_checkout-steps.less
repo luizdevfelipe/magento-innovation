@@ -53,7 +53,7 @@
         }
 
         .step {
-            .lib-css(background-color, @theme__color__primary); 
+            .lib-css(background-color, @theme__color__primary);
         }
     }
 
@@ -64,6 +64,15 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Header da Página de Checkout
+    .checkout-cart-index,
+    .checkout-index-index {
+
+        .page-wrapper .page-header {
+            .lib-css(margin-bottom, 76px);
+        }
+    }
+
     // Esconder a mensagem de compra segura no mobile
     .header.content .checkout-steps-wrapper .safe-purchase-message {
         .lib-css(display, none);
@@ -72,7 +81,7 @@
     // Posicionar os passos do checkout
     .header.content .checkout-steps-wrapper {
         .lib-css(position, absolute);
-        .lib-css(top, 65px);
+        .lib-css(top, 93px);
     }
 
 }
