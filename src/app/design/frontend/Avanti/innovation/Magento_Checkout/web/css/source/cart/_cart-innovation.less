@@ -91,7 +91,8 @@
     }
 
     // Input do Cupom de Desconto
-    #coupon_code {
+    #coupon_code,
+    #discount-code {
         .lib-css(height, 30px);
         .lib-css(border-color, #A9A9A9);
 
@@ -101,12 +102,13 @@
     }
 
     // Botão de Aplicar Cupom de Desconto
-    .fieldset.coupon .actions-toolbar .primary .action.apply.primary {
+    .fieldset.coupon .actions-toolbar .primary .action.apply.primary,
+    .payment-option-content .actions-toolbar .primary .action.action-apply {
         .lib-css(letter-spacing, normal);
         .lib-css(font-size, 13px);
         .lib-css(font-weight, 500);
         .lib-css(background-color, @theme__color__primary);
-        .lib-css(color, white);
+        .lib-css(color, @color-white);
 
         &:hover {
             .lib-css(background-color, darken(@theme__color__primary, 10%));
@@ -133,6 +135,14 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Título da Página do Carrinho de Compras
+    .checkout-cart-index .page-title-wrapper .page-title {
+        .lib-css(font-size, 20px);
+        .lib-css(padding-left, 26px);
+        .lib-css(margin-bottom, 14px);
+        .lib-css(margin-top, 10px);
+    }
+
     // Container do Resumo do Carrinho
     .cart-container .cart-summary {
         .lib-css(padding, 27px 34px 26px 34px);
@@ -142,6 +152,11 @@
     // Container do conteúdo do Resumo do Carrinho
     #block-summary.content {
         .lib-css(padding, 0);
+    }
+
+    // Container da Tabela do Carrinho de Compras
+    .checkout-cart-index .cart-container .cart.table-wrapper {
+        .lib-css(border, none);
     }
 
     // Tabela do Carrinho de Compras
@@ -210,6 +225,13 @@
 
     }
 
+    // Container do Resumo do Carrinho
+    .cart-container .cart-summary .cart-totals {
+        .lib-css(padding, 10px 0 0 0);
+        .lib-css(margin-top, 50px);
+    }
+
+
     // Container do Cupom de Desconto
     .cart-container .cart-discount {
         .lib-css(border, none);
@@ -234,9 +256,15 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
 
+    // Título da Página do Carrinho de Compras
+    .checkout-cart-index .page-title-wrapper {
+        .lib-css(margin, 118px 0 64px 0);
+    }
+
     // Container do Resumo do Carrinho
     .cart-container .cart-summary {
         .lib-css(padding, 0 16px 24px 16px);
+        .lib-css(margin-top, -122px);
     }
 
     // Título do Resumo do Carrinho
@@ -307,5 +335,20 @@
         .item-actions .actions-toolbar a {
             .lib-css(color, #565656);
         }
+    }
+
+    // Botão de Atualizar Carrinho
+    .cart-container .cart.main.actions .action.update {
+        .lib-css(width, 375px);
+    }
+
+    // Container do conteúdo do Cupom de Desconto
+    .checkout-cart-index .cart-discount .block.discount.active .content {
+        .lib-css(margin-top, 29px);
+    }
+
+    // Título do Cupom de Desconto
+    .checkout-cart-index .cart-discount .block.discount .title {
+        .lib-css(margin-top, 30px);
     }
 }
