@@ -12,7 +12,13 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Centralizar o conteúdo da tabela de métodos de envio no Checkout
+    .checkout-index-index #checkout-shipping-method-load tbody {
+        .lib-css(text-align, center);
+    }
+}
 
 //
 //  Desktop
