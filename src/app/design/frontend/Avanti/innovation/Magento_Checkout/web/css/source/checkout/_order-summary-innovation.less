@@ -19,11 +19,20 @@
         // th da área de resumo do pedido 
         .mark {
             .lib-css(font-weight, 700);
+            .lib-css(font-size, 16px);
+        }
+
+        // Total Geral no Resumo do Pedido
+        .grand.totals .mark,
+        .grand.totals .amount .price {
+            .lib-css(font-size, 24px);
+            .lib-css(font-weight, 700);
         }
 
         // Título do frete no Resumo do Pedido
         .totals.shipping.excl .mark .value {
             .lib-css(font-weight, 400);
+            .lib-css(font-size, 12px);
         }
 
         .block.items-in-cart {
@@ -35,6 +44,7 @@
         // Container do Título de quantidade de itens no Resumo do Pedido
         .block.items-in-cart .title {
             .lib-css(border, none);
+            .lib-css(color, @theme__color__primary);
         }
 
         // Título de quantidade de itens no Resumo do Pedido
@@ -49,7 +59,7 @@
             .lib-css(color, @color-black);
             .lib-css(margin-bottom, 14px);
             .lib-css(border-radius, 5px);
-            .lib-css(padding, 21px 26px 20px 22px);
+            .lib-css(padding, 18px 26px 17px 22px);
         }
 
         // Nome dos itens do Resumo do Pedido
@@ -76,6 +86,11 @@
         }
     }
 
+    #opc-sidebar > div.opc-block-summary > span {
+        .lib-css(padding, 0);
+        .lib-css(margin-bottom, 5px);
+    }
+
     // Título do Endereço de entrega
     .opc-wrapper .step-title {
         .lib-css(border, none);
@@ -97,7 +112,7 @@
     // Botão Adicionar Novo Endereço no Resumo do Pedido
     .opc-wrapper .new-address-popup .action.action-show-popup {
         .lib-css(background-color, @theme__color__primary);
-        .lib-css(color, white);
+        .lib-css(color, @color-white);
         .lib-css(text-transform, none);
         .lib-css(letter-spacing, normal);
         .lib-css(font-size, 16px);
@@ -113,10 +128,10 @@
 
     // Linhas da Tabela de Métodos de Envio no Resumo do Pedido
     .checkout-shipping-method .table-checkout-shipping-method tbody .row {
-        .lib-css(color, black);
+        .lib-css(color, @color-black);
         .lib-css(font-size, 15px);
         .lib-css(font-weight, 700);
-        .lib-css(border-bottom, 1px solid black);
+        .lib-css(border-bottom, 1px solid @color-black);
     }
 
     // Botão Continuar para o Método de Envio no Resumo do Pedido
@@ -169,10 +184,15 @@
 
     // Formulário de seleção do método de envio no Checkout
     .opc-wrapper .checkout-shipping-method .form.methods-shipping {
-        .lib-css(background-color, white);
+        .lib-css(background-color, @color-white);
         .lib-css(border, none);
         .lib-css(margin, 0);
         .lib-css(padding, 5px 0);
+    }
+
+    // Botão Continuar para o Método de Envio no Resumo do Pedido
+    .checkout-shipping-method .primary .button.action.continue.primary {
+        .lib-css(margin-top, 42px);
     }
 
     // Botão finalizar compra no Resumo do Pedido
@@ -190,23 +210,20 @@
     // Container dos tipos de envio no Checkout
     .checkout-container .opc-wrapper {
         .lib-css(padding-right, 7px);
-        .lib-css(max-width, 734px);
-        .lib-css(margin-top, 40px);
     }
 
     // Container do Resumo do Pedido no Checkout
     .checkout-index-index .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide {
-        .lib-css(margin, -18px 0 20px);
+        .lib-css(margin, -27px 0 20px);
     }
 
     .checkout-index-index .checkout-container .opc-block-summary .minicart-items-wrapper {
-        .lib-css(max-height, 450px);
+        .lib-css(max-height, 432px);
     }
        
-
-    // Contianer do Resumo do Pedido no Checkout
+    // Container do Resumo do Pedido no Checkout
     .checkout-container .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide .opc-block-summary {
-        .lib-css(padding-top, 66px);
+        .lib-css(padding-top, 62px);
     }
 
     // Container da Informação de Envio no Resumo do Pedido
