@@ -18,6 +18,11 @@
         }
     }
 
+    // Formulário do Resumo do Carrinho
+    #block-summary {
+        .lib-css(display, block) !important;
+    }
+
     // Texto de consulta de frete
     #block-shipping-heading {
         color: black;
@@ -162,6 +167,8 @@
     // Tabela do Carrinho de Compras
     #shopping-cart-table {
         .lib-css(color, @color-black);
+        .lib-css(max-width, 94%);
+        .lib-css(margin, auto);
 
         // Imagem do Produto
         .product-item-photo {
@@ -215,12 +222,14 @@
 
         // Botão de Editar Produto
         .action.action-edit {
-            .lib-css(padding-right, 27px);
+            .lib-css(padding-right, 24px);
+            .icon-image-before('images/icons/pencil/black-small-pencil.svg', 12px, 12px);
         }
 
         // Botão de Remover Produto
         .action.action-delete {
-            .lib-css(padding-right, 39px);
+            .lib-css(padding-right, 36px);
+            .icon-image-before('images/icons/trash/black-small-trash.svg', 14px, 14px);
         }
 
     }
@@ -248,7 +257,14 @@
         .lib-css(padding-left, 16px);
     }
 
+    // Container de cada Produto CrossSell
+    .checkout-cart-index .block.crosssell .item.product.product-item {
+        .lib-css(max-width, 172px);
 
+        .product-item-info {
+            .lib-css(min-height, 380px);
+        }
+    }
 }
 
 //
@@ -259,6 +275,11 @@
     // Título da Página do Carrinho de Compras
     .checkout-cart-index .page-title-wrapper {
         .lib-css(margin, 118px 0 64px 0);
+    }
+
+    // Container das Colunas do Carrinho de Compras
+    .checkout-cart-index .columns {
+        .lib-css(max-width, @layout__max-width);
     }
 
     // Container do Resumo do Carrinho
@@ -299,8 +320,6 @@
             .lib-css(padding-right, 10px);
         }
 
-
-
         // Nome do Produto
         .product-item-name {
             .lib-css(font-size, 16px);
@@ -332,9 +351,22 @@
         }
 
         // Link para mover o produto para a lista de desejos
-        .item-actions .actions-toolbar a {
-            .lib-css(color, #565656);
+        .item-actions .actions-toolbar {
+            .lib-css(border-bottom, 1px solid @color-gray83);
+
+            a {
+                .lib-css(color, #565656);
+            }
         }
+
+        .actions-toolbar .action-edit {
+            .icon-image-before('images/icons/pencil/gray-pencil.svg', 18px, 15px);
+        }
+
+        .actions-toolbar .action-delete {
+            .icon-image-before('images/icons/trash/gray-trash.svg', 17px, 16px);
+        }
+
     }
 
     // Botão de Atualizar Carrinho
@@ -350,5 +382,27 @@
     // Título do Cupom de Desconto
     .checkout-cart-index .cart-discount .block.discount .title {
         .lib-css(margin-top, 30px);
+    }
+
+    // Container de cada Produto CrossSell na Slick
+    .checkout-cart-index .block.crosssell .slick-slide {
+        .lib-css(width, 242px);
+        .lib-css(margin, 0 5px);
+    }
+
+    // Item de cada Produto CrossSell
+    .checkout-cart-index .block.crosssell .product-item .product-item-info {
+        .lib-css(width, 242px);
+        .lib-css(min-height, 525px);
+    }
+
+    // Botão Próximo da Slick de Produtos CrossSell
+    .checkout-cart-index .block.crosssell button.slick-next.slick-arrow {
+        .lib-css(transform, translate(34px, -110px));
+    }
+
+    // Botão Anterior da Slick de Produtos CrossSell
+    .checkout-cart-index .block.crosssell button.slick-prev.slick-arrow {
+        .lib-css(transform, translate(-35px, -110px));
     }
 }
