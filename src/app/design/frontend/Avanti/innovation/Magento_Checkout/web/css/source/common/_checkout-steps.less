@@ -57,6 +57,31 @@
         }
     }
 
+    // Linha entre os passos do checkout
+    .header.content .checkout-steps-wrapper .step-shipping {
+        .lib-css(position, relative);
+
+        &::before,
+        &::after {
+            content: "-";
+            .lib-css(color, transparent);
+            .lib-css(position, absolute);
+            .lib-css(background-color, @color-form-border);
+            .lib-css(width, 46px);
+            .lib-css(height, 2px);
+        }
+
+        &::before {
+            .lib-css(left, -60px);
+            .lib-css(top, 11px);
+        }
+
+        &::after {
+            .lib-css(right, -60px);
+            .lib-css(top, 11px);
+        }
+    }
+
 }
 
 //
