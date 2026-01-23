@@ -32,6 +32,25 @@
             .icon-image-before('images/icons/checkbox-check.svg', 10px, 10px);
         }
     }
+
+    // Container dos campos de formulário no Checkout
+    .checkout-index-index .step-content,
+    .form.form-shipping-address {
+        .lib-css(color, @color-gray46);
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            .lib-css(border-color, #9D9D9D);
+        }
+    }
+
+    .checkout-index-index .step-content .form-login .fieldset .field .label,
+    .checkout-index-index .opc-wrapper .form-shipping-address .fieldset .field .label,
+    .checkout-index-index .form.form-shipping-address .fieldset .field .label {
+        .lib-css(color, @color-black);
+        .lib-css(font-weight, 700);
+    }
 }
 
 //

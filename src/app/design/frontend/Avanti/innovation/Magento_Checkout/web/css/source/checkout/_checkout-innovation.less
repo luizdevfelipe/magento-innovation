@@ -131,4 +131,28 @@
     .checkout-onepage-success .checkout-success .actions-toolbar .action.primary.continue {
         .lib-css(width, 195px);
     }
+
+    // Conteúdo do método de pagamento no Checkout
+    .checkout-index-index .opc-wrapper .checkout-payment-method .step-content {
+        .lib-css(max-width, 734px);
+    }
+
+    // Título da opção de aplicar cupom de desconto no Checkout
+    .checkout-index-index .step-content #co-payment-form .payment-option-title.field.choice {
+        .lib-css(padding-top, 182px);
+    }
+
+    // Conteúdo da opção de aplicar cupom de desconto no Checkout
+    .checkout-index-index .step-content #co-payment-form .payment-option-content {
+        .lib-css(max-width, 420px);
+
+        input::placeholder {
+            .lib-css(color, @color-gray46);
+        }
+    }
+
+    // Formulário do método de pagamento no Checkout
+    .checkout-index-index #checkout-payment-method-load {
+        .lib-css(margin-top, 30px);
+    }
 }
