@@ -2,16 +2,20 @@
 
 namespace Avanti\CrosssellLimit\Plugin;
 
-use Magento\Checkout\Block\Cart\Crosssell;
+use \Magento\Checkout\Block\Cart\Crosssell;
+use Avanti\CrosssellLimit\Helper\CrossSellLimitHelper;
 use ReflectionProperty;
 
 class CheckoutCrosssellMaxItem
 {
+    public function __construct(
+        private CrossSellLimitHelper $crossSellLimitHelper
+    ) {}
+
     public function beforeGetItems(Crosssell $subject)
     {
-        // Usa Reflection para alterar a propriedade protected
+        // Usa Reflection API para alterar a propriedade protected
         $reflection = new ReflectionProperty($subject, '_maxItemCount');
-        $reflection->setAccessible(true);
-        $reflection->setValue($subject, 12);
+        $reflection->setValue($subject, $this->crossSellLimitHelper->getCrossSellLimitValue());
     }
 }
