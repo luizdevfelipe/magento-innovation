@@ -140,6 +140,11 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Container do botão de menu
+    .checkout-cart-index .header.content .nav-toggle {
+        .lib-css(display, none);
+    }
+
     // Título da Página do Carrinho de Compras
     .checkout-cart-index .page-title-wrapper .page-title {
         .lib-css(font-size, 20px);
@@ -228,10 +233,15 @@
 
         // Botão de Remover Produto
         .action.action-delete {
-            .lib-css(padding-right, 36px);
-            .icon-image-before('images/icons/trash/black-small-trash.svg', 14px, 14px);
+            .lib-css(padding-right, 30px);
+            .icon-image-before('images/icons/trash/black-small-trash.svg', 18px, 15px);
         }
 
+    }
+
+    // Container dos métodos de checkout
+    .checkout-cart-index .cart-container .checkout.methods.items.checkout-methods-items {
+        .lib-css(padding, 0);
     }
 
     // Container do Resumo do Carrinho
@@ -239,7 +249,6 @@
         .lib-css(padding, 10px 0 0 0);
         .lib-css(margin-top, 50px);
     }
-
 
     // Container do Cupom de Desconto
     .cart-container .cart-discount {
@@ -278,8 +287,9 @@
     }
 
     // Container das Colunas do Carrinho de Compras
-    .checkout-cart-index .columns {
-        .lib-css(max-width, @layout__max-width);
+    .checkout-cart-index .columns,
+    .checkout-cart-index .page-main {
+        .lib-css(max-width, 1288px);
     }
 
     // Container do Resumo do Carrinho
@@ -318,6 +328,11 @@
         thead th:last-child {
             .lib-css(border-top-right-radius, 8px);
             .lib-css(padding-right, 10px);
+        }
+
+        // Linha de cada Produto no Carrinho
+        .cart.item {
+            .lib-css(height, 253px);
         }
 
         // Nome do Produto
@@ -359,10 +374,12 @@
             }
         }
 
+        // Botão de Editar Produto
         .actions-toolbar .action-edit {
             .icon-image-before('images/icons/pencil/gray-pencil.svg', 18px, 15px);
         }
 
+        // Botão de Remover Produto
         .actions-toolbar .action-delete {
             .icon-image-before('images/icons/trash/gray-trash.svg', 17px, 16px);
         }
