@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+       
+        <section id="avanti_crosssell_limit" translate="label" sortOrder="930" showInDefault="1"
+            showInWebsite="1" showInStore="1">
+            <label>Avanti - CrossSell Limit</label>
+            <tab>avanti</tab>
+            
+            <resource>Avanti_CrossSellLimit::crossselllimit_config</resource>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+                
+                <label>General Settings</label>
+                
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Enabled Avanti CrossSell Limit</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="max_value" translate="label" type="text" sortOrder="30" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Max Value of CrossSell Items</label>
+                    <comment>Enter the maximum number of CrossSell items in checkout</comment>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
