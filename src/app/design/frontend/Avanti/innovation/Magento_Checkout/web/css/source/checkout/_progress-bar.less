@@ -4,6 +4,10 @@
 & when (@media-common =true) {
 
     // Barras de progresso do checkout
+    .opc-progress-bar .opc-progress-bar-item._active > span {
+        .lib-css(font-weight, 700);
+    }
+
     .opc-progress-bar-item {
         &::before {
             .lib-css(border-color, @color-gray94);
