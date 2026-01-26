@@ -11,7 +11,7 @@
         .lib-css(color, @color-black);
 
         // Título do Resumo do Pedido
-        .title {
+        & > .title {
             .lib-css(font-weight, 700);
             .lib-css(font-size, 24px);
         }
@@ -193,6 +193,7 @@
     // Botão Continuar para o Método de Envio no Resumo do Pedido
     .checkout-shipping-method .primary .button.action.continue.primary {
         .lib-css(margin-top, 42px);
+        .lib-css(margin-bottom, 55px);
     }
 
     // Botão finalizar compra no Resumo do Pedido
@@ -212,6 +213,11 @@
         .lib-css(padding-right, 7px);
     }
 
+    // Container principal do conteúdo de Checkout
+    .checkout-index-index .page-main {
+        .lib-css(max-width, 1288px);
+    }
+
     // Container do Resumo do Pedido no Checkout
     .checkout-index-index .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide {
         .lib-css(margin, -27px 0 20px);
@@ -224,6 +230,7 @@
     // Container do Resumo do Pedido no Checkout
     .checkout-container .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide .opc-block-summary {
         .lib-css(padding-top, 62px);
+        .lib-css(padding-bottom, 30px);
     }
 
     // Container da Informação de Envio no Resumo do Pedido

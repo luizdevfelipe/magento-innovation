@@ -3,7 +3,7 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
 
-
+        <!-- Adiciona a validação para telefone brasileiro sobre o respectivo campo de telefone -->
         <referenceContainer name="content">
             <referenceBlock name="checkout.root">
                 <arguments>

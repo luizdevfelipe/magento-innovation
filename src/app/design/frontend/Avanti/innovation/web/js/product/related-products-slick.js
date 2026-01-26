@@ -12,61 +12,88 @@ require([
         entry: function () {
             var $carousel = $('.products.list.items.product-items');
 
-            if ($carousel.length && $carousel.children().length < 2) {
-                return;
+            resetCarousel($carousel);
+
+            if ($carousel.length && $carousel.children().length > 2) {
+                initSlick(2, 1);
             }
 
-            initSlick();
         },
 
         // desktop
         exit: function () {
-
             var $carousel = $('.products.list.items.product-items');
 
-            if ($carousel.length && $carousel.children().length < 5) {
-                return;
+            resetCarousel($carousel);
+
+            if ($carousel.length && $carousel.children().length >= 5) {
+
+                if (window.innerWidth <= 1180) {
+                    initSlick(4, 1);
+
+                    checkResponsiveBreakpoint($carousel, 4);
+
+                } else {
+                    initSlick(5, 1);
+
+                    checkResponsiveBreakpoint($carousel, 5);
+
+                }
+
             }
 
-            initSlick();
         }
     });
 
-    function initSlick() {
+    function initSlick(slides, scroll) {
 
         var $carousel = $('.products.list.items.product-items');
 
+        if (!$carousel.hasClass('slick-initialized') && !$carousel.data('original-items')) {
+            $carousel.data('original-items', $carousel.html());
+        }
+
+        if (!$carousel.data('slides-per-page')) {
+            $carousel.data('slides-per-page', slides);
+        }
+
         if ($carousel.length && !$carousel.hasClass('slick-initialized')) {
             $carousel.slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
+                slidesToShow: slides || 5,
+                slidesToScroll: scroll || 1,
                 dots: true,
                 arrows: true,
                 infinite: false,
-                responsive: [
-                    {
-                        breakpoint: 1180,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            infinite: false,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            infinite: false,
-                            dots: true
-                        }
-                    }
-                ]
             });
         }
     }
 
+    function resetCarousel($carousel) {
+        if ($carousel.hasClass('slick-initialized') && $carousel.data('original-items')) {
+            $carousel.slick('unslick');
+            $carousel.html($carousel.data('original-items'));
+        }
+    }
+
+    function checkResponsiveBreakpoint($carousel, currentSlides) {
+        // Garante responsividade ao redimensionar a janela
+        // Não usa a responsividade nativa do Slick por comportamento inesperado ao voltar para o desktop
+        $(window).on('resize', function () {
+            if (window.innerWidth <= 1180 &&
+                $carousel.hasClass('slick-initialized') &&
+                $carousel.data('slides-per-page') > 4) {
+                resetCarousel($carousel);
+                initSlick(4, 1);
+                $carousel.data('slides-per-page', 4);
+
+            } else if (window.innerWidth > 1180 &&
+                $carousel.hasClass('slick-initialized') &&
+                $carousel.data('slides-per-page') <= 4) {
+                resetCarousel($carousel);
+                initSlick(5, 1);
+                $carousel.data('slides-per-page', 5);
+            }
+        });
+    }
+
 });
-
-
