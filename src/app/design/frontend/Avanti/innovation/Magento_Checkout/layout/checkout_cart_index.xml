@@ -8,9 +8,9 @@
 
     <body>
 
-         <!-- Remover o header padrão -->
-        <referenceBlock name="page.header" remove="true"/>
-        <referenceContainer name="header.container" remove="true"/>
+        <!-- Remover o header padrão -->
+        <referenceBlock name="page.header" remove="true" />
+        <referenceContainer name="header.container" remove="true" />
 
         <!-- Adicionar um header customizado como na página de checkout -->
         <referenceContainer name="page.wrapper">
@@ -26,12 +26,12 @@
                     />
                 </container>
             </container>
-        </referenceContainer>    
+        </referenceContainer>
         <!-- Move a logo para o novo header customizado -->
         <move element="logo" destination="checkout.header.wrapper" before="-" />
 
 
-        <!-- Troca de template no footer de checkout -->
+        <!-- Troca de template da primeira linha do footer de checkout -->
         <referenceBlock name="footer_row_1">
             <arguments>
                 <argument name="block_id" xsi:type="string">footer_row_1_checkout</argument>
