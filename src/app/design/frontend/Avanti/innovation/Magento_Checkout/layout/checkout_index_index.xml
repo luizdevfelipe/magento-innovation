@@ -8,6 +8,7 @@
 
     <body>
 
+        <!-- Adiciona o bloco de passos do checkout ao header -->
         <referenceContainer name="checkout.header.wrapper">
             <block
                 class="Magento\Framework\View\Element\Template"
@@ -15,16 +16,17 @@
                 template="Magento_Checkout::checkout/steps.phtml"
             />
         </referenceContainer>
-
+        <!-- Move o bloco de passos do checkout para depois do logo no header -->
         <move
             element="checkout.steps.indicator"
             destination="checkout.header.wrapper"
             after="logo"
         />
 
-        <!-- Adiciona um container para as linhas do footer -->
+        <!-- Adiciona um container para o footer -->
         <referenceContainer name="page.wrapper">
-
+            <!-- Cria o footer da mesma maneira como no resto da loja -->
+            <!-- Mas a primeira linha é diferente, versão de checkout -->
             <container name="footer" htmlTag="footer" htmlClass="page-footer" after="-">
                 <container name="footer.content" htmlTag="div" htmlClass="footer content" before="-">
 
