@@ -63,18 +63,18 @@
             </referenceBlock>
         </referenceContainer>
 
-        <!-- <referenceBlock name="checkout.root">
+        <referenceBlock name="checkout.root">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
                             <item name="children" xsi:type="array">
 
-                                Sidebar do checkout
+                                <!-- Sidebar do checkout -->
                                 <item name="sidebar" xsi:type="array">
                                     <item name="children" xsi:type="array">
 
-                                        Nosso componente
+                                        <!-- Nosso componente -->
                                         <item name="fulfillment-status" xsi:type="array">
                                             <item name="component" xsi:type="string"> Avanti_CustomCheckout/js/view/fulfillment-status</item>
                                             <item name="displayArea" xsi:type="string">summary</item>
@@ -89,7 +89,7 @@
                     </item>
                 </argument>
             </arguments>
-        </referenceBlock> -->
+        </referenceBlock>
 
     </body>
 </page>
