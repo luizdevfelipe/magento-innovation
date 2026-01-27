@@ -3,6 +3,7 @@
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
        
+        <!-- Criação de formulário para configuração do limite de CrossSell via admin -->
         <section id="avanti_crosssell_limit" translate="label" sortOrder="930" showInDefault="1"
             showInWebsite="1" showInStore="1">
             <label>Avanti - CrossSell Limit</label>
