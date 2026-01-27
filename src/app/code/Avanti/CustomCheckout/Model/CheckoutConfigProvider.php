@@ -13,6 +13,8 @@ use Magento\Cms\Block\BlockFactory;
 // Interface para obter informações da loja atual (store, website, etc)
 use Magento\Store\Model\StoreManagerInterface;
 
+use \Avanti\CustomCheckout\Helper\CustomCheckoutHelper;
+
 /**
  * Classe responsável por fornecer configurações personalizadas
  * para o frontend do checkout via window.checkoutConfig
@@ -30,7 +32,8 @@ class CheckoutConfigProvider implements ConfigProviderInterface
      */
     public function __construct(
         private BlockFactory $cmsBlockFactory,
-        private StoreManagerInterface $storeManager
+        private StoreManagerInterface $storeManager,
+        private CustomCheckoutHelper $customCheckoutHelper
     ) {}
 
     /**
@@ -43,6 +46,14 @@ class CheckoutConfigProvider implements ConfigProviderInterface
      */
     public function getConfig(): array
     {
+        // Verifica se o módulo está habilitado e se a mensagem de resumo está ativada
+        if (
+            !$this->customCheckoutHelper->getEnabled() ||
+            !$this->customCheckoutHelper->getSummaryEnabled()
+        ) {
+            return [];
+        }
+
         // Obtém o ID da store atual (importante para conteúdo multi-store)
         $storeId = (int) $this->storeManager->getStore()->getId();
 
