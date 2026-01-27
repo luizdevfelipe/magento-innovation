@@ -1,0 +1,39 @@
+<?php
+///** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<div class="checkout-steps-wrapper" data-bind="scope: 'checkoutSteps'">
+    <ul class="checkout-steps">
+        <li class="step-cart" data-bind="css: { active: isStepActive('cart') }">
+            <div class="step">1</div>
+            <span><?= __('Cart') ?></span>
+        </li>
+        <li class="step-shipping" data-bind="css: { active: isStepActive('shipping') }">
+            <div class="step">2</div>
+            <span><?= __('Delivery') ?></span>
+        </li>
+        <li class="step-payment" data-bind="css: { active: isStepActive('payment') }">
+            <div class="step">3</div>
+            <span><?= __('Payment') ?></span>
+        </li>
+    </ul>
+
+    <div class="safe-purchase-message">
+        <img src="<?= $block->getViewFileUrl('images/icons/verified-shield.svg'); ?>" alt="verified shield" />
+        <span><?= __('100% Secure Purchase'); ?></span>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "checkoutSteps": {
+                        "component": "Magento_Checkout/js/view/checkout-progress"
+                    }
+                }
+            }
+        }
+    }
+</script>
