@@ -1,11 +1,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
-    <head>
-        <script src="Magento_Checkout::js/checkout-steps.js" />
-    </head>
-
-
     <body>
 
         <!-- Adiciona o bloco de passos do checkout ao header -->
@@ -13,7 +8,7 @@
             <block
                 class="Magento\Framework\View\Element\Template"
                 name="checkout.steps.indicator"
-                template="Magento_Checkout::checkout/steps.phtml"
+                template="Magento_Checkout::html/steps-checkout.phtml"
             />
         </referenceContainer>
         <!-- Move o bloco de passos do checkout para depois do logo no header -->
