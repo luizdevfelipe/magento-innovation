@@ -1,0 +1,56 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Collapsible Navigation Content
+    .account .content.block-collapsible-nav-content {
+        .lib-css(background-color, @color-white);
+        .lib-css(border-radius, 10px);
+        .lib-css(border, 1px solid #BDBDBD);
+        .lib-css(box-shadow, 0 0 5px rgba(0, 0, 0, 0.25));
+    }
+
+    // Itens da navegação colapsável
+    .account .content.block-collapsible-nav-content .nav.items a {
+        .lib-css(color, #A4A4A4);
+    }
+
+    // Item atual da navegação colapsável
+    .account .content.block-collapsible-nav-content .nav.items .item.current {
+        .lib-css(border, none);
+
+        strong {
+            .lib-css(font-weight, 700);
+        }
+    }
+}
+
+
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Item atual da navegação colapsável
+    .account .content.block-collapsible-nav-content .nav.items .item.current {
+        strong {
+            .lib-css(color, @color-white);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Item atual da navegação colapsável
+    .account .content.block-collapsible-nav-content .nav.items .item.current {
+        .lib-css(background-color, @theme__color__primary);
+
+        strong {
+            .lib-css(color, @color-white);
+            .lib-css(padding, 10px 0 10px 13px);
+        }
+    }
+}
