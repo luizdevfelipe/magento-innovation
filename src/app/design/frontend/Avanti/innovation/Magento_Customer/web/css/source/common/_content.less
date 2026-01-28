@@ -1,0 +1,48 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Conteúdo principal na página de conta do cliente
+    .account .column.main {
+        .lib-css(border-radius, 10px);
+        .lib-css(border, 1px solid @color-gray_light);
+        .lib-css(box-shadow, 0 0 5px rgba(7, 6, 6, 0.25));
+        .lib-css(padding, 68px 25px 0 63px);
+        .lib-css(color, @color-black_dark);
+    }
+
+    // Main da página de conta do cliente
+    .account .page-wrapper .page-main {
+        .lib-css(margin-top, 89px);
+    }
+
+    .account .page-title-wrapper .page-title {
+        .lib-css(font-size, 24px);
+    }
+
+    // Título do bloco na página de conta do cliente
+    .account .column.main .block-title {
+        .lib-css(font-size, 18px);
+        .lib-css(color, @color-gray-middle5);
+        .lib-css(border-bottom, 1px solid #B6B6B6);
+        .lib-css(padding-bottom, 17px);
+
+    }
+
+    .account .column.main .box-title {
+        .lib-css(font-size, 14px);
+        .lib-css(color, @color-gray-middle5);
+    }
+
+}
