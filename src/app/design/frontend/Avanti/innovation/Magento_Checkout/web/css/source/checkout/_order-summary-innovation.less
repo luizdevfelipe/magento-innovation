@@ -151,17 +151,8 @@
 
     // Botão Continuar para o Método de Envio no Resumo do Pedido
     .checkout-index-index .payment-method-content .primary .action.primary.checkout {
-        .lib-css(letter-spacing, normal);
-        .lib-css(border-radius, 8px);
-        .lib-css(padding, 14px 24px);
-        .lib-css(font-size, 24px);
-        .lib-css(width, 342px);
+        .primary-button(@width: 283px, @radius: 8px, @font-size: 24px);
 
-        &:hover {
-            .lib-css(background-color, darken(@theme__color__primary, 10%));
-            .lib-css(border, none);
-            .lib-css(color, @color-white);
-        }
     }
 
 }
@@ -194,11 +185,14 @@
     .checkout-shipping-method .primary .button.action.continue.primary {
         .lib-css(margin-top, 42px);
         .lib-css(margin-bottom, 55px);
+        .lib-css(text-transform, uppercase);
     }
 
     // Botão finalizar compra no Resumo do Pedido
     .checkout-payment-method .payment-group .actions-toolbar .action.primary.checkout {
         .lib-css(font-size, 20px);
+        .lib-css(width, 100%);
+        .lib-css(text-transform, uppercase);
     }
 
 }

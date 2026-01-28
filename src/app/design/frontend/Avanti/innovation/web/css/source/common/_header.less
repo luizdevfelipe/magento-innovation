@@ -3,12 +3,13 @@
 //  _____________________________________________
 & when (@media-common =true) {
 
-    .page-header {
-        .lib-css(box-shadow, 0px 3px 3px #dedede94);
+    // Estrutura base do header
+    .page-wrapper .page-header {
+        .lib-css(box-shadow, 0px 3px 3px rgba(222, 222, 222, 0.58));
     }
 
     // Wrapper / estrutura do header
-    .page-header .panel.wrapper {
+    .page-wrapper .page-header .panel.wrapper {
         .lib-css(min-height, 30px);
         // Background padrão tratado em media-queries específicas
     }
@@ -57,6 +58,7 @@
     // Autocomplete
     .page-header .field.search .search-autocomplete {
         .lib-css(color, @color-black);
+        .lib-css(margin-top, -5px);
 
         & ul {
             .lib-css(border, 1px solid @color-form-border);
@@ -168,11 +170,6 @@
         .lib-css(margin, 22px 0 0 0);
         .lib-css(left, 50%);
         .lib-css(transform, translateX(-50%));
-    }
-
-    // Autocomplete
-    .page-header .field.search .search-autocomplete {
-        .lib-css(margin-top, -5px);
     }
 
     // Busca: espaçamento e controle visual em mobile

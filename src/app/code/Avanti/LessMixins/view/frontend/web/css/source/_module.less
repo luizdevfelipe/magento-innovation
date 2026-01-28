@@ -1,3 +1,6 @@
+/*
+* Icon Image Before Mixin
+*/
 .icon-image-before(@image-path, @width, @height) {
     &::before {
         content: '';
@@ -12,7 +15,9 @@
     }
 }
 
-
+/*
+* Primary Button Mixin
+*/
 .primary-button(@width: auto, @radius: 4px, @font-size: 14px) {
     .lib-css(background-color, @theme__color__primary);
     .lib-css(color, @color-white);
