@@ -63,6 +63,7 @@
             </referenceBlock>
         </referenceContainer>
 
+        <!-- Adciona o carregamento do componente de status de atendimento -->
         <referenceBlock name="checkout.root">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
