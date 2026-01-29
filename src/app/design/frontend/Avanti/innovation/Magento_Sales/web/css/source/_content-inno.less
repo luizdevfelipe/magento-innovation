@@ -1,0 +1,41 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Título da mensagem na página de histórico de pedidos
+    .account.sales-order-history .order_history_message h2 {
+        .lib-css(font-size, 18px);
+        .lib-css(color, @color-gray-middle5);
+        .lib-css(font-weight, 700);
+    }
+
+    // Parágrafo da mensagem na página de histórico de pedidos
+    .account.sales-order-history .order_history_message p {
+        .lib-css(color, @color-gray40)
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Conteúdo principal na página de conta do cliente
+    .account.sales-order-history .page-wrapper .columns .column.main {
+        .lib-css(padding-left, 30px);
+        .lib-css(padding-right, 40px);
+        .lib-css(padding-bottom, 94px);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Conteúdo principal na página de conta do cliente
+    .account.sales-order-history .page-wrapper .columns .column.main {
+        .lib-css(padding, 70px 25px 0 63px);
+    }
+}
