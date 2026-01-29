@@ -4,7 +4,7 @@
 & when (@media-common =true) {
 
     // Estilo do primeiro item da paginação (página atual)
-    .toolbar.toolbar-products .items.pages-items .item.current .page {
+    .toolbar .items.pages-items .item.current .page {
         .lib-css(background-color, @theme__color__primary);
         .lib-css(color, @color-white);
         .lib-css(border-radius, 50%);
@@ -16,8 +16,8 @@
     }
 
     // Estido da seta de navegação da paginação
-    .toolbar.toolbar-products .items.pages-items .item.pages-item-next .action.next,
-    .toolbar.toolbar-products .items.pages-items .item.pages-item-previous .action.previous {
+    .toolbar .items.pages-items .item.pages-item-next .action.next,
+    .toolbar .items.pages-items .item.pages-item-previous .action.previous {
         .lib-css(padding, 0);
         .lib-css(width, 31px);
         .lib-css(height, 32px);
@@ -37,8 +37,8 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
     // Posicionamento dos botões de navegação da paginação
-    .toolbar.toolbar-products .items.pages-items .pages-item-next,
-    .toolbar.toolbar-products .items.pages-items .pages-item-previous {
+    .toolbar .items.pages-items .pages-item-next,
+    .toolbar .items.pages-items .pages-item-previous {
         .lib-css(position, static);
     }
 }

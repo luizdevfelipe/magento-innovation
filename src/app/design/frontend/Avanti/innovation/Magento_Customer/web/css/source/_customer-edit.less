@@ -1,0 +1,64 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+
+    // Botão de salvar na página de edição da conta do cliente
+    .account.customer-account-edit .action.save.primary {
+        .primary-button(@width: 170px, @radius: 8px, @font-size: 16px);
+        .lib-css(padding, 14px 24px);
+        .lib-css(margin-bottom, 40px);
+    }
+
+    // Container de informações na página de edição da conta do cliente
+    .account.customer-account-edit .fieldset.info {
+        .lib-css(width, 100%);
+    }
+
+    // Campos de texto na página de edição da conta do cliente
+    .account.customer-account-edit .fieldset input[type="text"],
+    .account.customer-account-edit .fieldset input[type="email"],
+    .account.customer-account-edit .fieldset input[type="password"] {
+        .lib-css(border-color, #9d9d9d);
+        .lib-css(max-width, 489px);
+    }
+
+    // Labels dos campos na página de edição da conta do cliente
+    .account.customer-account-edit .fieldset .required label {
+        .lib-css(font-weight, 600);
+        .lib-css(font-size, 14px);
+    }
+
+    // Labels das opções na página de edição da conta do cliente
+    .account.customer-account-edit .fieldset .field.choice .label {
+        .lib-css(color, @color-gray-middle5);
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Conteúdo principal na página de conta do cliente
+    .account.customer-account-edit .page-wrapper .columns .column.main {
+        .lib-css(padding-left, 21px);
+        .lib-css(padding-right, 38px);
+        .lib-css(padding-bottom, 100px);
+    }
+
+    // Botão de salvar na página de edição da conta do cliente
+    .account.customer-account-edit .action.save.primary {
+        .lib-css(width, 100%);
+    }
+
+    // Título da página de edição da conta do cliente
+    .account.customer-account-edit .page-title-wrapper .page-title {
+        .lib-css(margin-right, 0);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}

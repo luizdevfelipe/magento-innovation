@@ -6,7 +6,35 @@
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Conteúdo principal na página de conta do cliente
+    .account.customer-account-index .page-wrapper .columns .column.main {
+        .lib-css(padding-left, 21px);
+        .lib-css(padding-right, 30px);
+        .lib-css(padding-bottom, 63px);
+    }
+
+    // Primeiro container de informações da conta
+    .account.customer-account-index .box.box-information {
+        .lib-css(margin-top, 32px);
+    }
+
+    // Células da tabela na página de pedidos recentes
+    .account .table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr > td {
+        .lib-css(padding-bottom, 2px);
+
+        &[data-th]::before {
+            .lib-css(color, @color-gray-middle5);
+        }
+
+        &:first-child {
+            .lib-css(padding-top, 50px);
+        }
+
+    }
+
+}
 
 //
 //  Desktop
@@ -19,6 +47,22 @@
         .lib-css(justify-content, flex-start);
         .lib-css(flex-direction, column);
         .lib-css(gap, 30px);
+    }
+
+    // Container de endereços na página de conta do cliente
+    .account.customer-account-index .block.block-dashboard-addresses .block-content {
+        .lib-css(margin-top, 16px);
+    }
+
+    // Cabeçalho da tabela na página de pedidos recentes
+    .account.customer-account-index thead tr th {
+        .lib-css(padding, 60px 10px 20px 10px);
+        .lib-css(color, @color-gray-middle5);
+    }
+
+    // Células da tabela na página de pedidos recentes
+    .account tbody tr td {
+        .lib-css(padding, 18px 10px);
     }
 
 }

@@ -1,12 +1,90 @@
 //
 //  Common
 //  _____________________________________________
-& when (@media-common =true) {}
+& when (@media-common =true) {
+
+    // Título da página de conta do cliente
+    .account .page-title-wrapper .page-title {
+        .lib-css(font-size, 24px);
+    }
+
+    // Conteúdo principal na página de conta do cliente
+    .account .column.main {
+        .lib-css(color, @color-black_dark);
+    }
+
+    // Título do bloco na página de conta do cliente
+    .account .column.main .block-title,
+    .account .column.main .block:not(.widget) .block-title {
+        .lib-css(font-size, 18px);
+        .lib-css(color, @color-gray-middle5);
+        .lib-css(border-bottom, 1px solid #B6B6B6);
+        .lib-css(margin-bottom, 0);
+        .lib-css(font-weight, 700);
+
+        a {
+            .lib-css(font-weight, 400);
+            .lib-css(font-size, 14px);
+        }
+    }
+
+    // Legenda do fieldset na página de gerenciamento da newsletter
+    .account .fieldset>.legend {
+        .lib-css(padding, 0px 0 18px);
+        .lib-css(margin-top, 15px);
+
+        span {
+
+            .lib-css(font-size, 18px);
+            .lib-css(font-weight, 700);
+            .lib-css(color, @color-gray-middle5);
+        }
+
+    }
+
+    // Título da caixa na página de conta do cliente
+    .account .column.main .box-title {
+        .lib-css(font-size, 14px);
+        .lib-css(color, @color-gray-middle5);
+    }
+
+    // Seletor de quantidade de itens por página na página de conta do cliente
+    .account .pager .limiter .limiter-options {
+        .lib-css(background-color, @color-white);
+        .lib-css(border, 1px solid @color-black);
+        .lib-css(border-radius, 5px);
+    }
+}
 
 //
 //  Mobile
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
+
+    // Título do bloco na página de conta do cliente
+    .account .column.main .block-title,
+    .account .column.main .block:not(.widget) .block-title {
+        .lib-css(padding-bottom, 27px);
+        .lib-css(color, @color-gray-middle5);
+    }
+
+    // Conteúdo principal na página de conta do cliente
+    .account .page-wrapper .columns .column.main {
+        .lib-css(padding, 73px 0 0 0);
+    }
+
+    .account .column.main .block-title,
+    .account .column.main .block:not(.widget) .block-title {
+        .lib-css(display, flex);
+        .lib-css(flex-direction, column);
+        .lib-css(justify-content, flex-start);
+
+        a.action {
+            .lib-css(margin, 0);
+        }
+    }
+
+}
 
 //
 //  Desktop
@@ -19,7 +97,7 @@
         .lib-css(border, 1px solid @color-gray_light);
         .lib-css(box-shadow, 0 0 5px rgba(7, 6, 6, 0.25));
         .lib-css(padding, 68px 25px 0 63px);
-        .lib-css(color, @color-black_dark);
+        .lib-css(min-height, 766px);
     }
 
     // Main da página de conta do cliente
@@ -27,22 +105,10 @@
         .lib-css(margin-top, 89px);
     }
 
-    .account .page-title-wrapper .page-title {
-        .lib-css(font-size, 24px);
-    }
-
     // Título do bloco na página de conta do cliente
-    .account .column.main .block-title {
-        .lib-css(font-size, 18px);
-        .lib-css(color, @color-gray-middle5);
-        .lib-css(border-bottom, 1px solid #B6B6B6);
+    .account .column.main .block-title,
+    .account .column.main .block:not(.widget) .block-title {
         .lib-css(padding-bottom, 17px);
-
-    }
-
-    .account .column.main .box-title {
-        .lib-css(font-size, 14px);
-        .lib-css(color, @color-gray-middle5);
     }
 
 }
