@@ -7,9 +7,9 @@
 //  Mobile
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
-    
+
     // Main da página de lista de desejos
-    .wishlist-index-index .page-wrapper .columns .column.main{
+    .wishlist-index-index .page-wrapper .columns .column.main {
         .lib-css(padding-left, 16px);
         .lib-css(padding-right, 17px);
     }
@@ -19,6 +19,93 @@
         .lib-css(display, flex);
         .lib-css(flex-direction, column);
     }
+
+    // Itens da lista
+    .wishlist-index-index .product-items .product-item {
+        .lib-css(max-width, 100%);
+        .lib-css(width, 100%);
+        .lib-css(border, none);
+
+        &:first-child {
+            .lib-css(border, none);
+        }
+    }
+
+    // Container de Informações do produto
+    .wishlist-index-index .product-items .product-item .product-item-info {
+        .lib-css(min-height, 275px);
+    }
+
+    // Container da imagem do produto
+    .wishlist-index-index .product-item-info .product-item-photo {
+        .lib-css(margin, 27px 12px 21px 15px);
+
+        &,
+        .product-image-container {
+            .lib-css(max-width, 68px);
+            .lib-css(max-height, 64px);
+        }
+    }
+
+    // Imagem do produto
+    .wishlist-index-index .product-item-info .product-item-photo .product-image-photo {
+        .lib-css(max-width, 68px);
+        .lib-css(aspect-ratio, 68 / 64);
+        .lib-css(margin, 0);
+        .lib-css(object-fit, contain);
+    }
+
+    // Nome do produto
+    .wishlist-index-index .product-item-info .product-item-name {
+        .lib-css(margin-top, 30px);
+        .lib-css(text-align, left);
+        .lib-css(font-size, 14px);
+    }
+
+    // Preço do produto
+    .wishlist-index-index .product-item-info .price-box.price-final_price {
+        .lib-css(text-align, left);
+
+        .price {
+            .lib-css(font-size, 14px);
+            .lib-css(font-weight, 400);
+        }
+    }
+
+    // Caixa de comentário do produto
+    .wishlist-index-index .product-items .product-item-inner .field.comment-box {
+        .lib-css(margin, 0 16px 21px 15px);
+
+        textarea {
+            .lib-css(border-radius, 8px);
+        }
+    }
+
+    // Botão de comprar no produto
+    .wishlist-index-index .product-item-inner .box-tocart .product-item-actions .action.tocart.primary {
+        .lib-css(position, static);
+        .lib-css(margin, 0 0 0 15px);
+        .lib-css(border-radius, 8px);
+        .lib-css(padding, 14px 24px);
+        .lib-css(font-size, 16px);
+        .lib-css(width, 170px);
+    }
+
+    // Ícone de editar o produto
+    .wishlist-index-index .product-item-info .product-item-inner .action.edit {
+        .icon-image-before('images/icons/pencil/black-small-pencil.svg', 12px, 12px);
+    }
+
+    // Ícone de remover o produto
+    .wishlist-index-index .product-item-info .product-item-inner .btn-remove.action.delete {
+        .icon-image-before('images/icons/trash/black-small-trash.svg', 18px, 15px);
+    }
+
+    // Texto de paginação
+    .column.main .toolbar.wishlist-toolbar .pager {
+        .lib-css(text-align, left);
+    }
+
 }
 
 //
