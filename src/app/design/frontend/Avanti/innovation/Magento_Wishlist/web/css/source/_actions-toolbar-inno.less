@@ -23,4 +23,14 @@
 //
 //  Desktop
 //  _____________________________________________
-.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {}
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
+
+    // Botões na barra de ações da lista de desejos
+    .account.wishlist-index-index .actions-toolbar  {
+        .action.update,
+        .action.share,
+        .action.tocart {
+            .lib-css(max-width, 252px);
+        }
+    }
+}

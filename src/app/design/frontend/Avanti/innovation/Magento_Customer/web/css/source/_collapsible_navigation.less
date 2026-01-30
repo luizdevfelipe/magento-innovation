@@ -31,10 +31,17 @@
 //  _____________________________________________
 .media-width(@extremum, @break) when (@extremum ="max") and (@break =@screen__m) {
 
+    // Conteúdo da navegação colapsável
+    .account .block-collapsible-nav .content.block-collapsible-nav-content {
+        .lib-css(border-radius, 0);
+        .lib-css(padding-top, 35px);
+        .lib-css(padding-bottom, 35px);
+    }
+
     // Item atual da navegação colapsável
     .account .content.block-collapsible-nav-content .nav.items .item.current {
         strong {
-            .lib-css(color, @color-white);
+            .lib-css(color, #A4A4A4);
         }
     }
 
